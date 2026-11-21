@@ -185,7 +185,7 @@ nav.scrolled{background:rgba(7,6,13,.82);backdrop-filter:blur(14px);border-color
 /* PROJECTS */
 #proyectos{background:radial-gradient(ellipse at top,rgba(123,92,255,.12),transparent 60%)}
 .proj-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
-.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:3rem}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,380px));justify-content:start;gap:22px;margin-top:3rem}
 .proj{border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--card);transition:transform .3s,border-color .3s}
 .proj:hover{transform:translateY(-6px);border-color:#4a3f80}
 .proj .art{aspect-ratio:16/10;position:relative;overflow:hidden}
@@ -223,6 +223,7 @@ details p{color:var(--muted);margin-top:.8rem;font-size:.95rem}
 .news form{display:flex;gap:.7rem;max-width:500px;margin:2rem auto 0}
 .news input{flex:1;padding:1rem 1.3rem;border-radius:999px;border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--text);font-family:inherit;font-size:.95rem;outline:none}
 .news input:focus{border-color:var(--nova2)}
+.follow-cta{margin-top:2rem}
 .news .ok{margin-top:1rem;color:#6dffb0;font-size:.9rem;min-height:1.4em}
 
 footer{border-top:1px solid var(--line);padding:60px 0 40px;margin-top:40px}

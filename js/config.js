@@ -12,8 +12,7 @@ window.TIENDA = {
    Usa "imagen" con la ruta de una imagen propia, o "arte" para una ilustración provisional. */
 window.PROYECTOS = [
   { titulo:"Reinos de Leyenda", texto:"Estrategia fantástica por turnos. Ya jugable en acceso anticipado por 1,99 $, y sigue creciendo.", status:"early", chips:["Estrategia","Por turnos","Navegador"], imagen:"assets/img/portada/portada-es.webp", accion:"comprar" },
-  { titulo:"Proyecto Astra", texto:"Exploración espacial y supervivencia entre estrellas lejanas.", status:"dev", chips:["Exploración","Ciencia ficción"], arte:"astra", accion:"avisar" },
-  { titulo:"Próximo proyecto", texto:"Algo nuevo se está gestando en el estudio. Muy pronto, más detalles.", status:"soon", chips:["Por anunciar"], arte:"misterio", accion:"avisar" }
+  { titulo:"Próximo proyecto", texto:"Algo nuevo se está gestando en el estudio. Cuando esté listo, lo verás aquí primero.", status:"soon", chips:["Por anunciar"], arte:"misterio", accion:"avisar" }
 ];
 /* Reinos del juego y su color de acento */
 window.REINOS = {

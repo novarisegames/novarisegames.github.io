@@ -15,13 +15,13 @@ PROYECTOS.forEach(p=>{
   el.innerHTML = `<div class="art">${arte}<span class="status ${cls}">${lbl}</span></div>
     <div class="body"><h4>${p.titulo}</h4><p>${p.texto}</p>
     <div class="meta">${p.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
-    <button class="follow" data-act="${p.accion}">${p.accion==='comprar'?'Comprar ahora →':'Avísame cuando salga →'}</button></div>`;
+    <button class="follow" data-act="${p.accion}">${p.accion==='comprar'?'Comprar ahora →':'Seguir a NovaRise →'}</button></div>`;
   grid.appendChild(el);
 });
 grid.addEventListener('click',e=>{
   const b=e.target.closest('.follow'); if(!b) return;
   if(b.dataset.act==='comprar') window.open(window.TIENDA.url,'_blank','noopener');
-  else { document.getElementById('newsEmail').focus(); document.querySelector('.news').scrollIntoView({behavior:'smooth',block:'center'}); }
+  else document.getElementById('seguir').scrollIntoView({behavior:'smooth',block:'center'});
 });
 
 // Visor de imágenes (héroes y capturas)
@@ -95,13 +95,6 @@ document.getElementById('shotMain').onclick=()=>openLb(capList,ci,true);
 // Tienda: todos los botones de compra apuntan al enlace de config.js
 if(window.TIENDA&&window.TIENDA.url) document.querySelectorAll('a[data-buy]').forEach(a=>a.href=window.TIENDA.url);
 
-// Boletín
-document.getElementById('newsForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const v=document.getElementById('newsEmail').value.trim();
-  document.getElementById('newsOk').textContent = v ? '¡Gracias! Te avisaremos de todas las novedades de NovaRise.' : '';
-  e.target.reset();
-});
 
 // Navegación
 const nav=document.getElementById('nav');

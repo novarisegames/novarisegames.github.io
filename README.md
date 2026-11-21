@@ -72,7 +72,8 @@ python3 -m http.server 8000
 - [ ] Más capturas (batallas, ciudades), tráiler y logo de NovaRise
 - [x] Demo jugable gratis
 - [x] Compra a través de itch.io (1,99 $)
-- [ ] Conectar el boletín (Mailchimp, Brevo…)
+- [ ] Correo de contacto real
+- [ ] Boletín propio (opcional; ahora se usa «Seguir en itch.io»)
 - [ ] Páginas legales: aviso legal, privacidad, cookies, condiciones de venta
 - [ ] Versión en inglés
 - [ ] Dominio propio
