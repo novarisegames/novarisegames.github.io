@@ -33,10 +33,10 @@ novarise-web/
 
 `status` puede ser `live` (disponible), `dev` (en desarrollo) o `soon` (próximamente).
 
-**Añadir o cambiar un héroe**: guarda las imágenes en `assets/img/heroes/` y añade una entrada a `HEROES` en `js/config.js`:
+**Añadir o cambiar un héroe**: el reino debe estar en `REINOS` (con su color). Guarda las imágenes en `assets/img/heroes/` y añade una entrada a `HEROES` en `js/config.js`:
 
 ```js
-{ nombre:"Nombre del héroe", reino:"Su reino", img:"nombre-archivo" }
+{ nombre:"Nombre", clase:"Clase", reino:"Torre Azul", img:"nombre-archivo" }
 ```
 
 **Añadir una captura de partida**: guarda `nombre.webp` y `nombre-grande.webp` en `assets/img/capturas/` y añade una entrada a `CAPTURAS` en `js/config.js`:

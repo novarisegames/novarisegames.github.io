@@ -49,17 +49,28 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight') showLb(hi+1);
 });
 
-// Galería de héroes
-const heroGrid=document.getElementById('heroGrid'), HB='assets/img/heroes/';
-const heroList=(window.HEROES||[]).map(h=>({src:HB+h.img+'-grande.webp',title:h.nombre,sub:h.reino}));
-(window.HEROES||[]).forEach((h,i)=>{
-  const b=document.createElement('button');
-  b.className='hero-tile reveal'; b.type='button';
-  b.setAttribute('aria-label','Ver '+h.nombre);
-  b.innerHTML=`<img src="${HB+h.img}.webp" alt="${h.nombre}" loading="lazy" width="560" height="560"><div class="cap"><strong>${h.nombre}</strong><span>${h.reino}</span></div>`;
-  b.onclick=()=>openLb(heroList,i);
-  heroGrid.appendChild(b);
-});
+// Galería de héroes con filtro por reino
+const heroGrid=document.getElementById('heroGrid'), heroFilters=document.getElementById('heroFilters'), HB='assets/img/heroes/';
+const HEROS=window.HEROES||[], RE=window.REINOS||{};
+let heroList=[];
+function renderHeroes(reino){
+  const vis=HEROS.filter(h=>!reino||h.reino===reino);
+  heroList=vis.map(h=>({src:HB+h.img+'-grande.webp',title:h.nombre,sub:h.clase+' · '+h.reino}));
+  heroGrid.innerHTML='';
+  vis.forEach((h,i)=>{
+    const b=document.createElement('button');
+    b.className='hero-tile'; b.type='button'; b.style.setProperty('--rc',RE[h.reino]||'var(--gold)');
+    b.setAttribute('aria-label','Ver a '+h.nombre+', '+h.clase+' de '+h.reino);
+    b.innerHTML=`<img src="${HB+h.img}.webp" alt="${h.nombre}" loading="lazy" width="560" height="560"><div class="cap"><em>${h.reino}</em><strong>${h.nombre}</strong><span>${h.clase}</span></div>`;
+    b.onclick=()=>openLb(heroList,i);
+    heroGrid.appendChild(b);
+  });
+  heroFilters.querySelectorAll('button').forEach(f=>f.classList.toggle('on',(f.dataset.r||'')===(reino||'')));
+}
+const reinosUsados=[...new Set(HEROS.map(h=>h.reino))];
+heroFilters.innerHTML=`<button type="button" data-r="">Todos</button>`+reinosUsados.map(r=>`<button type="button" data-r="${r}" style="--rc:${RE[r]||'var(--gold)'}"><i></i>${r}</button>`).join('');
+heroFilters.addEventListener('click',e=>{const b=e.target.closest('button'); if(b) renderHeroes(b.dataset.r);});
+renderHeroes('');
 
 // Capturas "Así se juega"
 const CB='assets/img/capturas/', CAPS=window.CAPTURAS||[];
