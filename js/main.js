@@ -11,7 +11,8 @@ PROYECTOS.forEach(p=>{
   const [lbl,cls] = ST[p.status];
   const el = document.createElement('article');
   el.className='proj reveal';
-  el.innerHTML = `<div class="art">${ARTES[p.arte]||ARTES.misterio}<span class="status ${cls}">${lbl}</span></div>
+  const arte = p.imagen ? `<img src="${p.imagen}" alt="${p.titulo}" loading="lazy">` : (ARTES[p.arte]||ARTES.misterio);
+  el.innerHTML = `<div class="art">${arte}<span class="status ${cls}">${lbl}</span></div>
     <div class="body"><h4>${p.titulo}</h4><p>${p.texto}</p>
     <div class="meta">${p.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
     <button class="follow" data-act="${p.accion}">${p.accion==='comprar'?'Comprar ahora →':'Avísame cuando salga →'}</button></div>`;
@@ -21,6 +22,37 @@ grid.addEventListener('click',e=>{
   const b=e.target.closest('.follow'); if(!b) return;
   if(b.dataset.act==='comprar') openBuy('estandar');
   else { document.getElementById('newsEmail').focus(); document.querySelector('.news').scrollIntoView({behavior:'smooth',block:'center'}); }
+});
+
+// Galería de héroes + visor
+const heroGrid=document.getElementById('heroGrid'), HB='assets/img/heroes/';
+const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
+let hi=0;
+(window.HEROES||[]).forEach((h,i)=>{
+  const b=document.createElement('button');
+  b.className='hero-tile reveal'; b.type='button';
+  b.setAttribute('aria-label','Ver '+h.nombre);
+  b.innerHTML=`<img src="${HB+h.img}.webp" alt="${h.nombre}" loading="lazy" width="560" height="560"><div class="cap"><strong>${h.nombre}</strong><span>${h.reino}</span></div>`;
+  b.onclick=()=>openLb(i);
+  heroGrid.appendChild(b);
+});
+function showLb(i){
+  const H=window.HEROES; hi=(i+H.length)%H.length; const h=H[hi];
+  lbImg.src=HB+h.img+'-grande.webp'; lbImg.alt=h.nombre;
+  document.getElementById('lbName').textContent=h.nombre;
+  document.getElementById('lbRealm').textContent=h.reino;
+}
+function openLb(i){ showLb(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('lbClose').onclick=closeLb;
+document.getElementById('lbPrev').onclick=()=>showLb(hi-1);
+document.getElementById('lbNext').onclick=()=>showLb(hi+1);
+lb.addEventListener('click',e=>{ if(e.target===lb) closeLb(); });
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') closeLb();
+  if(e.key==='ArrowLeft') showLb(hi-1);
+  if(e.key==='ArrowRight') showLb(hi+1);
 });
 
 // Modal de compra

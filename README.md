@@ -10,10 +10,12 @@ novarise-web/
 ├── css/
 │   └── styles.css    # Estilos
 ├── js/
-│   ├── config.js     # ← Ediciones, precios, enlaces de pago y proyectos
+│   ├── config.js     # ← Ediciones, precios, enlaces de pago, héroes y proyectos
 │   └── main.js       # Lógica de la página
-├── assets/
-│   └── img/          # Capturas, logo, portadas…
+├── assets/img/
+│   ├── portada/      # Portadas del juego (ES y EN)
+│   ├── heroes/       # Retratos: nombre.webp (miniatura) y nombre-grande.webp (visor)
+│   └── banner-caballero.webp
 └── .nojekyll         # Para que GitHub Pages sirva los archivos tal cual
 ```
 
@@ -29,6 +31,12 @@ novarise-web/
 ```
 
 `status` puede ser `live` (disponible), `dev` (en desarrollo) o `soon` (próximamente).
+
+**Añadir o cambiar un héroe**: guarda las imágenes en `assets/img/heroes/` y añade una entrada a `HEROES` en `js/config.js`:
+
+```js
+{ nombre:"Nombre del héroe", reino:"Su reino", img:"nombre-archivo" }
+```
 
 ## Verla en local
 
@@ -49,7 +57,8 @@ python3 -m http.server 8000
 
 ## Pendiente
 
-- [ ] Capturas, tráiler y logo reales
+- [x] Portada y retratos de héroes
+- [ ] Capturas de partida, tráiler y logo de NovaRise
 - [ ] Enlaces de pago en `js/config.js`
 - [ ] Conectar el boletín (Mailchimp, Brevo…)
 - [ ] Páginas legales: aviso legal, privacidad, cookies, condiciones de venta
