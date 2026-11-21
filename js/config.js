@@ -30,8 +30,15 @@ window.HEROES = [
   { nombre:"Guerrero del Norte",          reino:"Reino del Norte",     img:"guerrero-del-norte" },
   { nombre:"Arquera Élfica",              reino:"Bosque Élfico",       img:"arquera-elfica" },
   { nombre:"Guerrera del León Dorado",    reino:"Reino del León",      img:"guerrera-leon" },
-  { nombre:"Guardabosques",               reino:"Bosque Élfico",       img:"guardabosques-flores" },
+  { nombre:"Aldric, el Guardabosques",    reino:"Bosque Élfico",       img:"guardabosques-flores" },
   { nombre:"Guardabosques y su corcel",   reino:"Bosque Élfico",       img:"guardabosques-caballo" },
   { nombre:"Caballero ante el Castillo",  reino:"Reino del León",      img:"caballero-castillo" }
+];
+
+/* Capturas de la sección "Así se juega". Las imágenes están en assets/img/capturas/
+   (archivo.webp para la miniatura y archivo-grande.webp para la vista grande). */
+window.CAPTURAS = [
+  { img:"mapa-exploracion", texto:"Explorando el mapa con Aldric, el Guardabosques: recursos, hechizos y el diario de cada día." },
+  { img:"mapa-tutorial",    texto:"El tutorial guiado enseña a capturar minas para conseguir recursos cada día." }
 ];
 /* ========================================================= */

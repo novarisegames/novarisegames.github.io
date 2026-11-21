@@ -24,25 +24,19 @@ grid.addEventListener('click',e=>{
   else { document.getElementById('newsEmail').focus(); document.querySelector('.news').scrollIntoView({behavior:'smooth',block:'center'}); }
 });
 
-// Galería de héroes + visor
-const heroGrid=document.getElementById('heroGrid'), HB='assets/img/heroes/';
-const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
-let hi=0;
-(window.HEROES||[]).forEach((h,i)=>{
-  const b=document.createElement('button');
-  b.className='hero-tile reveal'; b.type='button';
-  b.setAttribute('aria-label','Ver '+h.nombre);
-  b.innerHTML=`<img src="${HB+h.img}.webp" alt="${h.nombre}" loading="lazy" width="560" height="560"><div class="cap"><strong>${h.nombre}</strong><span>${h.reino}</span></div>`;
-  b.onclick=()=>openLb(i);
-  heroGrid.appendChild(b);
-});
+// Visor de imágenes (héroes y capturas)
+const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbFig=lb.querySelector('figure');
+let lbList=[], hi=0;
 function showLb(i){
-  const H=window.HEROES; hi=(i+H.length)%H.length; const h=H[hi];
-  lbImg.src=HB+h.img+'-grande.webp'; lbImg.alt=h.nombre;
-  document.getElementById('lbName').textContent=h.nombre;
-  document.getElementById('lbRealm').textContent=h.reino;
+  hi=(i+lbList.length)%lbList.length; const it=lbList[hi];
+  lbImg.src=it.src; lbImg.alt=it.title||it.sub||'';
+  document.getElementById('lbName').textContent=it.title||'';
+  document.getElementById('lbRealm').textContent=it.sub||'';
+  const multi=lbList.length>1;
+  document.getElementById('lbPrev').style.display=multi?'':'none';
+  document.getElementById('lbNext').style.display=multi?'':'none';
 }
-function openLb(i){ showLb(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+function openLb(list,i,wide){ lbList=list; lbFig.classList.toggle('wide',!!wide); showLb(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
 function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
 document.getElementById('lbClose').onclick=closeLb;
 document.getElementById('lbPrev').onclick=()=>showLb(hi-1);
@@ -54,6 +48,38 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft') showLb(hi-1);
   if(e.key==='ArrowRight') showLb(hi+1);
 });
+
+// Galería de héroes
+const heroGrid=document.getElementById('heroGrid'), HB='assets/img/heroes/';
+const heroList=(window.HEROES||[]).map(h=>({src:HB+h.img+'-grande.webp',title:h.nombre,sub:h.reino}));
+(window.HEROES||[]).forEach((h,i)=>{
+  const b=document.createElement('button');
+  b.className='hero-tile reveal'; b.type='button';
+  b.setAttribute('aria-label','Ver '+h.nombre);
+  b.innerHTML=`<img src="${HB+h.img}.webp" alt="${h.nombre}" loading="lazy" width="560" height="560"><div class="cap"><strong>${h.nombre}</strong><span>${h.reino}</span></div>`;
+  b.onclick=()=>openLb(heroList,i);
+  heroGrid.appendChild(b);
+});
+
+// Capturas "Así se juega"
+const CB='assets/img/capturas/', CAPS=window.CAPTURAS||[];
+const capList=CAPS.map(c=>({src:CB+c.img+'-grande.webp',title:'',sub:c.texto}));
+const shotImg=document.getElementById('shotImg'), shotCap=document.getElementById('shotCap'), thumbs=document.getElementById('thumbs');
+let ci=0;
+function showShot(i){
+  ci=i; const c=CAPS[i];
+  shotImg.src=CB+c.img+'-grande.webp'; shotImg.alt=c.texto; shotCap.textContent=c.texto;
+  thumbs.querySelectorAll('.thumb').forEach((t,k)=>t.classList.toggle('on',k===i));
+}
+CAPS.forEach((c,i)=>{
+  const t=document.createElement('button'); t.type='button'; t.className='thumb';
+  t.setAttribute('aria-label','Ver captura '+(i+1));
+  t.innerHTML=`<img src="${CB+c.img}.webp" alt="" loading="lazy">`;
+  t.onclick=()=>showShot(i); thumbs.appendChild(t);
+});
+if(CAPS.length){ showShot(0); if(CAPS.length<2) thumbs.style.display='none'; }
+else document.getElementById('jugabilidad').style.display='none';
+document.getElementById('shotMain').onclick=()=>openLb(capList,ci,true);
 
 // Modal de compra
 const modal=document.getElementById('modal'), opts=document.getElementById('opts');

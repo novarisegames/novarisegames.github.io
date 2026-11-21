@@ -15,6 +15,7 @@ novarise-web/
 ├── assets/img/
 │   ├── portada/      # Portadas del juego (ES y EN)
 │   ├── heroes/       # Retratos: nombre.webp (miniatura) y nombre-grande.webp (visor)
+│   ├── capturas/     # Capturas de partida para "Así se juega"
 │   └── banner-caballero.webp
 └── .nojekyll         # Para que GitHub Pages sirva los archivos tal cual
 ```
@@ -38,6 +39,12 @@ novarise-web/
 { nombre:"Nombre del héroe", reino:"Su reino", img:"nombre-archivo" }
 ```
 
+**Añadir una captura de partida**: guarda `nombre.webp` y `nombre-grande.webp` en `assets/img/capturas/` y añade una entrada a `CAPTURAS` en `js/config.js`:
+
+```js
+{ img:"nombre", texto:"Pie de foto de la captura." }
+```
+
 ## Verla en local
 
 Abre `index.html` en el navegador, o arranca un servidor:
@@ -58,7 +65,8 @@ python3 -m http.server 8000
 ## Pendiente
 
 - [x] Portada y retratos de héroes
-- [ ] Capturas de partida, tráiler y logo de NovaRise
+- [x] Primeras capturas de partida
+- [ ] Más capturas (batallas, ciudades), tráiler y logo de NovaRise
 - [ ] Enlaces de pago en `js/config.js`
 - [ ] Conectar el boletín (Mailchimp, Brevo…)
 - [ ] Páginas legales: aviso legal, privacidad, cookies, condiciones de venta

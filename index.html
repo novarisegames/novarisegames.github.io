@@ -34,6 +34,7 @@
     <a href="#inicio" class="logo"><svg width="30" height="30"><use href="#novamark"/></svg><span>Nova<b>Rise</b></span></a>
     <div class="links" id="links">
       <a href="#juego">Reinos de Leyenda</a>
+      <a href="#jugabilidad">Así se juega</a>
       <a href="#comprar">Comprar</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#estudio">Estudio</a>
@@ -104,6 +105,34 @@
       <p class="lead" style="margin:0 auto">Toca cualquier retrato para verlo a tamaño completo.</p>
     </div>
     <div class="heroes" id="heroGrid"></div>
+  </div>
+</section>
+
+<!-- ===== JUGABILIDAD ===== -->
+<section id="jugabilidad">
+  <div class="wrap">
+    <div class="play-head reveal">
+      <span class="eyebrow">Así se juega</span>
+      <h2 class="title">Tu reino, día a día</h2>
+      <p class="lead">Mueve a tus héroes por el mapa, conquista minas, lanza hechizos y cumple misiones. Cada día cuenta: al terminarlo, tus rivales también mueven ficha.</p>
+    </div>
+    <div class="play">
+      <div class="viewer reveal">
+        <button class="shot-main" id="shotMain" type="button" aria-label="Ver captura a pantalla completa">
+          <img id="shotImg" alt="" width="1220" height="864">
+          <span class="zoom">⤢ Ampliar</span>
+        </button>
+        <p class="shot-cap" id="shotCap"></p>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+      <ul class="mechs">
+        <li class="reveal"><span class="mi">🗺️</span><div><strong>Explora el mapa</strong><p>Avanza entre la niebla de guerra y descubre castillos, ruinas, minas y criaturas.</p></div></li>
+        <li class="reveal"><span class="mi">⛏️</span><div><strong>Captura minas</strong><p>Cada mina que controlas te da recursos cada día: oro, madera, mineral y gemas.</p></div></li>
+        <li class="reveal"><span class="mi">⚔️</span><div><strong>Haz crecer a tus héroes</strong><p>Ataque, defensa, maná, logística y diplomacia. Cada nivel los hace más fuertes.</p></div></li>
+        <li class="reveal"><span class="mi">✨</span><div><strong>Lanza hechizos</strong><p>Ciudad Portal, Clarividencia, Marcha Forzada… La magia puede cambiar el rumbo de la partida.</p></div></li>
+        <li class="reveal"><span class="mi">🚩</span><div><strong>Misiones y tutorial</strong><p>Un tutorial guiado y misiones para que domines tu reino desde el primer día.</p></div></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -264,7 +293,7 @@
 </footer>
 
 <!-- ===== VISOR DE IMÁGENES ===== -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de héroes">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
   <button class="close" id="lbClose" aria-label="Cerrar">✕</button>
   <button class="lb-nav prev" id="lbPrev" aria-label="Anterior">‹</button>
   <figure>
