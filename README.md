@@ -10,7 +10,7 @@ novarise-web/
 ├── css/
 │   └── styles.css    # Estilos
 ├── js/
-│   ├── config.js     # ← Ediciones, precios, enlaces de pago, héroes y proyectos
+│   ├── config.js     # ← Enlace de compra, héroes, capturas y proyectos
 │   └── main.js       # Lógica de la página
 ├── demo/             # Demo jugable (5 días) en https://…/novarise-web/demo/
 ├── assets/img/
@@ -23,7 +23,7 @@ novarise-web/
 
 ## Tareas habituales
 
-**Cambiar precios o activar los pagos**: edita `EDICIONES` en `js/config.js` y pega en `pago` el enlace de pago de cada edición (Stripe Payment Links, Gumroad, Lemon Squeezy o itch.io). Mientras el campo esté vacío, el botón de compra muestra un aviso de "modo demostración" y no cobra nada.
+**Cambiar el precio o el enlace de compra**: edita `TIENDA` en `js/config.js`. Todos los botones de compra usan ese enlace (ahora, la página de itch.io). El precio que se muestra en los textos de `index.html` hay que cambiarlo también allí.
 
 **Añadir un proyecto nuevo**: añade una entrada a `PROYECTOS` en `js/config.js`:
 
@@ -71,7 +71,7 @@ python3 -m http.server 8000
 - [x] Primeras capturas de partida
 - [ ] Más capturas (batallas, ciudades), tráiler y logo de NovaRise
 - [x] Demo jugable gratis
-- [ ] Enlaces de pago en `js/config.js`
+- [x] Compra a través de itch.io (1,99 $)
 - [ ] Conectar el boletín (Mailchimp, Brevo…)
 - [ ] Páginas legales: aviso legal, privacidad, cookies, condiciones de venta
 - [ ] Versión en inglés

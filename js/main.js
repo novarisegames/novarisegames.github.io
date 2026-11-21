@@ -3,7 +3,7 @@ const ARTES = {
   astra:`<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="pb" cx=".7" cy=".3" r=".8"><stop offset="0" stop-color="#2a4fa0"/><stop offset="1" stop-color="#05061a"/></radialGradient></defs><rect width="320" height="200" fill="url(#pb)"/><g fill="#fff"><circle cx="30" cy="30" r="1"/><circle cx="90" cy="60" r="1.3"/><circle cx="260" cy="150" r="1"/><circle cx="200" cy="30" r="1.2"/><circle cx="50" cy="160" r="1"/><circle cx="140" cy="20" r=".8"/></g><circle cx="220" cy="80" r="44" fill="#38d6ff" opacity=".85"/><ellipse cx="220" cy="80" rx="72" ry="14" fill="none" stroke="#c9f4ff" stroke-width="2" opacity=".7"/><path d="M60 140 l30 -10 l10 -20 l8 22 l26 6 l-26 6 l-8 22 l-10 -20z" fill="#e3e8ff"/></svg>`,
   misterio:`<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><rect width="320" height="200" fill="#0d0b18"/><circle cx="160" cy="100" r="80" fill="#7b5cff" opacity=".18"/><circle cx="160" cy="100" r="46" fill="#7b5cff" opacity=".25"/><g transform="translate(160 100) scale(2.2) translate(-20 -20)"><path d="M20 2 L23.5 16.5 L38 20 L23.5 23.5 L20 38 L16.5 23.5 L2 20 L16.5 16.5Z" fill="#c9b8ff"/></g><text x="160" y="182" text-anchor="middle" font-family="Sora,sans-serif" font-size="11" fill="#8f86b8" letter-spacing="4">PRÓXIMAMENTE</text></svg>`
 };
-const ST = { live:["Disponible","st-live"], dev:["En desarrollo","st-dev"], soon:["Próximamente","st-soon"] };
+const ST = { live:["Disponible","st-live"], early:["Acceso anticipado","st-live"], dev:["En desarrollo","st-dev"], soon:["Próximamente","st-soon"] };
 
 // Proyectos
 const grid = document.getElementById('projGrid');
@@ -20,7 +20,7 @@ PROYECTOS.forEach(p=>{
 });
 grid.addEventListener('click',e=>{
   const b=e.target.closest('.follow'); if(!b) return;
-  if(b.dataset.act==='comprar') openBuy('estandar');
+  if(b.dataset.act==='comprar') window.open(window.TIENDA.url,'_blank','noopener');
   else { document.getElementById('newsEmail').focus(); document.querySelector('.news').scrollIntoView({behavior:'smooth',block:'center'}); }
 });
 
@@ -92,40 +92,8 @@ if(CAPS.length){ showShot(0); if(CAPS.length<2) thumbs.style.display='none'; }
 else document.getElementById('jugabilidad').style.display='none';
 document.getElementById('shotMain').onclick=()=>openLb(capList,ci,true);
 
-// Modal de compra
-const modal=document.getElementById('modal'), opts=document.getElementById('opts');
-let sel='estandar';
-function renderOpts(){
-  opts.innerHTML = Object.entries(EDICIONES).map(([k,v])=>
-    `<div class="opt ${k===sel?'sel':''}" data-k="${k}" role="radio" aria-checked="${k===sel}" tabindex="0"><div><b>${v.nombre}</b><small>${v.nota}</small></div><b>${v.precio}</b></div>`).join('');
-  document.getElementById('bTotal').textContent = EDICIONES[sel].precio;
-  document.getElementById('payLink').style.display='none';
-  document.getElementById('demo').style.display='none';
-}
-opts.addEventListener('click',e=>{const o=e.target.closest('.opt'); if(o){sel=o.dataset.k; renderOpts();}});
-opts.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){const o=e.target.closest('.opt'); if(o){e.preventDefault(); sel=o.dataset.k; renderOpts();}}});
-function openBuy(k){ sel=k||'estandar'; renderOpts(); modal.classList.add('open'); document.body.style.overflow='hidden'; setTimeout(()=>document.getElementById('bEmail').focus(),100); }
-function closeBuy(){ modal.classList.remove('open'); document.body.style.overflow=''; }
-document.querySelectorAll('[data-buy]').forEach(b=>b.addEventListener('click',()=>openBuy(b.dataset.buy)));
-document.getElementById('mClose').onclick=closeBuy;
-modal.addEventListener('click',e=>{ if(e.target===modal) closeBuy(); });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeBuy(); });
-
-document.getElementById('buyForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const email=document.getElementById('bEmail').value.trim(), err=document.getElementById('bErr');
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ err.textContent='Introduce un correo electrónico válido.'; return; }
-  err.textContent='';
-  const ed=EDICIONES[sel], link=document.getElementById('payLink'), demo=document.getElementById('demo');
-  if(ed.pago){
-    const url = ed.pago + (ed.pago.includes('?')?'&':'?') + 'prefilled_email=' + encodeURIComponent(email);
-    link.href=url; link.style.display='flex'; demo.style.display='none';
-    try{ window.location.href=url; }catch(_){}
-  } else {
-    demo.innerHTML='<strong>Modo demostración:</strong> todavía no hay un enlace de pago configurado para la edición «'+ed.nombre+'». Cuando se añada, este botón llevará a la pasarela de pago y el comprador recibirá la descarga automáticamente. No se ha realizado ningún cobro.';
-    demo.style.display='block';
-  }
-});
+// Tienda: todos los botones de compra apuntan al enlace de config.js
+if(window.TIENDA&&window.TIENDA.url) document.querySelectorAll('a[data-buy]').forEach(a=>a.href=window.TIENDA.url);
 
 // Boletín
 document.getElementById('newsForm').addEventListener('submit',e=>{
