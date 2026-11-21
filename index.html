@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaRise — Reinos de Leyenda</title>
+<meta name="description" content="NovaRise, estudio independiente de videojuegos. Descarga Reinos de Leyenda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ===== Iconos y arte reutilizable ===== -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="novamark" viewBox="0 0 40 40">
+      <defs><linearGradient id="nm" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#7b5cff"/><stop offset="1" stop-color="#38d6ff"/></linearGradient></defs>
+      <path d="M20 2 L23.5 16.5 L38 20 L23.5 23.5 L20 38 L16.5 23.5 L2 20 L16.5 16.5Z" fill="url(#nm)"/>
+      <circle cx="20" cy="20" r="4" fill="#fff"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#inicio" class="logo"><svg width="30" height="30"><use href="#novamark"/></svg><span>Nova<b>Rise</b></span></a>
+    <div class="links" id="links">
+      <a href="#juego">Reinos de Leyenda</a>
+      <a href="#comprar">Comprar</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#estudio">Estudio</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="btn btn-gold nav-cta" data-buy="estandar">Descargar ahora</button>
+    <button class="burger" id="burger" aria-label="Menú"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="inicio">
+  <canvas class="stars" id="stars"></canvas>
+  <div class="hero-glow"></div><div class="hero-glow b"></div>
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Estudio independiente de videojuegos</span>
+      <h1>Creamos mundos que <span>se elevan.</span></h1>
+      <p>NovaRise es el hogar de nuestros juegos. Hoy lanzamos nuestra primera gran aventura, <strong style="color:var(--gold2)">Reinos de Leyenda</strong>, y esto es solo el comienzo.</p>
+      <div class="hero-actions">
+        <button class="btn btn-gold" data-buy="estandar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Descargar Reinos de Leyenda
+        </button>
+        <a href="#juego" class="btn btn-ghost">Descubrir el juego</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>1</strong><span>Juego lanzado</span></div>
+        <div><strong>3+</strong><span>Proyectos en camino</span></div>
+        <div><strong>100%</strong><span>Independientes</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b0f3a"/><stop offset=".55" stop-color="#7a2f4d"/><stop offset=".8" stop-color="#e8794a"/><stop offset="1" stop-color="#ffc77a"/></linearGradient>
+          <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff3c9"/><stop offset=".4" stop-color="#ffcf7a"/><stop offset="1" stop-color="#ffcf7a" stop-opacity="0"/></radialGradient>
+          <linearGradient id="mtn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a1f3f"/><stop offset="1" stop-color="#140b1f"/></linearGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#sky)"/>
+        <circle cx="200" cy="300" r="150" fill="url(#sun)"/>
+        <g fill="#fff" opacity=".7"><circle cx="40" cy="40" r="1.2"/><circle cx="120" cy="70" r="1"/><circle cx="300" cy="30" r="1.5"/><circle cx="350" cy="90" r="1"/><circle cx="220" cy="55" r=".9"/><circle cx="80" cy="120" r=".8"/></g>
+        <path d="M0 330 L60 260 L110 300 L170 220 L230 290 L290 240 L350 285 L400 250 L400 500 L0 500Z" fill="#4a2643" opacity=".8"/>
+        <!-- castillo -->
+        <g fill="#160c1e">
+          <rect x="150" y="235" width="100" height="120"/>
+          <rect x="135" y="200" width="28" height="155"/><polygon points="132,200 149,160 166,200"/>
+          <rect x="237" y="200" width="28" height="155"/><polygon points="234,200 251,160 268,200"/>
+          <rect x="185" y="175" width="30" height="180"/><polygon points="181,175 200,115 219,175"/>
+          <rect x="198" y="96" width="2" height="22"/><polygon points="200,96 216,102 200,108" fill="#e8b65a"/>
+          <path d="M185 355 v-45 a15 15 0 0 1 30 0 v45z" fill="#2b1630"/>
+        </g>
+        <g fill="#ffcf7a"><rect x="145" y="225" width="6" height="10" rx="3"/><rect x="247" y="225" width="6" height="10" rx="3"/><rect x="197" y="200" width="6" height="12" rx="3"/><rect x="170" y="260" width="6" height="10" rx="3"/><rect x="224" y="260" width="6" height="10" rx="3"/></g>
+        <path d="M0 360 L80 320 L140 350 L200 330 L270 355 L330 320 L400 345 L400 500 L0 500Z" fill="url(#mtn)"/>
+        <!-- dragón -->
+        <path d="M300 130 q20 -18 40 -6 q-16 2 -22 12 q24 -6 40 6 q-22 -2 -34 10 q-10 10 -26 6 q-8 -2 -14 4 q2 -12 16 -32z" fill="#140b1f"/>
+      </svg>
+      <span class="badge">★ Ya disponible</span>
+      <div class="info">
+        <h3>Reinos de<br>Leyenda</h3>
+        <p>Una aventura épica de fantasía. Forja tu destino.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== JUEGO ===== -->
+<section id="juego">
+  <div class="wrap">
+    <div class="game-head reveal">
+      <span class="eyebrow">Nuestro primer lanzamiento</span>
+      <div class="game-logo">Reinos de Leyenda</div>
+      <div class="ornament"><i></i>✦<i></i></div>
+      <p class="lead">Los antiguos reinos se desmoronan y las leyendas vuelven a despertar. Explora tierras olvidadas, reúne aliados, enfréntate a criaturas legendarias y decide el destino de un mundo que espera a su héroe.</p>
+    </div>
+
+    <div class="gallery reveal">
+      <div class="shot">
+        <svg viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f2a3a"/><stop offset=".6" stop-color="#2d6b6a"/><stop offset="1" stop-color="#d9c27a"/></linearGradient></defs>
+          <rect width="800" height="520" fill="url(#g1)"/>
+          <circle cx="620" cy="120" r="60" fill="#f6e9b8" opacity=".85"/>
+          <path d="M0 300 L120 180 L220 260 L340 130 L460 250 L580 170 L700 240 L800 200 V520 H0Z" fill="#183b47"/>
+          <path d="M0 380 L150 300 L300 360 L450 290 L600 350 L800 300 V520 H0Z" fill="#0e2630"/>
+          <g fill="#0a1a20"><path d="M80 520 L110 360 L140 520Z"/><path d="M130 520 L170 330 L210 520Z"/><path d="M640 520 L680 340 L720 520Z"/><path d="M700 520 L735 380 L770 520Z"/></g>
+          <path d="M360 520 Q400 420 440 520" fill="#d9c27a" opacity=".35"/>
+          <g fill="#0a1a20"><rect x="392" y="400" width="16" height="44" rx="5"/><circle cx="400" cy="392" r="9"/><path d="M408 410 L440 380" stroke="#0a1a20" stroke-width="4"/></g>
+        </svg>
+        <span>Las Tierras del Norte</span>
+      </div>
+      <div class="shot">
+        <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+          <rect width="400" height="260" fill="#1a0b0b"/>
+          <circle cx="200" cy="150" r="140" fill="#ff6a3d" opacity=".25"/>
+          <path d="M0 260 L60 170 L120 210 L200 120 L280 200 L340 160 L400 220 V260Z" fill="#2a0f0f"/>
+          <path d="M150 110 q50 -60 100 0 q-20 -10 -30 0 q30 10 40 40 q-30 -20 -60 -10 q-30 -10 -60 10 q10 -30 40 -40 q-10 -10 -30 0z" fill="#0a0404"/>
+          <g fill="#ffb15a"><circle cx="190" cy="98" r="3"/><circle cx="210" cy="98" r="3"/></g>
+        </svg>
+        <span>Guarida del Dragón</span>
+      </div>
+      <div class="shot">
+        <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+          <rect width="400" height="260" fill="#120c24"/>
+          <rect x="0" y="180" width="400" height="80" fill="#1d1436"/>
+          <g fill="#2a1e4d"><rect x="40" y="60" width="30" height="120"/><rect x="330" y="60" width="30" height="120"/></g>
+          <circle cx="200" cy="120" r="50" fill="none" stroke="#7b5cff" stroke-width="3"/>
+          <circle cx="200" cy="120" r="36" fill="#7b5cff" opacity=".35"/>
+          <circle cx="200" cy="120" r="12" fill="#c9b8ff"/>
+          <g stroke="#38d6ff" stroke-width="2" opacity=".6"><path d="M200 60 v-20M200 180 v20M140 120 h-20M260 120 h20"/></g>
+        </svg>
+        <span>El Santuario Arcano</span>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20l7-7M14 4l6 6-9 9-6-6z"/></svg></div><h4>Combate épico</h4><p>Domina armas, magia y habilidades para derrotar a enemigos y jefes legendarios.</p></div>
+      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z M9 3v15M15 6v15"/></svg></div><h4>Mundo por explorar</h4><p>Recorre reinos únicos, cada uno con su historia, sus secretos y sus peligros.</p></div>
+      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div><h4>Tu leyenda</h4><p>Tus decisiones cambian la historia. Cada partida escribe una leyenda distinta.</p></div>
+      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 1.5 6 4"/></svg></div><h4>Aliados y facciones</h4><p>Recluta compañeros, forja alianzas y elige a qué reino jurar lealtad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPRAR ===== -->
+<section id="comprar">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <span class="eyebrow">Consigue el juego</span>
+      <h2 class="title">Elige tu edición</h2>
+      <p class="lead" style="margin:0 auto">Pago único, sin suscripciones. Tras el pago recibirás tu enlace de descarga y tu clave por correo electrónico.</p>
+    </div>
+    <div class="pricing">
+      <div class="plan reveal">
+        <h3>Estándar</h3>
+        <p class="desc">El juego completo, listo para empezar tu aventura.</p>
+        <div class="price">14,99 €<small> pago único</small></div>
+        <ul>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Juego completo Reinos de Leyenda</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Descarga digital inmediata</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Actualizaciones gratuitas</li>
+        </ul>
+        <button class="btn btn-ghost" data-buy="estandar">Comprar Estándar</button>
+      </div>
+      <div class="plan hot reveal">
+        <span class="tag">Más elegida</span>
+        <h3>Edición Legendaria</h3>
+        <p class="desc">Para quienes quieren vivir la leyenda al completo.</p>
+        <div class="price">24,99 €<small> pago único</small></div>
+        <ul>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Todo lo de la edición Estándar</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Banda sonora original digital</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Libro de arte digital</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Armadura y montura exclusivas</li>
+        </ul>
+        <button class="btn btn-gold" data-buy="legendaria">Comprar Legendaria</button>
+      </div>
+      <div class="plan reveal">
+        <h3>Mecenas</h3>
+        <p class="desc">Apoya a NovaRise y ayúdanos a crear los próximos juegos.</p>
+        <div class="price">39,99 €<small> pago único</small></div>
+        <ul>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Todo lo de la edición Legendaria</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Tu nombre en los créditos</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Acceso anticipado a futuros proyectos</li>
+        </ul>
+        <button class="btn btn-ghost" data-buy="mecenas">Ser Mecenas</button>
+      </div>
+    </div>
+    <div class="secure">
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Pago seguro cifrado</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Tarjeta, PayPal y más</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Descarga inmediata</span>
+    </div>
+
+    <div class="reqs">
+      <div class="req reveal">
+        <h4>Requisitos mínimos</h4>
+        <dl>
+          <dt>Sistema</dt><dd>Windows 10 (64 bits)</dd>
+          <dt>Procesador</dt><dd>Intel Core i3 / AMD Ryzen 3</dd>
+          <dt>Memoria</dt><dd>8 GB de RAM</dd>
+          <dt>Gráficos</dt><dd>GTX 960 / RX 470 o similar</dd>
+          <dt>Almacenamiento</dt><dd>10 GB disponibles</dd>
+        </dl>
+      </div>
+      <div class="req reveal">
+        <h4>Requisitos recomendados</h4>
+        <dl>
+          <dt>Sistema</dt><dd>Windows 10 / 11 (64 bits)</dd>
+          <dt>Procesador</dt><dd>Intel Core i5 / AMD Ryzen 5</dd>
+          <dt>Memoria</dt><dd>16 GB de RAM</dd>
+          <dt>Gráficos</dt><dd>GTX 1660 / RX 5600 o superior</dd>
+          <dt>Almacenamiento</dt><dd>10 GB SSD</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROYECTOS ===== -->
+<section id="proyectos">
+  <div class="wrap">
+    <div class="proj-head reveal">
+      <div>
+        <span class="eyebrow">Catálogo NovaRise</span>
+        <h2 class="title">Nuestros proyectos</h2>
+        <p class="lead">Reinos de Leyenda es el primero de muchos. Aquí publicaremos cada nuevo juego que salga del estudio.</p>
+      </div>
+    </div>
+    <div class="projects" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- ===== ESTUDIO ===== -->
+<section id="estudio">
+  <div class="wrap studio">
+    <div class="reveal">
+      <span class="eyebrow">Sobre nosotros</span>
+      <h2 class="title">Somos NovaRise</h2>
+      <p class="lead">Un estudio independiente nacido con una idea sencilla: crear juegos con alma. Como una nova que se eleva en el cielo, queremos que cada proyecto brille con luz propia.</p>
+      <p class="lead" style="margin-top:1rem">Cada compra apoya directamente al equipo y nos permite seguir creando nuevos mundos.</p>
+    </div>
+    <div class="values">
+      <div class="val reveal"><strong>Pasión</strong><span>Hacemos los juegos que nos gustaría jugar.</span></div>
+      <div class="val reveal"><strong>Comunidad</strong><span>Escuchamos a nuestros jugadores en cada paso.</span></div>
+      <div class="val reveal"><strong>Calidad</strong><span>Preferimos pulir cada detalle antes que correr.</span></div>
+      <div class="val reveal"><strong>Independencia</strong><span>Sin intermediarios: del estudio a tu equipo.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" style="padding-top:40px">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <span class="eyebrow">Ayuda</span>
+      <h2 class="title">Preguntas frecuentes</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>¿Cómo recibo el juego después de pagar?</summary><p>En cuanto se confirma el pago, recibirás un correo con tu enlace de descarga personal y tu clave del juego. También podrás descargarlo de nuevo desde ese enlace cuando lo necesites.</p></details>
+      <details><summary>¿Qué métodos de pago aceptáis?</summary><p>Aceptamos tarjetas de crédito y débito, PayPal y otros métodos disponibles en la pasarela de pago segura.</p></details>
+      <details><summary>¿Es un pago único o una suscripción?</summary><p>Es un pago único. Pagas una vez y el juego es tuyo, incluidas las actualizaciones futuras.</p></details>
+      <details><summary>¿Puedo pedir un reembolso?</summary><p>Sí. Si el juego no funciona en tu equipo, escríbenos en los 14 días siguientes a la compra y lo revisaremos contigo.</p></details>
+      <details><summary>¿Cómo me entero de los próximos proyectos?</summary><p>Suscríbete al boletín de NovaRise más abajo o pulsa «Avísame» en cualquier proyecto en desarrollo.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section style="padding-top:40px">
+  <div class="wrap">
+    <div class="news reveal">
+      <span class="eyebrow">Boletín NovaRise</span>
+      <h2 class="title">Sé el primero en saberlo</h2>
+      <p class="lead" style="margin:0 auto">Novedades, actualizaciones de Reinos de Leyenda y acceso anticipado a nuestros próximos juegos.</p>
+      <form id="newsForm">
+        <input type="email" id="newsEmail" placeholder="tu@correo.com" required>
+        <button class="btn btn-gold" type="submit">Suscribirme</button>
+      </form>
+      <div class="ok" id="newsOk"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#inicio" class="logo"><svg width="28" height="28"><use href="#novamark"/></svg><span>Nova<b>Rise</b></span></a>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:1rem;max-width:300px">Estudio independiente de videojuegos. Creamos mundos que se elevan.</p>
+      </div>
+      <div><h5>Juegos</h5><ul><li><a href="#juego">Reinos de Leyenda</a></li><li><a href="#proyectos">Próximamente</a></li></ul></div>
+      <div><h5>Tienda</h5><ul><li><a href="#comprar">Ediciones</a></li><li><a href="#faq">Ayuda</a></li><li><a href="#faq">Reembolsos</a></li></ul></div>
+      <div><h5>Contacto</h5><ul><li>contacto@novarise.com</li><li><a href="#estudio">Sobre nosotros</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> NovaRise. Todos los derechos reservados.</span><span>Aviso legal · Privacidad · Cookies</span></div>
+  </div>
+</footer>
+
+<!-- ===== MODAL DE COMPRA ===== -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="box">
+    <button class="close" id="mClose" aria-label="Cerrar">✕</button>
+    <h3 id="mTitle">Reinos de Leyenda</h3>
+    <p class="sub">Elige tu edición y te enviaremos a la pasarela de pago segura.</p>
+    <div class="opts" id="opts"></div>
+    <form id="buyForm" novalidate>
+      <div class="field"><label for="bEmail">Correo electrónico (aquí recibirás tu descarga)</label><input type="email" id="bEmail" placeholder="tu@correo.com" required></div>
+      <div class="err" id="bErr"></div>
+      <div class="field"><label for="bPlat">Plataforma</label><select id="bPlat"><option>Windows (64 bits)</option></select></div>
+      <div class="total"><span>Total</span><b id="bTotal">14,99 €</b></div>
+      <button class="btn btn-gold" style="width:100%;justify-content:center" type="submit">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+        Continuar al pago seguro
+      </button>
+      <a id="payLink" class="btn btn-gold" style="width:100%;justify-content:center;display:none;margin-top:10px" target="_blank" rel="noopener">Abrir pasarela de pago →</a>
+      <div class="demo" id="demo"></div>
+      <p class="note">Pago procesado de forma segura. NovaRise no almacena los datos de tu tarjeta.</p>
+    </form>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

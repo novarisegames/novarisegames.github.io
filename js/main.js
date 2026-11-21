@@ -1,0 +1,88 @@
+const ARTES = {
+  reinos:`<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="pa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1240"/><stop offset=".7" stop-color="#c4603f"/><stop offset="1" stop-color="#f2b66a"/></linearGradient></defs><rect width="320" height="200" fill="url(#pa)"/><circle cx="160" cy="140" r="60" fill="#ffd98a" opacity=".5"/><g fill="#170c1e"><rect x="120" y="100" width="80" height="100"/><rect x="108" y="80" width="22" height="120"/><polygon points="105,80 119,50 133,80"/><rect x="190" y="80" width="22" height="120"/><polygon points="187,80 201,50 215,80"/><rect x="148" y="64" width="24" height="136"/><polygon points="145,64 160,20 175,64"/></g><path d="M0 170 L80 150 L160 175 L240 150 L320 168 V200 H0Z" fill="#100816"/><text x="160" y="190" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="15" fill="#ffd98a" letter-spacing="2">REINOS DE LEYENDA</text></svg>`,
+  astra:`<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="pb" cx=".7" cy=".3" r=".8"><stop offset="0" stop-color="#2a4fa0"/><stop offset="1" stop-color="#05061a"/></radialGradient></defs><rect width="320" height="200" fill="url(#pb)"/><g fill="#fff"><circle cx="30" cy="30" r="1"/><circle cx="90" cy="60" r="1.3"/><circle cx="260" cy="150" r="1"/><circle cx="200" cy="30" r="1.2"/><circle cx="50" cy="160" r="1"/><circle cx="140" cy="20" r=".8"/></g><circle cx="220" cy="80" r="44" fill="#38d6ff" opacity=".85"/><ellipse cx="220" cy="80" rx="72" ry="14" fill="none" stroke="#c9f4ff" stroke-width="2" opacity=".7"/><path d="M60 140 l30 -10 l10 -20 l8 22 l26 6 l-26 6 l-8 22 l-10 -20z" fill="#e3e8ff"/></svg>`,
+  misterio:`<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><rect width="320" height="200" fill="#0d0b18"/><circle cx="160" cy="100" r="80" fill="#7b5cff" opacity=".18"/><circle cx="160" cy="100" r="46" fill="#7b5cff" opacity=".25"/><g transform="translate(160 100) scale(2.2) translate(-20 -20)"><path d="M20 2 L23.5 16.5 L38 20 L23.5 23.5 L20 38 L16.5 23.5 L2 20 L16.5 16.5Z" fill="#c9b8ff"/></g><text x="160" y="182" text-anchor="middle" font-family="Sora,sans-serif" font-size="11" fill="#8f86b8" letter-spacing="4">PRÓXIMAMENTE</text></svg>`
+};
+const ST = { live:["Disponible","st-live"], dev:["En desarrollo","st-dev"], soon:["Próximamente","st-soon"] };
+
+// Proyectos
+const grid = document.getElementById('projGrid');
+PROYECTOS.forEach(p=>{
+  const [lbl,cls] = ST[p.status];
+  const el = document.createElement('article');
+  el.className='proj reveal';
+  el.innerHTML = `<div class="art">${ARTES[p.arte]||ARTES.misterio}<span class="status ${cls}">${lbl}</span></div>
+    <div class="body"><h4>${p.titulo}</h4><p>${p.texto}</p>
+    <div class="meta">${p.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+    <button class="follow" data-act="${p.accion}">${p.accion==='comprar'?'Comprar ahora →':'Avísame cuando salga →'}</button></div>`;
+  grid.appendChild(el);
+});
+grid.addEventListener('click',e=>{
+  const b=e.target.closest('.follow'); if(!b) return;
+  if(b.dataset.act==='comprar') openBuy('estandar');
+  else { document.getElementById('newsEmail').focus(); document.querySelector('.news').scrollIntoView({behavior:'smooth',block:'center'}); }
+});
+
+// Modal de compra
+const modal=document.getElementById('modal'), opts=document.getElementById('opts');
+let sel='estandar';
+function renderOpts(){
+  opts.innerHTML = Object.entries(EDICIONES).map(([k,v])=>
+    `<div class="opt ${k===sel?'sel':''}" data-k="${k}" role="radio" aria-checked="${k===sel}" tabindex="0"><div><b>${v.nombre}</b><small>${v.nota}</small></div><b>${v.precio}</b></div>`).join('');
+  document.getElementById('bTotal').textContent = EDICIONES[sel].precio;
+  document.getElementById('payLink').style.display='none';
+  document.getElementById('demo').style.display='none';
+}
+opts.addEventListener('click',e=>{const o=e.target.closest('.opt'); if(o){sel=o.dataset.k; renderOpts();}});
+opts.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){const o=e.target.closest('.opt'); if(o){e.preventDefault(); sel=o.dataset.k; renderOpts();}}});
+function openBuy(k){ sel=k||'estandar'; renderOpts(); modal.classList.add('open'); document.body.style.overflow='hidden'; setTimeout(()=>document.getElementById('bEmail').focus(),100); }
+function closeBuy(){ modal.classList.remove('open'); document.body.style.overflow=''; }
+document.querySelectorAll('[data-buy]').forEach(b=>b.addEventListener('click',()=>openBuy(b.dataset.buy)));
+document.getElementById('mClose').onclick=closeBuy;
+modal.addEventListener('click',e=>{ if(e.target===modal) closeBuy(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeBuy(); });
+
+document.getElementById('buyForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const email=document.getElementById('bEmail').value.trim(), err=document.getElementById('bErr');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ err.textContent='Introduce un correo electrónico válido.'; return; }
+  err.textContent='';
+  const ed=EDICIONES[sel], link=document.getElementById('payLink'), demo=document.getElementById('demo');
+  if(ed.pago){
+    const url = ed.pago + (ed.pago.includes('?')?'&':'?') + 'prefilled_email=' + encodeURIComponent(email);
+    link.href=url; link.style.display='flex'; demo.style.display='none';
+    try{ window.location.href=url; }catch(_){}
+  } else {
+    demo.innerHTML='<strong>Modo demostración:</strong> todavía no hay un enlace de pago configurado para la edición «'+ed.nombre+'». Cuando se añada, este botón llevará a la pasarela de pago y el comprador recibirá la descarga automáticamente. No se ha realizado ningún cobro.';
+    demo.style.display='block';
+  }
+});
+
+// Boletín
+document.getElementById('newsForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=document.getElementById('newsEmail').value.trim();
+  document.getElementById('newsOk').textContent = v ? '¡Gracias! Te avisaremos de todas las novedades de NovaRise.' : '';
+  e.target.reset();
+});
+
+// Navegación
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const links=document.getElementById('links');
+document.getElementById('burger').onclick=()=>links.classList.toggle('open');
+links.addEventListener('click',e=>{ if(e.target.tagName==='A') links.classList.remove('open'); });
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// Animaciones de entrada
+const io=new IntersectionObserver(es=>es.forEach(x=>{ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Cielo estrellado
+(function(){
+  const c=document.getElementById('stars'), x=c.getContext('2d'); let W,H,S=[];
+  function size(){ W=c.width=c.offsetWidth*devicePixelRatio; H=c.height=c.offsetHeight*devicePixelRatio;
+    S=Array.from({length:140},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4*devicePixelRatio+.3,p:Math.random()*6.28,s:.005+Math.random()*.02})); }
+  function draw(){ x.clearRect(0,0,W,H); S.forEach(s=>{ s.p+=s.s; x.globalAlpha=.35+Math.sin(s.p)*.35; x.fillStyle='#fff'; x.beginPath(); x.arc(s.x,s.y,s.r,0,6.28); x.fill(); }); requestAnimationFrame(draw); }
+  size(); addEventListener('resize',size); draw();
+})();
