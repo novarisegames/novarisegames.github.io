@@ -12,6 +12,7 @@ novarise-web/
 ├── js/
 │   ├── config.js     # ← Ediciones, precios, enlaces de pago, héroes y proyectos
 │   └── main.js       # Lógica de la página
+├── demo/             # Demo jugable (5 días) en https://…/novarise-web/demo/
 ├── assets/img/
 │   ├── portada/      # Portadas del juego (ES y EN)
 │   ├── heroes/       # Retratos: nombre.webp (miniatura) y nombre-grande.webp (visor)
@@ -45,6 +46,8 @@ novarise-web/
 { img:"nombre", texto:"Pie de foto de la captura." }
 ```
 
+**Actualizar la demo**: sustituye los archivos de `demo/` por los de la nueva versión. La demo usa un service worker con caché (`sw.js`): cambia el nombre de la caché (`tr-v1` → `tr-v2`…) en cada versión nueva para que los jugadores que ya la abrieron reciban la actualización.
+
 ## Verla en local
 
 Abre `index.html` en el navegador, o arranca un servidor:
@@ -67,6 +70,7 @@ python3 -m http.server 8000
 - [x] Portada y retratos de héroes
 - [x] Primeras capturas de partida
 - [ ] Más capturas (batallas, ciudades), tráiler y logo de NovaRise
+- [x] Demo jugable gratis
 - [ ] Enlaces de pago en `js/config.js`
 - [ ] Conectar el boletín (Mailchimp, Brevo…)
 - [ ] Páginas legales: aviso legal, privacidad, cookies, condiciones de venta

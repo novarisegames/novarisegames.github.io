@@ -128,6 +128,26 @@ nav.scrolled{background:rgba(7,6,13,.82);backdrop-filter:blur(14px);border-color
 .mechs strong{display:block;font-size:1rem;margin-bottom:.2rem}
 .mechs p{font-size:.88rem;color:var(--muted)}
 
+/* DATOS DEL JUEGO */
+.tagline{font-family:'Cinzel',serif;color:#f6e6c4;letter-spacing:.06em;margin:-.4rem 0 1.2rem;font-size:1.05rem}
+.facts{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:-1.5rem auto 3rem}
+.facts div{min-width:130px;text-align:center;padding:16px 18px;border-radius:16px;border:1px solid #33271a;background:linear-gradient(180deg,#18130b,#110d08)}
+.facts strong{display:block;font-family:'Cinzel',serif;font-size:2rem;line-height:1;color:var(--gold2)}
+.facts span{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#b8ab95}
+.banner-btns{display:flex;gap:.7rem;justify-content:flex-end;flex-wrap:wrap}
+
+/* DEMO */
+.demo-sec{padding:40px 0 20px}
+.demo-band{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:center;padding:56px;border-radius:28px;border:1px solid rgba(232,182,90,.45);background:radial-gradient(ellipse at 85% 50%,rgba(232,182,90,.18),transparent 55%),linear-gradient(135deg,#1d160c,#0f0c08 60%);box-shadow:0 40px 100px -50px rgba(232,182,90,.6)}
+.demo-band .eyebrow{color:var(--gold)}
+.demo-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.5rem;margin-top:1.5rem;font-size:.92rem;color:#d9ccb2}
+.demo-list li::before{content:"✦ ";color:var(--gold)}
+.demo-cta{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+.demo-cta img{width:150px;height:150px;border-radius:32px;box-shadow:0 20px 50px -15px rgba(232,182,90,.6)}
+.demo-cta small{color:var(--muted);font-size:.78rem}
+.btn-lg{padding:1.1rem 2.2rem;font-size:1.05rem}
+.links a.nav-demo{color:var(--gold2)}
+
 /* PRICING */
 .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:3.5rem;align-items:stretch}
 .plan{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 30px;display:flex;flex-direction:column;position:relative}
@@ -236,6 +256,9 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;margin-top:40px}
   .filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-left:0;margin-right:0}
   .filters button{flex-shrink:0}
   .play{grid-template-columns:1fr}
+  .demo-band{grid-template-columns:1fr;padding:36px 28px}
+  .demo-cta{order:-1}
+  .banner-btns{justify-content:center}
   .banner{aspect-ratio:auto;min-height:420px}
   .banner::after{background:linear-gradient(180deg,transparent 30%,rgba(13,10,7,.95) 85%)}
   .banner-txt{top:auto;bottom:28px;transform:none;left:6%;right:6%;max-width:none;text-align:center}
@@ -254,6 +277,9 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;margin-top:40px}
   .features,.values{grid-template-columns:1fr}
   .heroes{grid-template-columns:1fr 1fr;gap:10px}
   .thumb{width:calc(50% - 6px)}
+  .demo-list{grid-template-columns:1fr}
+  .facts div{min-width:calc(50% - 6px)}
+  .facts{margin-top:-1rem}
   .hero-tile strong{font-size:.85rem}
   .lb-nav{top:auto;bottom:18px;transform:none}
   .news{padding:40px 24px}.news form{flex-direction:column}

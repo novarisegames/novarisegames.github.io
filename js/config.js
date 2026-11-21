@@ -14,7 +14,7 @@ window.EDICIONES = {
 /* Añade aquí cada nuevo proyecto. status: "live" | "dev" | "soon"
    Usa "imagen" con la ruta de una imagen propia, o "arte" para una ilustración provisional. */
 window.PROYECTOS = [
-  { titulo:"Reinos de Leyenda", texto:"Estrategia fantástica por turnos. Nuestro primer gran lanzamiento.", status:"live", chips:["Estrategia","Por turnos","Fantasía"], imagen:"assets/img/portada/portada-es.webp", accion:"comprar" },
+  { titulo:"Reinos de Leyenda", texto:"Estrategia fantástica por turnos. Nuestro primer gran lanzamiento.", status:"live", chips:["Estrategia","Por turnos","Navegador"], imagen:"assets/img/portada/portada-es.webp", accion:"comprar" },
   { titulo:"Proyecto Astra", texto:"Exploración espacial y supervivencia entre estrellas lejanas.", status:"dev", chips:["Exploración","Ciencia ficción"], arte:"astra", accion:"avisar" },
   { titulo:"Próximo proyecto", texto:"Algo nuevo se está gestando en el estudio. Muy pronto, más detalles.", status:"soon", chips:["Por anunciar"], arte:"misterio", accion:"avisar" }
 ];
@@ -33,12 +33,12 @@ window.REINOS = {
    (archivo.webp para la miniatura y archivo-grande.webp para el visor). */
 window.HEROES = [
   { nombre:"Aldric",      clase:"Guardabosques",         reino:"Alba Violeta",      img:"guardabosques-flores" },
-  { nombre:"Guardabosques", clase:"Guardabosques",       reino:"Alba Violeta",      img:"arquera-elfica" },
+  { nombre:"Elowen",      clase:"Guardabosques",         reino:"Alba Violeta",      img:"arquera-elfica" },
   { nombre:"Selene",      clase:"Archimaga",             reino:"Torre Azul",        img:"archimaga-azul" },
   { nombre:"Roland",      clase:"Caballero",             reino:"Fortaleza Bermeja", img:"caballero-leon" },
   { nombre:"Brienne",     clase:"Caballera",             reino:"Fortaleza Bermeja", img:"guerrera-leon" },
   { nombre:"Isolde",      clase:"Hechicera de escarcha", reino:"Corona de Hielo",   img:"reina-de-hielo" },
-  { nombre:"Bjorn",       clase:"Guerrero de escarcha",  reino:"Corona de Hielo",   img:"guerrero-del-norte" },
+  { nombre:"Bjorn",       clase:"Hechicero de escarcha",  reino:"Corona de Hielo",   img:"guerrero-del-norte" },
   { nombre:"Kharn",       clase:"Señor de la guerra",    reino:"Ceniza Ardiente",   img:"senor-volcanico" },
   { nombre:"Marea",       clase:"Capitana corsaria",     reino:"Puerto Sur",        img:"marea-guardiana" },
   { nombre:"Amon",        clase:"Hechicero del desierto",reino:"Oasis Dorado",      img:"rey-del-desierto" }
