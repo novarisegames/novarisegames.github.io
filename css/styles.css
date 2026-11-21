@@ -26,6 +26,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,bor
 nav.scrolled{background:rgba(7,6,13,.82);backdrop-filter:blur(14px);border-color:var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
 .logo{display:flex;align-items:center;gap:.65rem;font-weight:700;font-size:1.25rem;letter-spacing:.02em}
+.logo-games{margin-left:.45rem;font-size:.62em;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);vertical-align:.12em}
 .logo b{background:linear-gradient(90deg,var(--nova2),var(--nova));-webkit-background-clip:text;background-clip:text;color:transparent}
 .links{display:flex;gap:2rem;font-size:.92rem;color:var(--muted)}
 .links a:hover{color:var(--text)}

@@ -15,7 +15,7 @@ PROYECTOS.forEach(p=>{
   el.innerHTML = `<div class="art">${arte}<span class="status ${cls}">${lbl}</span></div>
     <div class="body"><h4>${p.titulo}</h4><p>${p.texto}</p>
     <div class="meta">${p.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
-    <button class="follow" data-act="${p.accion}">${p.accion==='comprar'?'Comprar ahora →':'Seguir a NovaRise →'}</button></div>`;
+    <button class="follow" data-act="${p.accion}">${p.accion==='comprar'?'Comprar ahora →':'Seguir a NovaRise Games →'}</button></div>`;
   grid.appendChild(el);
 });
 grid.addEventListener('click',e=>{

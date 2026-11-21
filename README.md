@@ -1,6 +1,6 @@
-# NovaRise
+# NovaRise Games
 
-Web oficial de **NovaRise**, estudio independiente de videojuegos. Aquí se promociona y se vende nuestro primer juego, **Reinos de Leyenda**, y aquí se irán publicando los proyectos futuros.
+Web oficial de **NovaRise Games**, estudio independiente de videojuegos. Aquí se promociona y se vende nuestro primer juego, **Reinos de Leyenda**, y aquí se irán publicando los proyectos futuros.
 
 ## Estructura
 
@@ -69,7 +69,7 @@ python3 -m http.server 8000
 
 - [x] Portada y retratos de héroes
 - [x] Primeras capturas de partida
-- [ ] Más capturas (batallas, ciudades), tráiler y logo de NovaRise
+- [ ] Más capturas (batallas, ciudades), tráiler y logo de NovaRise Games
 - [x] Demo jugable gratis
 - [x] Compra a través de itch.io (1,99 $)
 - [ ] Correo de contacto real
