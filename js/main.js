@@ -89,6 +89,20 @@ heroFilters.innerHTML=`<button type="button" data-r="">${T.all}</button>`+reinos
 heroFilters.addEventListener('click',e=>{const b=e.target.closest('button'); if(b) renderHeroes(b.dataset.r);});
 renderHeroes('');
 
+// Mapas
+const mapGrid=document.getElementById('mapGrid'), MB=BASE+'assets/img/mapas/', MAPS=window.MAPAS||[];
+if(mapGrid){
+  const mapList=MAPS.map(m=>({src:MB+m.img+'-grande.webp',title:tr(m,'nombre'),sub:'',bio:tr(m,'texto')}));
+  MAPS.forEach((m,i)=>{
+    const b=document.createElement('button'); b.type='button'; b.className='map-tile reveal';
+    b.setAttribute('aria-label',tr(m,'nombre'));
+    b.innerHTML=`<img src="${MB+m.img}.webp" alt="${tr(m,'nombre')}" loading="lazy" width="600" height="600"><div class="cap"><strong>${tr(m,'nombre')}</strong><span>${tr(m,'texto')}</span></div>`;
+    b.onclick=()=>openLb(mapList,i,true);
+    mapGrid.appendChild(b);
+  });
+  if(!MAPS.length) document.getElementById('mapas').style.display='none';
+}
+
 // Capturas "Así se juega"
 const CB=BASE+'assets/img/capturas/', CAPS=window.CAPTURAS||[];
 const capList=CAPS.map(c=>({src:CB+c.img+'-grande.webp',title:'',sub:tr(c,'texto')}));

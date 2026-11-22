@@ -13,6 +13,10 @@ window.TIENDA = {
 /* Diario de desarrollo (sección «Novedades»). La más reciente, arriba.
    fecha: "AAAA-MM-DD" (opcional) · etiqueta: texto corto, p. ej. "v0.4" o "Demo" */
 window.NOVEDADES = [
+  { fecha:"2026-11-22", etiqueta:"Actualización", etiqueta_en:"Update",
+    titulo:"¡Nuevos mapas para elegir!", titulo_en:"New maps to choose from!",
+    texto:"Hemos añadido seis mapas nuevos de los siete reinos: cordilleras, archipiélagos, cañones, ríos y lagos. Ahora puedes escoger en cuál librar tu partida.",
+    texto_en:"We've added six new maps of the seven realms: mountain ranges, archipelagos, canyons, rivers and lakes. You can now choose where to wage your war." },
   { fecha:"2026-11-22", etiqueta:"Demo", etiqueta_en:"Demo",
     titulo:"Demo gratuita en la web", titulo_en:"Free demo on the website",
     texto:"Ya puedes jugar gratis los primeros 5 días de Reinos de Leyenda directamente en el navegador, sin registrarte ni instalar nada.",
@@ -82,6 +86,29 @@ window.HEROES = [
   { nombre:"Amon",    clase:"Hechicero del desierto", clase_en:"Desert sorcerer", reino:"Oasis Dorado", img:"rey-del-desierto",
     bio:"Sabio del desierto que lee el destino en la arena.",
     bio_en:"Desert sage who reads destiny in the sand." }
+];
+
+/* Mapas que se pueden escoger en el juego (sección «Elige tu mapa»).
+   Imágenes en assets/img/mapas/ (archivo.webp miniatura, archivo-grande.webp visor). */
+window.MAPAS = [
+  { img:"cordillera",    nombre:"Cordillera Central",    nombre_en:"Central Range",
+    texto:"Una gran cordillera nevada parte el continente en dos. Elegir por dónde cruzarla lo cambia todo.",
+    texto_en:"A great snowy range splits the continent in two. Choosing where to cross changes everything." },
+  { img:"archipielago",  nombre:"Archipiélago",          nombre_en:"Archipelago",
+    texto:"Los siete reinos repartidos en islas unidas por puentes: quien controla los pasos, controla el mapa.",
+    texto_en:"The seven realms spread across islands linked by bridges: whoever holds the crossings holds the map." },
+  { img:"meseta",        nombre:"Meseta de los Cañones", nombre_en:"Canyon Plateau",
+    texto:"El castillo central se alza sobre una meseta rodeada de cañones, ríos y puentes de piedra.",
+    texto_en:"The central castle rises on a plateau ringed by canyons, rivers and stone bridges." },
+  { img:"valle-del-rio", nombre:"Valle del Río",         nombre_en:"River Valley",
+    texto:"Un río serpentea por el corazón del continente entre ruinas, minas y una antigua estatua.",
+    texto_en:"A river winds through the heart of the continent among ruins, mines and an ancient statue." },
+  { img:"senderos",      nombre:"Tierra de Senderos",    nombre_en:"Land of Trails",
+    texto:"Caminos y arroyos se entrelazan por todo el mapa, con minas de oro esperando en cada rincón.",
+    texto_en:"Trails and streams weave across the whole map, with gold mines waiting in every corner." },
+  { img:"lagos",         nombre:"Lagos Interiores",      nombre_en:"Inland Lakes",
+    texto:"Un mar interior rodea el castillo principal y los caminos lo bordean de reino en reino.",
+    texto_en:"An inland sea surrounds the main castle, with roads skirting it from realm to realm." }
 ];
 
 /* Capturas de la sección "Así se juega". Las imágenes están en assets/img/capturas/

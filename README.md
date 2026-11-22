@@ -20,6 +20,7 @@ novarisegames.github.io/
 │   ├── portada/      # Portadas del juego (ES y EN)
 │   ├── heroes/       # Retratos: nombre.webp (miniatura) y nombre-grande.webp (visor)
 │   ├── capturas/     # Capturas de partida para "Así se juega"
+│   ├── mapas/        # Mapas seleccionables ("Elige tu mapa")
 │   └── banner-caballero.webp
 └── .nojekyll         # Para que GitHub Pages sirva los archivos tal cual
 ```
@@ -61,6 +62,8 @@ novarisegames.github.io/
 **Versión en inglés**: los textos de `js/config.js` tienen su campo `_en` (si falta, se usa el español).
 Los textos fijos de la página están en `en/index.html`: si cambias un texto en `index.html`,
 cámbialo también allí. Los nombres oficiales en inglés de los reinos están en `REINOS_EN`.
+
+**Añadir un mapa**: guarda `nombre.webp` y `nombre-grande.webp` en `assets/img/mapas/` y añade una entrada a `MAPAS` en `js/config.js`.
 
 ## Verla en local
 

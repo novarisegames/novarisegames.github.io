@@ -159,6 +159,18 @@ nav.scrolled{background:rgba(7,6,13,.82);backdrop-filter:blur(14px);border-color
 .wip strong{display:block;margin-bottom:.3rem;color:#dff7ff}
 .wip p{color:var(--muted);font-size:.92rem}
 
+/* MAPAS */
+.maps-head{max-width:720px;margin-bottom:2.5rem}
+.maps-head .eyebrow{color:var(--gold)}
+.maps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.map-tile{position:relative;aspect-ratio:1;border-radius:18px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;padding:0;background:#06121a;font:inherit;color:inherit;text-align:left}
+.map-tile img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.map-tile:hover img,.map-tile:focus-visible img{transform:scale(1.06)}
+.map-tile:hover,.map-tile:focus-visible{border-color:var(--gold);outline:none}
+.map-tile .cap{position:absolute;left:0;right:0;bottom:0;padding:48px 18px 16px;background:linear-gradient(transparent,rgba(5,6,12,.94))}
+.map-tile strong{display:block;font-family:'Cinzel',serif;font-size:1.15rem;color:#f6e6c4}
+.map-tile span{display:block;font-size:.85rem;color:#c9c3dc;line-height:1.45;margin-top:.2rem}
+
 /* NOVEDADES */
 .timeline{list-style:none;margin-top:2.5rem;max-width:820px;border-left:2px solid var(--line);padding-left:28px;display:grid;gap:22px}
 .timeline li{position:relative;padding:20px 24px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
@@ -295,6 +307,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;margin-top:40px}
   .filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-left:0;margin-right:0}
   .filters button{flex-shrink:0}
   .play{grid-template-columns:1fr}
+  .maps{grid-template-columns:1fr 1fr}
   .demo-band{grid-template-columns:1fr;padding:36px 28px}
   .demo-cta{order:-1}
   .banner-btns{justify-content:center}
@@ -311,6 +324,8 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;margin-top:40px}
   .features,.values{grid-template-columns:1fr}
   .heroes{grid-template-columns:1fr 1fr;gap:10px}
   .thumb{width:calc(50% - 6px)}
+  .maps{grid-template-columns:1fr;gap:12px}
+  .map-tile{aspect-ratio:4/3}
   .demo-list{grid-template-columns:1fr}
   .facts div{min-width:calc(50% - 6px)}
   .facts{margin-top:-1rem}
