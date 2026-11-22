@@ -28,4 +28,16 @@
     <lastmod>2026-11-22</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://novarisegames.github.io/prensa/</loc>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://novarisegames.github.io/prensa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novarisegames.github.io/en/press/"/>
+  </url>
+  <url>
+    <loc>https://novarisegames.github.io/en/press/</loc>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://novarisegames.github.io/prensa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novarisegames.github.io/en/press/"/>
+  </url>
 </urlset>

@@ -15,6 +15,7 @@ novarisegames.github.io/
 ├── js/
 │   ├── config.js     # ← Enlace de compra, novedades, héroes, capturas y proyectos (ES + EN)
 │   └── main.js       # Lógica de la página
+├── prensa/           # Kit de prensa (y en/press/ en inglés)
 ├── demo/             # Demo de Reinos de Leyenda (5 días) → /demo/
 ├── tidebound/demo/   # Demo de Tidebound (8 minutos) → /tidebound/demo/
 │                     # Arte de Tidebound en assets/img/tidebound/ (épocas y jefes en config.js: TB_ERAS, TB_JEFES)
@@ -78,6 +79,18 @@ Cada vez que cambies uno de esos archivos, actualiza ese número en las dos pág
 - Imágenes para compartir: `assets/img/social/compartir-es.jpg` y `compartir-en.jpg` (1200×630).
 - `404.html`: página de error propia.
 - `google56d692fc0045d526.html`: verificación de Google Search Console. **No borrar.**
+
+## Estadísticas (GoatCounter)
+
+Todas las páginas (web, demos y prensa) cuentan visitas con GoatCounter, sin cookies.
+Panel: https://novarisegames.goatcounter.com (hay que crear la cuenta con el código `novarisegames`).
+Clics registrados como eventos: `compra-reinos-de-leyenda`, `compra-tidebound`, `demo-reinos-de-leyenda`,
+`demo-tidebound`, `descarga-presskit`. Los enlaces con `?ref=tiktok`, `?ref=reddit`… aparecen como origen de la visita.
+
+## Prensa
+
+- `prensa/` (español) y `en/press/` (inglés): kit de prensa. Se generan con un script; si cambias datos de los juegos, actualízalos también ahí.
+- `prensa/NovaRise-presskit.zip`: imágenes en alta resolución y logo.
 
 ## Verla en local
 

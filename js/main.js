@@ -187,3 +187,15 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   function draw(){ x.clearRect(0,0,W,H); S.forEach(s=>{ s.p+=s.s; x.globalAlpha=.35+Math.sin(s.p)*.35; x.fillStyle='#fff'; x.beginPath(); x.arc(s.x,s.y,s.r,0,6.28); x.fill(); }); requestAnimationFrame(draw); }
   size(); addEventListener('resize',size); draw();
 })();
+
+// Estadísticas (GoatCounter, sin cookies): clics en compra y demos
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href]'); if(!a||!window.goatcounter||!window.goatcounter.count) return;
+  const h=a.getAttribute('href')||''; let ev=null;
+  if(h.includes('itch.io/reinos-de-leyenda')) ev='compra-reinos-de-leyenda';
+  else if(h.includes('itch.io/tidebound')) ev='compra-tidebound';
+  else if(/(^|\/)tidebound\/demo\/?$/.test(h)) ev='demo-tidebound';
+  else if(/(^|\/)demo\/?$/.test(h)) ev='demo-reinos-de-leyenda';
+  else if(h.includes('presskit.zip')) ev='descarga-presskit';
+  if(ev) try{ window.goatcounter.count({path:ev,title:ev+' ('+LANG+')',event:true}); }catch(_){}
+});
