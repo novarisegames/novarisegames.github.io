@@ -67,6 +67,9 @@ cámbialo también allí. Los nombres oficiales en inglés de los reinos están 
 
 **Añadir un mapa**: guarda `nombre.webp` y `nombre-grande.webp` en `assets/img/mapas/` y añade una entrada a `MAPAS` en `js/config.js`.
 
+**Caché del navegador**: `index.html` y `en/index.html` cargan `styles.css`, `config.js` y `main.js` con `?v=AAAAMMDDHHMM`.
+Cada vez que cambies uno de esos archivos, actualiza ese número en las dos páginas para que los visitantes reciban la versión nueva al momento.
+
 ## Verla en local
 
 Abre `index.html` en el navegador, o arranca un servidor:
