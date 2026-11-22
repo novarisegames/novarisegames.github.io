@@ -98,6 +98,14 @@ Clics registrados como eventos: `compra-reinos-de-leyenda`, `compra-tidebound`, 
 `aviso-legal/`, `privacidad/`, `en/legal-notice/` y `en/privacy/`. Si cambian los datos del titular, los proveedores
 (alojamiento, estadísticas, correo, tienda) o la forma de tratar datos, actualiza estas páginas y su fecha.
 
+## Escaparate de creadores
+
+`comunidad/` y `en/community/`: juegos de otros creadores. El formulario solo prepara un correo a novarisegames26@gmail.com;
+la web no guarda nada. Para publicar un juego aprobado:
+1. Guarda su portada en `assets/comunidad/` (630×500 ideal, .webp o .jpg).
+2. Añade una entrada al principio de `COMUNIDAD` en `js/comunidad.js` (el formato está explicado al principio del archivo).
+3. Actualiza el `?v=` de `comunidad.js` en `comunidad/index.html` y `en/community/index.html`.
+
 ## Verla en local
 
 Abre `index.html` en el navegador, o arranca un servidor:

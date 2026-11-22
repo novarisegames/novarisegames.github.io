@@ -260,6 +260,13 @@ footer .logo-img{height:52px}
 .boss{aspect-ratio:16/9}
 .boss strong{font-size:1.4rem}.boss small{font-size:.9rem}
 
+/* COMUNIDAD (portada) */
+.cm-teaser{display:grid;grid-template-columns:1.6fr auto;gap:2.5rem;align-items:center;padding:44px 48px;border-radius:26px;border:1px solid #3b3270;background:radial-gradient(ellipse at 90% 50%,rgba(56,214,255,.12),transparent 55%),linear-gradient(135deg,#17123a,#0e0c1a 65%)}
+.cm-teaser .lead{max-width:640px}
+.cm-teaser-btns{display:flex;flex-direction:column;gap:.7rem}
+.cm-teaser-btns .btn{justify-content:center}
+@media (max-width:860px){.cm-teaser{grid-template-columns:1fr;padding:32px 24px}.cm-teaser-btns{flex-direction:row;flex-wrap:wrap}}
+
 /* NOVEDADES */
 .timeline{list-style:none;margin-top:2.5rem;max-width:820px;border-left:2px solid var(--line);padding-left:28px;display:grid;gap:22px}
 .timeline li{position:relative;padding:20px 24px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.02)}

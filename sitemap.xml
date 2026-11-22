@@ -40,4 +40,16 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://novarisegames.github.io/prensa/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://novarisegames.github.io/en/press/"/>
   </url>
+  <url>
+    <loc>https://novarisegames.github.io/comunidad/</loc>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://novarisegames.github.io/comunidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novarisegames.github.io/en/community/"/>
+  </url>
+  <url>
+    <loc>https://novarisegames.github.io/en/community/</loc>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://novarisegames.github.io/comunidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novarisegames.github.io/en/community/"/>
+  </url>
 </urlset>
