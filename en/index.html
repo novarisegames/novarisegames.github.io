@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaRise Games — Realms of Legend</title>
+<meta name="description" content="NovaRise Games, independent game studio. Play Realms of Legend, a turn-based fantasy strategy game.">
+<meta property="og:title" content="Realms of Legend — NovaRise Games">
+<meta property="og:description" content="Turn-based fantasy strategy. Choose your realm, recruit your heroes and conquer the legend.">
+<meta property="og:image" content="https://novarisegames.github.io/assets/img/portada/portada-en.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="es" href="https://novarisegames.github.io/">
+<link rel="alternate" hreflang="en" href="https://novarisegames.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://novarisegames.github.io/">
+<link rel="icon" href="../demo/icon-192.png">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- ===== Iconos y arte reutilizable ===== -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="novamark" viewBox="0 0 40 40">
+      <defs><linearGradient id="nm" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#7b5cff"/><stop offset="1" stop-color="#38d6ff"/></linearGradient></defs>
+      <path d="M20 2 L23.5 16.5 L38 20 L23.5 23.5 L20 38 L16.5 23.5 L2 20 L16.5 16.5Z" fill="url(#nm)"/>
+      <circle cx="20" cy="20" r="4" fill="#fff"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#inicio" class="logo"><svg width="30" height="30"><use href="#novamark"/></svg><span>Nova<b>Rise</b><small class="logo-games">Games</small></span></a>
+    <div class="links" id="links">
+      <a href="#juego">Realms of Legend</a>
+      <a href="#jugabilidad">How it plays</a>
+      <a href="../demo/" class="nav-demo">Free demo</a>
+      <a href="#comprar">Buy</a>
+      <a href="#novedades">News</a>
+      <a href="#proyectos">Projects</a>
+      <a href="#faq">FAQ</a>
+      <a href="../" class="lang" hreflang="es" lang="es" title="Versión en español">ES</a>
+    </div>
+    <a class="btn btn-gold nav-cta" href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener" data-buy>Buy · $1.99</a>
+    <button class="burger" id="burger" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="inicio">
+  <canvas class="stars" id="stars"></canvas>
+  <div class="hero-glow"></div><div class="hero-glow b"></div>
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Independent game studio</span>
+      <h1>We build worlds that <span>rise.</span></h1>
+      <p>NovaRise Games is the home of our games. Our first game, <strong style="color:var(--gold2)">Realms of Legend</strong>, is playable now in early access: turn-based fantasy strategy that keeps growing with every update. And this is just the beginning.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener" data-buy>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z M6 6L5 3H2 M9 20h.01M18 20h.01"/></svg>
+          Buy for $1.99
+        </a>
+        <a href="../demo/" class="btn btn-ghost"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg> Play the free demo</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>1</strong><span>Game in early access</span></div>
+        <div><strong>4</strong><span>Languages</span></div>
+        <div><strong>100%</strong><span>Independent</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <img src="../assets/img/portada/portada-en.webp" alt="Realms of Legend cover art: turn-based fantasy strategy" width="630" height="500" fetchpriority="high">
+      <span class="badge">★ Early access</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== JUEGO ===== -->
+<section id="juego">
+  <div class="wrap">
+    <div class="game-head reveal">
+      <span class="eyebrow">Our first release</span>
+      <div class="game-logo">Realms of Legend</div>
+      <div class="ornament"><i></i>✦<i></i></div>
+      <p class="tagline">A divided realm. Seven crowns. One legend.</p>
+      <p class="wip-pill"><i></i>In active development · early access</p>
+      <p class="lead">Turn-based fantasy strategy. Seven realms fight for supremacy, from the Golden Oasis to the Crown of Ice, from the Blue Tower to the Burning Ash. Choose yours, recruit its heroes and make it a legend.</p>
+    </div>
+
+    <div class="facts reveal">
+      <div><strong>7</strong><span>realms</span></div>
+      <div><strong>14</strong><span>heroes</span></div>
+      <div><strong>39</strong><span>creatures</span></div>
+      <div><strong>6</strong><span>campaign missions</span></div>
+      <div><strong>4</strong><span>languages</span></div>
+    </div>
+
+    <div class="banner reveal">
+      <img src="../assets/img/banner-caballero.webp" alt="Roland, knight of the Crimson Fortress, before his castle" loading="lazy">
+      <div class="banner-txt">
+        <p class="quote">“Every realm has its hero.<br>Who will be yours?”</p>
+        <div class="banner-btns"><a class="btn btn-gold" href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener" data-buy>Start your conquest · $1.99</a><a href="../demo/" class="btn btn-ghost"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg> Free demo</a></div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/></svg></div><h4>Turn-based tactics</h4><p>Plan every move. On the battlefield, the sharpest mind wins, not the fastest finger.</p></div>
+      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V10l4-3 4 3 4-3 4 3v11z M9 21v-5h6v5 M4 10V5M20 10V5"/></svg></div><h4>Unique realms</h4><p>Violet Dawn, Blue Tower, Crimson Fortress, Crown of Ice, Burning Ash, South Harbor and Golden Oasis: each with its own style and way of waging war.</p></div>
+      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div><h4>Legendary heroes</h4><p>Knights, archmages, rangers, corsairs and warlords. Recruit yours and lead them to glory.</p></div>
+      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></div><h4>Conquest</h4><p>Expand your borders, defend your castles and make your realm rule over all others.</p></div>
+    </div>
+
+    <div class="heroes-head reveal">
+      <span class="eyebrow">The heroes</span>
+      <h2 class="title">Meet the heroes of the Realms</h2>
+      <p class="lead" style="margin:0 auto">Seven realms, each with its own heroes. Filter by realm and tap any portrait to see it full size.</p>
+    </div>
+    <div class="filters reveal" id="heroFilters" role="toolbar" aria-label="Filter heroes by realm"></div>
+    <div class="heroes" id="heroGrid"></div>
+  </div>
+</section>
+
+<!-- ===== JUGABILIDAD ===== -->
+<section id="jugabilidad">
+  <div class="wrap">
+    <div class="play-head reveal">
+      <span class="eyebrow">How it plays</span>
+      <h2 class="title">Your realm, day by day</h2>
+      <p class="lead">Move your heroes across the map, seize mines, cast spells and complete missions. Every day counts: when you end it, your rivals make their move too.</p>
+    </div>
+    <div class="play">
+      <div class="viewer reveal">
+        <button class="shot-main" id="shotMain" type="button" aria-label="View screenshot full screen">
+          <img id="shotImg" alt="" width="1220" height="864">
+          <span class="zoom">⤢ Enlarge</span>
+        </button>
+        <p class="shot-cap" id="shotCap"></p>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+      <ul class="mechs">
+        <li class="reveal"><span class="mi">🗺️</span><div><strong>Explore the map</strong><p>Push through the fog of war and discover castles, ruins, mines and creatures.</p></div></li>
+        <li class="reveal"><span class="mi">⛏️</span><div><strong>Capture mines</strong><p>Every mine you hold gives you resources each day: gold, wood, ore and gems.</p></div></li>
+        <li class="reveal"><span class="mi">⚔️</span><div><strong>Grow your heroes</strong><p>Attack, defense, mana, logistics and diplomacy. Every level makes them stronger.</p></div></li>
+        <li class="reveal"><span class="mi">✨</span><div><strong>Cast spells</strong><p>Town Portal, Clairvoyance, Forced March… Magic can turn the tide of the game.</p></div></li>
+        <li class="reveal"><span class="mi">🚩</span><div><strong>Missions and tutorial</strong><p>A guided tutorial and missions so you master your realm from day one.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEMO ===== -->
+<section id="probar" class="demo-sec">
+  <div class="wrap">
+    <div class="demo-band reveal">
+      <div>
+        <span class="eyebrow">Free demo</span>
+        <h2 class="title">Try it free, right now</h2>
+        <p class="lead">Play the <strong>first 5 days</strong> of your realm right in your browser, with nothing to download or install. If you like it, the full game lets you carry on until you conquer the rival castles.</p>
+        <ul class="demo-list">
+          <li>No sign-up, no payment</li>
+          <li>Computer, tablet or phone</li>
+          <li>English, Español, Português and Français</li>
+          <li>Your game is saved in your browser</li>
+        </ul>
+      </div>
+      <div class="demo-cta">
+        <img src="../demo/icon-512.png" alt="Realms of Legend icon" width="160" height="160" loading="lazy">
+        <a href="../demo/" class="btn btn-gold btn-lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg> Play the demo</a>
+        <small>Opens in this window · ~16 MB</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPRAR ===== -->
+<section id="comprar">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <span class="eyebrow">Get the game</span>
+      <h2 class="title">Play it now for just $1.99</h2>
+      <p class="lead" style="margin:0 auto">One-time payment, no subscriptions. Checkout is handled securely by itch.io.</p>
+    </div>
+
+    <div class="wip reveal">
+      <div class="wip-ic">🛠️</div>
+      <div>
+        <strong>Realms of Legend is still in development</strong>
+        <p>It's an early access game: you can already play the 6-mission campaign, but we keep adding content, polishing the balance and fixing bugs. Buy it now to help us finish it, and get every new version at no extra cost.</p>
+      </div>
+    </div>
+
+    <div class="pricing two">
+      <div class="plan reveal">
+        <h3>Demo</h3>
+        <p class="desc">Try the first days of your realm before you decide.</p>
+        <div class="price">Free</div>
+        <ul>
+          <li><svg width="16" height="16"><use href="#check"/></svg>The first 5 days of play</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>In your browser, nothing to install</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>No sign-up</li>
+        </ul>
+        <a href="../demo/" class="btn btn-ghost">Play the demo</a>
+      </div>
+      <div class="plan hot reveal">
+        <span class="tag">Early access</span>
+        <h3>Full game</h3>
+        <p class="desc">All of Realms of Legend, today and with every update.</p>
+        <div class="price">$1.99<small> one-time</small></div>
+        <ul>
+          <li><svg width="16" height="16"><use href="#check"/></svg>6-mission campaign</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>7 realms, 14 heroes and 39 creatures</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>English, Español, Português and Français</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Every update during development</li>
+          <li><svg width="16" height="16"><use href="#check"/></svg>Directly supports NovaRise Games</li>
+        </ul>
+        <a class="btn btn-gold" href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener" data-buy>Buy on itch.io</a>
+      </div>
+    </div>
+    <div class="secure">
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Secure checkout with itch.io</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Card or PayPal</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4.5v15l13-7.5z"/></svg>Play instantly</span>
+    </div>
+
+    <div class="reqs">
+      <div class="req reveal">
+        <h4>Where to play</h4>
+        <dl>
+          <dt>Platform</dt><dd>Web browser: no installation needed</dd>
+          <dt>Browsers</dt><dd>Up-to-date Chrome, Edge, Firefox or Safari</dd>
+          <dt>Devices</dt><dd>Computer, tablet or phone</dd>
+          <dt>As an app</dt><dd>Can be installed from the browser</dd>
+        </dl>
+      </div>
+      <div class="req reveal">
+        <h4>What's included</h4>
+        <dl>
+          <dt>Campaign</dt><dd>6 missions</dd>
+          <dt>Content</dt><dd>7 realms, 14 heroes and 39 creatures</dd>
+          <dt>Languages</dt><dd>English, Español, Português, Français</dd>
+          <dt>Saving</dt><dd>Automatic, in your browser</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NOVEDADES ===== -->
+<section id="novedades" style="padding-top:40px">
+  <div class="wrap">
+    <div class="reveal" style="max-width:720px">
+      <span class="eyebrow">Devlog</span>
+      <h2 class="title">News</h2>
+      <p class="lead">Realms of Legend is in early access and keeps growing. Here we share every step.</p>
+    </div>
+    <ol class="timeline" id="newsList"></ol>
+  </div>
+</section>
+
+<!-- ===== PROYECTOS ===== -->
+<section id="proyectos">
+  <div class="wrap">
+    <div class="proj-head reveal">
+      <div>
+        <span class="eyebrow">NovaRise Games catalog</span>
+        <h2 class="title">Our projects</h2>
+        <p class="lead">Realms of Legend is the first of many. Every new game from the studio will be published here.</p>
+      </div>
+    </div>
+    <div class="projects" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- ===== ESTUDIO ===== -->
+<section id="estudio">
+  <div class="wrap studio">
+    <div class="reveal">
+      <span class="eyebrow">About us</span>
+      <h2 class="title">We are NovaRise Games</h2>
+      <p class="lead">An independent studio born from a simple idea: making games with soul. Like a nova rising in the sky, we want every project to shine with its own light.</p>
+      <p class="lead" style="margin-top:1rem">Every purchase directly supports the team and lets us keep building new worlds.</p>
+    </div>
+    <div class="values">
+      <div class="val reveal"><strong>Passion</strong><span>We make the games we want to play.</span></div>
+      <div class="val reveal"><strong>Community</strong><span>We listen to our players every step of the way.</span></div>
+      <div class="val reveal"><strong>Quality</strong><span>We would rather polish every detail than rush.</span></div>
+      <div class="val reveal"><strong>Independence</strong><span>No middlemen: straight from the studio to you.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" style="padding-top:40px">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <span class="eyebrow">Help</span>
+      <h2 class="title">Frequently asked questions</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Can I try it before buying?</summary><p>Yes. The <a href="../demo/" style="color:var(--nova2)">free demo</a> lets you play the first 5 days of a game right in your browser, with no sign-up and nothing to download.</p></details>
+      <details><summary>Is the game finished?</summary><p>Not yet. Realms of Legend is in active development and sold in early access: you can already play the 6-mission campaign, but we keep adding content, polishing the balance and fixing bugs. That's why it costs just $1.99.</p></details>
+      <details><summary>Where do I buy it and how do I get it?</summary><p>You buy it on our <a href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener" style="color:var(--nova2)">itch.io page</a>. After paying, the game is added to your itch.io account (or you get a link by email if you buy without an account) and you can play or download it whenever you want.</p></details>
+      <details><summary>Which payment methods do you accept?</summary><p>Those offered by itch.io: credit or debit card and PayPal.</p></details>
+      <details><summary>Will I have to pay again for updates?</summary><p>No. It's a one-time payment: new versions we publish on itch.io will be available with your purchase.</p></details>
+      <details><summary>How do I hear about updates and new projects?</summary><p>Follow <a href="https://novarisegames.itch.io" target="_blank" rel="noopener" style="color:var(--nova2)">NovaRise Games on itch.io</a>: you'll be notified whenever we publish a Realms of Legend update or a new game.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEGUIR ===== -->
+<section id="seguir" style="padding-top:40px">
+  <div class="wrap">
+    <div class="news reveal">
+      <span class="eyebrow">Don't miss a thing</span>
+      <h2 class="title">Follow NovaRise Games</h2>
+      <p class="lead" style="margin:0 auto">Realms of Legend keeps growing. Follow us on itch.io to be notified of every update and our upcoming games.</p>
+      <div class="follow-cta">
+        <a class="btn btn-gold" href="https://novarisegames.itch.io" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          Follow on itch.io
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#inicio" class="logo"><svg width="28" height="28"><use href="#novamark"/></svg><span>Nova<b>Rise</b><small class="logo-games">Games</small></span></a>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:1rem;max-width:300px">Independent game studio. We build worlds that rise.</p>
+      </div>
+      <div><h5>Games</h5><ul><li><a href="#juego">Realms of Legend</a></li><li><a href="../demo/">Free demo</a></li><li><a href="#proyectos">Coming soon</a></li></ul></div>
+      <div><h5>Store</h5><ul><li><a href="#comprar">Price</a></li><li><a href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener">itch.io</a></li><li><a href="#faq">Help</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="https://novarisegames.itch.io" target="_blank" rel="noopener">NovaRise Games on itch.io</a></li><li><a href="#estudio">About us</a></li><li><a href="../" hreflang="es">Versión en español</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> NovaRise Games. All rights reserved.</span><span>Made with ✦ by NovaRise Games</span></div>
+  </div>
+</footer>
+
+<!-- ===== VISOR DE IMÁGENES ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-nav prev" id="lbPrev" aria-label="Previous">‹</button>
+  <figure>
+    <img id="lbImg" alt="">
+    <figcaption><strong id="lbName"></strong><span id="lbRealm"></span><p id="lbBio"></p></figcaption>
+  </figure>
+  <button class="lb-nav next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

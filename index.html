@@ -13,6 +13,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="es" href="https://novarisegames.github.io/">
+<link rel="alternate" hreflang="en" href="https://novarisegames.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://novarisegames.github.io/">
+<link rel="icon" href="demo/icon-192.png">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -37,9 +41,10 @@
       <a href="#jugabilidad">Así se juega</a>
       <a href="demo/" class="nav-demo">Demo gratis</a>
       <a href="#comprar">Comprar</a>
+      <a href="#novedades">Novedades</a>
       <a href="#proyectos">Proyectos</a>
-      <a href="#estudio">Estudio</a>
       <a href="#faq">FAQ</a>
+      <a href="en/" class="lang" hreflang="en" lang="en" title="English version">EN</a>
     </div>
     <a class="btn btn-gold nav-cta" href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener" data-buy>Comprar · 1,99 $</a>
     <button class="burger" id="burger" aria-label="Menú"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -245,6 +250,18 @@
   </div>
 </section>
 
+<!-- ===== NOVEDADES ===== -->
+<section id="novedades" style="padding-top:40px">
+  <div class="wrap">
+    <div class="reveal" style="max-width:720px">
+      <span class="eyebrow">Diario de desarrollo</span>
+      <h2 class="title">Novedades</h2>
+      <p class="lead">Reinos de Leyenda está en acceso anticipado y no para de crecer. Aquí contamos cada paso.</p>
+    </div>
+    <ol class="timeline" id="newsList"></ol>
+  </div>
+</section>
+
 <!-- ===== PROYECTOS ===== -->
 <section id="proyectos">
   <div class="wrap">
@@ -321,7 +338,7 @@
       </div>
       <div><h5>Juegos</h5><ul><li><a href="#juego">Reinos de Leyenda</a></li><li><a href="demo/">Demo gratis</a></li><li><a href="#proyectos">Próximamente</a></li></ul></div>
       <div><h5>Tienda</h5><ul><li><a href="#comprar">Precio</a></li><li><a href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener">itch.io</a></li><li><a href="#faq">Ayuda</a></li></ul></div>
-      <div><h5>Contacto</h5><ul><li><a href="https://novarisegames.itch.io" target="_blank" rel="noopener">NovaRise Games en itch.io</a></li><li><a href="#estudio">Sobre nosotros</a></li></ul></div>
+      <div><h5>Contacto</h5><ul><li><a href="https://novarisegames.itch.io" target="_blank" rel="noopener">NovaRise Games en itch.io</a></li><li><a href="#estudio">Sobre nosotros</a></li><li><a href="en/" hreflang="en">English version</a></li></ul></div>
     </div>
     <div class="copy"><span>© <span id="yr"></span> NovaRise Games. Todos los derechos reservados.</span><span>Hecho con ✦ por NovaRise Games</span></div>
   </div>
@@ -333,7 +350,7 @@
   <button class="lb-nav prev" id="lbPrev" aria-label="Anterior">‹</button>
   <figure>
     <img id="lbImg" alt="">
-    <figcaption><strong id="lbName"></strong><span id="lbRealm"></span></figcaption>
+    <figcaption><strong id="lbName"></strong><span id="lbRealm"></span><p id="lbBio"></p></figcaption>
   </figure>
   <button class="lb-nav next" id="lbNext" aria-label="Siguiente">›</button>
 </div>

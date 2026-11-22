@@ -8,11 +8,12 @@ Web oficial de **NovaRise Games**, estudio independiente de videojuegos. Aquí s
 
 ```
 novarisegames.github.io/
-├── index.html        # Página principal
+├── index.html        # Página principal (español)
+├── en/index.html     # Versión en inglés (comparte css, js y assets)
 ├── css/
 │   └── styles.css    # Estilos
 ├── js/
-│   ├── config.js     # ← Enlace de compra, héroes, capturas y proyectos
+│   ├── config.js     # ← Enlace de compra, novedades, héroes, capturas y proyectos (ES + EN)
 │   └── main.js       # Lógica de la página
 ├── demo/             # Demo jugable (5 días) en https://novarisegames.github.io/demo/
 ├── assets/img/
@@ -50,6 +51,17 @@ novarisegames.github.io/
 
 **Actualizar la demo**: sustituye los archivos de `demo/` por los de la nueva versión. La demo usa un service worker con caché (`sw.js`): cambia el nombre de la caché (`tr-v1` → `tr-v2`…) en cada versión nueva para que los jugadores que ya la abrieron reciban la actualización.
 
+**Publicar una novedad**: añade una entrada al principio de `NOVEDADES` en `js/config.js`:
+
+```js
+{ fecha:"2026-12-01", etiqueta:"v0.4", titulo:"Título", titulo_en:"Title",
+  texto:"Qué hay de nuevo.", texto_en:"What's new." },
+```
+
+**Versión en inglés**: los textos de `js/config.js` tienen su campo `_en` (si falta, se usa el español).
+Los textos fijos de la página están en `en/index.html`: si cambias un texto en `index.html`,
+cámbialo también allí. Los nombres oficiales en inglés de los reinos están en `REINOS_EN`.
+
 ## Verla en local
 
 Abre `index.html` en el navegador, o arranca un servidor:
@@ -81,5 +93,6 @@ Para usar un dominio propio (por ejemplo `novarisegames.com`), añádelo en **Se
 - [ ] Correo de contacto real
 - [ ] Boletín propio (opcional; ahora se usa «Seguir en itch.io»)
 - [ ] Páginas legales: aviso legal, privacidad, cookies, condiciones de venta
-- [ ] Versión en inglés
+- [x] Versión en inglés (/en/)
+- [x] Sección de novedades
 - [ ] Dominio propio
