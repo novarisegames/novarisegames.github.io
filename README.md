@@ -106,6 +106,13 @@ la web no guarda nada. Para publicar un juego aprobado:
 2. Añade una entrada al principio de `COMUNIDAD` en `js/comunidad.js` (el formato está explicado al principio del archivo).
 3. Actualiza el `?v=` de `comunidad.js` en `comunidad/index.html` y `en/community/index.html`.
 
+## Protección de imágenes
+
+- Las imágenes grandes (`*-grande.webp`, las del visor) llevan marca de agua «© NovaRise Games».
+  Si añades imágenes nuevas, márcalas igual antes de subirlas.
+- La web bloquea el menú contextual, el arrastre y la pulsación larga sobre las imágenes (`js/main.js` y `css/styles.css`).
+- Ninguna medida impide una captura de pantalla; la marca de agua es la protección principal.
+
 ## Verla en local
 
 Abre `index.html` en el navegador, o arranca un servidor:

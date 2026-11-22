@@ -78,7 +78,7 @@ const HEROS=window.HEROES||[], RE=window.REINOS||{};
 let heroList=[];
 function renderHeroes(reino){
   const vis=HEROS.filter(h=>!reino||h.reino===reino);
-  heroList=vis.map(h=>({src:HB+h.img+'-grande.webp',title:h.nombre,sub:tr(h,'clase')+' · '+reinoN(h.reino),bio:tr(h,'bio')}));
+  heroList=vis.map(h=>({src:HB+h.img+'-grande.webp?v=wm1',title:h.nombre,sub:tr(h,'clase')+' · '+reinoN(h.reino),bio:tr(h,'bio')}));
   heroGrid.innerHTML='';
   vis.forEach((h,i)=>{
     const b=document.createElement('button');
@@ -100,14 +100,14 @@ const TBB=BASE+'assets/img/tidebound/';
 const eraGrid=document.getElementById('eraGrid'), bossGrid=document.getElementById('bossGrid');
 if(eraGrid){
   const ER=window.TB_ERAS||[], JF=window.TB_JEFES||[];
-  const eraList=ER.map((e,i)=>({src:TBB+e.img+'-grande.webp',title:(i+1)+' · '+tr(e,'nombre'),sub:'',bio:tr(e,'texto')}));
+  const eraList=ER.map((e,i)=>({src:TBB+e.img+'-grande.webp?v=wm1',title:(i+1)+' · '+tr(e,'nombre'),sub:'',bio:tr(e,'texto')}));
   ER.forEach((e,i)=>{
     const li=document.createElement('li'); li.className='reveal';
     li.innerHTML=`<button type="button" class="era"><img src="${TBB+e.img}.webp" alt="${tr(e,'nombre')}: ${tr(e,'texto')}" loading="lazy" width="640" height="360"><span class="era-n">${i+1}</span><span class="era-cap"><strong>${tr(e,'nombre')}</strong><small>${tr(e,'texto')}</small></span></button>`;
     li.querySelector('button').onclick=()=>openLb(eraList,i,true);
     eraGrid.appendChild(li);
   });
-  const bossList=JF.map(j=>({src:TBB+j.img+'-grande.webp',title:tr(j,'nombre'),sub:'',bio:tr(j,'texto')}));
+  const bossList=JF.map(j=>({src:TBB+j.img+'-grande.webp?v=wm1',title:tr(j,'nombre'),sub:'',bio:tr(j,'texto')}));
   JF.forEach((j,i)=>{
     const b=document.createElement('button'); b.type='button'; b.className='boss reveal';
     b.innerHTML=`<img src="${TBB+j.img}.webp" alt="${tr(j,'nombre')}" loading="lazy" width="640" height="360"><span class="cap"><strong>${tr(j,'nombre')}</strong><small>${tr(j,'texto')}</small></span>`;
@@ -118,7 +118,7 @@ if(eraGrid){
 // Mapas
 const mapGrid=document.getElementById('mapGrid'), MB=BASE+'assets/img/mapas/', MAPS=window.MAPAS||[];
 if(mapGrid){
-  const mapList=MAPS.map(m=>({src:MB+m.img+'-grande.webp',title:tr(m,'nombre'),sub:'',bio:tr(m,'texto')}));
+  const mapList=MAPS.map(m=>({src:MB+m.img+'-grande.webp?v=wm1',title:tr(m,'nombre'),sub:'',bio:tr(m,'texto')}));
   MAPS.forEach((m,i)=>{
     const b=document.createElement('button'); b.type='button'; b.className='map-tile reveal';
     b.setAttribute('aria-label',tr(m,'nombre'));
@@ -131,12 +131,12 @@ if(mapGrid){
 
 // Capturas "Así se juega"
 const CB=BASE+'assets/img/capturas/', CAPS=window.CAPTURAS||[];
-const capList=CAPS.map(c=>({src:CB+c.img+'-grande.webp',title:'',sub:tr(c,'texto')}));
+const capList=CAPS.map(c=>({src:CB+c.img+'-grande.webp?v=wm1',title:'',sub:tr(c,'texto')}));
 const shotImg=document.getElementById('shotImg'), shotCap=document.getElementById('shotCap'), thumbs=document.getElementById('thumbs');
 let ci=0;
 function showShot(i){
   ci=i; const c=CAPS[i];
-  shotImg.src=CB+c.img+'-grande.webp'; shotImg.alt=tr(c,'texto'); shotCap.textContent=tr(c,'texto');
+  shotImg.src=CB+c.img+'-grande.webp?v=wm1'; shotImg.alt=tr(c,'texto'); shotCap.textContent=tr(c,'texto');
   thumbs.querySelectorAll('.thumb').forEach((t,k)=>t.classList.toggle('on',k===i));
 }
 CAPS.forEach((c,i)=>{
@@ -203,3 +203,10 @@ document.addEventListener('click',e=>{
   else if(h.includes('presskit.zip')) ev='descarga-presskit';
   if(ev) try{ window.goatcounter.count({path:ev,title:ev+' ('+LANG+')',event:true}); }catch(_){}
 });
+
+// Protección de imágenes: sin menú contextual, arrastre ni pulsación larga sobre las imágenes
+(function(){
+  const esImagen = t => t && (t.tagName==='IMG' || t.closest('.hero-card,.hero-tile,.map-tile,.era,.boss,.shot-main,.lightbox figure,.banner,.proj .art,.cr-hero,.thumb,.dd-item'));
+  document.addEventListener('contextmenu', e => { if(esImagen(e.target)) e.preventDefault(); });
+  document.addEventListener('dragstart', e => { if(e.target.tagName==='IMG') e.preventDefault(); });
+})();
