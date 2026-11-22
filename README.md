@@ -1,5 +1,7 @@
 # NovaRise Games
 
+🌐 **https://novarisegames.github.io/**
+
 Web oficial de **NovaRise Games**, estudio independiente de videojuegos. Aquí se promociona y se vende nuestro primer juego, **Reinos de Leyenda**, y aquí se irán publicando los proyectos futuros.
 
 ## Estructura
@@ -12,7 +14,7 @@ novarise-web/
 ├── js/
 │   ├── config.js     # ← Enlace de compra, héroes, capturas y proyectos
 │   └── main.js       # Lógica de la página
-├── demo/             # Demo jugable (5 días) en https://…/novarise-web/demo/
+├── demo/             # Demo jugable (5 días) en https://novarisegames.github.io/demo/
 ├── assets/img/
 │   ├── portada/      # Portadas del juego (ES y EN)
 │   ├── heroes/       # Retratos: nombre.webp (miniatura) y nombre-grande.webp (visor)
@@ -57,13 +59,17 @@ python3 -m http.server 8000
 # y entra en http://localhost:8000
 ```
 
-## Publicar con GitHub Pages
+## Publicación
 
-1. Sube el repositorio a GitHub.
-2. Ve a **Settings → Pages**.
-3. En *Source* elige **Deploy from a branch**, rama `main`, carpeta `/ (root)`.
-4. En un par de minutos la web estará en `https://TU-USUARIO.github.io/novarise-web/`.
-5. (Opcional) En **Custom domain** añade tu dominio, por ejemplo `novarise.com`.
+La web se publica sola con GitHub Pages desde la rama `main` de este repositorio
+(`novarisegames/novarisegames.github.io`). Cada cambio que se sube a `main` aparece en
+**https://novarisegames.github.io/** en uno o dos minutos.
+
+- Web: https://novarisegames.github.io/
+- Demo: https://novarisegames.github.io/demo/
+- Tienda: https://novarisegames.itch.io/reinos-de-leyenda
+
+Para usar un dominio propio (por ejemplo `novarisegames.com`), añádelo en **Settings → Pages → Custom domain**.
 
 ## Pendiente
 
