@@ -93,6 +93,11 @@ Clics registrados como eventos: `compra-reinos-de-leyenda`, `compra-tidebound`, 
 - `prensa/` (español) y `en/press/` (inglés): kit de prensa. Se generan con un script; si cambias datos de los juegos, actualízalos también ahí.
 - `prensa/NovaRise-presskit.zip`: imágenes en alta resolución y logo.
 
+## Páginas legales
+
+`aviso-legal/`, `privacidad/`, `en/legal-notice/` y `en/privacy/`. Si cambian los datos del titular, los proveedores
+(alojamiento, estadísticas, correo, tienda) o la forma de tratar datos, actualiza estas páginas y su fecha.
+
 ## Verla en local
 
 Abre `index.html` en el navegador, o arranca un servidor:
@@ -123,7 +128,7 @@ Para usar un dominio propio (por ejemplo `novarisegames.com`), añádelo en **Se
 - [x] Compra a través de itch.io (1,99 $)
 - [x] Correo de contacto: novarisegames26@gmail.com
 - [ ] Boletín propio (opcional; ahora se usa «Seguir en itch.io»)
-- [ ] Páginas legales: aviso legal, privacidad, cookies, condiciones de venta
+- [x] Aviso legal y política de privacidad (/aviso-legal/, /privacidad/ y en inglés). La web no usa cookies.
 - [x] Versión en inglés (/en/)
 - [x] Sección de novedades
 - [ ] Dominio propio
