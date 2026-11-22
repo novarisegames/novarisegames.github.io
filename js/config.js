@@ -41,28 +41,32 @@ window.NOVEDADES = [
 
 /* Añade aquí cada nuevo proyecto. status: "live" | "early" | "dev" | "soon"
    Usa "imagen" con la ruta de una imagen propia, o "arte" para una ilustración provisional.
-   enlaces: botones a páginas externas, p. ej. [{texto:"Ver en itch.io", texto_en:"See on itch.io", url:"…"}] */
+   enlaces: enlaces de texto (Descubrir, Demo…). boton: botón principal al pie de la tarjeta.
+   Cada uno: {texto, texto_en, url}; añade ancla:true para "#seccion" o interno:true para rutas de la web. */
 window.PROYECTOS = [
   { titulo:"Reinos de Leyenda", titulo_en:"Realms of Legend",
-    texto:"Estrategia fantástica por turnos. Ya jugable en acceso anticipado por 1,99 $, y sigue creciendo.",
+    texto:"Estrategia fantástica por turnos. Ya jugable en acceso anticipado por 1,99&nbsp;$, y sigue creciendo.",
     texto_en:"Turn-based fantasy strategy. Playable now in early access for $1.99, and still growing.",
     status:"early", chips:["Estrategia","Por turnos","Navegador"], chips_en:["Strategy","Turn-based","Browser"],
-    imagen:"assets/img/portada/portada-es.webp", imagen_en:"assets/img/portada/portada-en.webp", accion:"comprar" },
+    imagen:"assets/img/portada/portada-es.webp", imagen_en:"assets/img/portada/portada-en.webp",
+    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#juego", ancla:true},
+              {texto:"Demo gratis", texto_en:"Free demo", url:"demo/", interno:true} ],
+    boton:{texto:"Comprar · 1,99 $", texto_en:"Buy · $1.99", url:"https://novarisegames.itch.io/reinos-de-leyenda"} },
   { titulo:"Tidebound", titulo_en:"Tidebound",
-    texto:"Sobrevive en alta mar. Tu barco dispara solo: tú solo navega, recoge madera y mejora tu navío entre tormentas, noches cerradas y tesoros. Juego completo por 1,99 $.",
+    texto:"Sobrevive en alta mar. Tu barco dispara solo: tú solo navega, recoge madera y mejora tu navío entre tormentas, noches cerradas y tesoros. Juego completo por 1,99&nbsp;$.",
     texto_en:"Survive on the open sea. Your ship fires on its own: just sail, collect wood and upgrade your vessel through storms, dark nights and treasure. Full game for $1.99.",
     status:"live", chips:["Supervivencia naval","Acción","Navegador"], chips_en:["Naval survival","Action","Browser"],
     imagen:"assets/img/tidebound/portada.webp", arte:"olas",
-    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#tidebound", interno:true, ancla:true},
-              {texto:"Jugar la demo gratis", texto_en:"Play the free demo", url:"tidebound/demo/", interno:true},
-              {texto:"Comprar · 1,99 $", texto_en:"Buy · $1.99", url:"https://novarisegames.itch.io/tidebound"} ] },
+    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#tidebound", ancla:true},
+              {texto:"Demo gratis", texto_en:"Free demo", url:"tidebound/demo/", interno:true} ],
+    boton:{texto:"Comprar · 1,99 $", texto_en:"Buy · $1.99", url:"https://novarisegames.itch.io/tidebound"} },
   { titulo:"Cronos City", titulo_en:"Cronos City",
     texto:"Construye tu ciudad, vive la vida de sus habitantes y conquista ciudades rivales a través de 10 eras de la historia. En desarrollo.",
     texto_en:"Build your city, live the lives of its people and conquer rival cities across 10 eras of history. In development.",
     status:"dev", chips:["Construcción","Simulación","Estrategia"], chips_en:["City building","Simulation","Strategy"],
     imagen:"assets/img/cronos/cronos-portada.webp?v=3",
-    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#cronos", ancla:true},
-              {texto:"Seguir el desarrollo", texto_en:"Follow development", url:"https://novarisegames.itch.io"} ] }
+    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#cronos", ancla:true} ],
+    boton:{texto:"Seguir el desarrollo", texto_en:"Follow development", url:"https://novarisegames.itch.io", sec:true} }
 ];
 
 /* Reinos del juego: color de acento y nombre oficial en inglés */

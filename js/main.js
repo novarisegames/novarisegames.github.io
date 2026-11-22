@@ -29,11 +29,15 @@ PROYECTOS.forEach(p=>{
   el.className='proj reveal';
   const img = tr(p,'imagen');
   const arte = img ? `<img src="${BASE+img}" alt="${tr(p,'titulo')}" loading="lazy">` : (ARTES[p.arte]||ARTES.misterio);
-  el.innerHTML = `<div class="art">${arte}<span class="status ${cls}">${lbl}</span></div>
-    <div class="body"><h4>${tr(p,'titulo')}</h4><p>${tr(p,'texto')}</p>
+  const href = l => l.ancla ? l.url : (l.interno ? BASE+l.url : l.url);
+  const ext = l => (l.interno||l.ancla) ? '' : ' target="_blank" rel="noopener"';
+  const links = (p.enlaces||[]).map(l=>`<a class="follow" href="${href(l)}"${ext(l)}>${tr(l,'texto')} →</a>`).join('');
+  const btn = p.boton ? `<a class="btn ${p.boton.sec?'btn-ghost':'btn-gold'} proj-btn" href="${href(p.boton)}"${ext(p.boton)}>${tr(p.boton,'texto')}</a>`
+            : (!p.enlaces ? `<button class="follow" data-act="${p.accion}">${p.accion==='comprar'?T.buy:T.follow}</button>` : '');
+  el.innerHTML = `<div class="art">${arte}</div>
+    <div class="body"><span class="status ${cls}">${lbl}</span><h4>${tr(p,'titulo')}</h4><p>${tr(p,'texto')}</p>
     <div class="meta">${(tr(p,'chips')||[]).map(c=>`<span class="chip">${c}</span>`).join('')}</div>
-    ${p.enlaces ? `<div class="proj-links">${p.enlaces.map((l,k)=>`<a class="follow${k?' sec':''}" href="${l.ancla?l.url:(l.interno?BASE+l.url:l.url)}"${(l.interno||l.ancla)?'':' target="_blank" rel="noopener"'}>${tr(l,'texto')} →</a>`).join('')}</div>`
-                : `<button class="follow" data-act="${p.accion}">${p.accion==='comprar'?T.buy:T.follow}</button>`}</div>`;
+    <div class="proj-foot">${links?`<div class="proj-links">${links}</div>`:''}${btn}</div></div>`;
   grid.appendChild(el);
 });
 grid.addEventListener('click',e=>{

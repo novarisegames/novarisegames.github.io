@@ -329,22 +329,24 @@ footer .logo-img{height:52px}
 #proyectos{background:radial-gradient(ellipse at top,rgba(123,92,255,.12),transparent 60%)}
 .proj-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
 .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;margin-top:3rem}
-.proj{border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--card);transition:transform .3s,border-color .3s}
+.proj{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--card);transition:transform .3s,border-color .3s}
 .proj:hover{transform:translateY(-6px);border-color:#4a3f80}
 .proj .art{aspect-ratio:630/500;position:relative;overflow:hidden}
 .proj .art svg,.proj .art img{width:100%;height:100%;object-fit:cover}
-.proj .status{position:absolute;top:14px;right:14px;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;padding:.35rem .75rem;border-radius:999px;background:rgba(7,6,13,.75);backdrop-filter:blur(6px)}
+.proj .status{display:inline-block;align-self:flex-start;margin-bottom:.7rem;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;padding:.35rem .75rem;border-radius:999px;background:rgba(7,6,13,.75);backdrop-filter:blur(6px)}
 .st-live{color:#6dffb0;border:1px solid rgba(109,255,176,.4)}
 .st-dev{color:var(--nova2);border:1px solid rgba(56,214,255,.4)}
 .st-soon{color:#c9b8ff;border:1px solid rgba(201,184,255,.35)}
-.proj .body{padding:24px 26px 28px}
+.proj .body{padding:22px 26px 26px;display:flex;flex-direction:column;flex:1}
 .proj h4{font-size:1.2rem;margin-bottom:.35rem}
 .proj p{color:var(--muted);font-size:.9rem;margin-bottom:1.1rem}
 .proj .meta{display:flex;gap:.5rem;flex-wrap:wrap}
 .chip{font-size:.72rem;padding:.3rem .7rem;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#c8c2de}
 .proj .follow{margin-top:1.2rem;font-size:.88rem;font-weight:600;color:var(--nova2);background:none;border:0;cursor:pointer;font-family:inherit;padding:0}
 .proj .follow:hover{text-decoration:underline}
-.proj-links{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin-top:1.2rem}
+.proj-foot{margin-top:auto;padding-top:1.3rem;display:flex;flex-direction:column;gap:.9rem}
+.proj-links{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+.proj-btn{justify-content:center;padding:.75rem 1.2rem;font-size:.9rem}
 .proj-links .follow{margin-top:0;display:inline-block}
 .proj-links .follow.sec{color:var(--gold2)}
 
