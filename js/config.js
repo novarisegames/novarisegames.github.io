@@ -21,10 +21,10 @@ window.NOVEDADES = [
     titulo:"Nueva web de NovaRise Games", titulo_en:"New NovaRise Games website",
     texto:"Estrenamos casa: toda la información de Reinos de Leyenda, sus héroes y nuestros próximos proyectos en un solo sitio, en español e inglés.",
     texto_en:"We have a new home: everything about Realms of Legend, its heroes and our upcoming projects in one place, in Spanish and English." },
-  { etiqueta:"Acceso anticipado", etiqueta_en:"Early access",
-    titulo:"Reinos de Leyenda, en acceso anticipado en itch.io", titulo_en:"Realms of Legend is in early access on itch.io",
-    texto:"El juego ya está a la venta por 1,99 $ con la campaña de 6 misiones, 7 reinos, 14 héroes y 39 criaturas. Y seguimos trabajando en él.",
-    texto_en:"The game is on sale for $1.99 with a 6-mission campaign, 7 realms, 14 heroes and 39 creatures. And we keep working on it." }
+  { fecha:"2026-11-21", etiqueta:"Lanzamiento", etiqueta_en:"Launch",
+    titulo:"¡Reinos de Leyenda ya está a la venta en itch.io!", titulo_en:"Realms of Legend is out now on itch.io!",
+    texto:"Lanzamos el juego completo en acceso anticipado por 1,99 $: campaña de 6 misiones, 7 reinos, 14 héroes y 39 criaturas. Y seguimos trabajando en él.",
+    texto_en:"We launched the full game in early access for $1.99: a 6-mission campaign, 7 realms, 14 heroes and 39 creatures. And we keep working on it." }
 ];
 
 /* Añade aquí cada nuevo proyecto. status: "live" | "early" | "dev" | "soon"
