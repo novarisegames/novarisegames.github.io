@@ -19,6 +19,7 @@ novarisegames.github.io/
 ├── demo/             # Demo de Reinos de Leyenda (5 días) → /demo/
 ├── tidebound/demo/   # Demo de Tidebound (8 minutos) → /tidebound/demo/
 │                     # Arte de Tidebound en assets/img/tidebound/ (épocas y jefes en config.js: TB_ERAS, TB_JEFES)
+├── assets/logo/       # Logotipo: SVG/PNG (oscuro, claro, vertical), símbolo, icono de app y favicon
 ├── assets/img/
 │   ├── portada/      # Portadas del juego (ES y EN)
 │   ├── heroes/       # Retratos: nombre.webp (miniatura) y nombre-grande.webp (visor)
