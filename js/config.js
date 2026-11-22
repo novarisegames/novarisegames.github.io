@@ -13,6 +13,10 @@ window.TIENDA = {
 /* Diario de desarrollo (sección «Novedades»). La más reciente, arriba.
    fecha: "AAAA-MM-DD" (opcional) · etiqueta: texto corto, p. ej. "v0.4" o "Demo" */
 window.NOVEDADES = [
+  { fecha:"2026-11-22", etiqueta:"Anuncio", etiqueta_en:"Announcement",
+    titulo:"Presentamos Cronos City, nuestro próximo juego", titulo_en:"Introducing Cronos City, our next game",
+    texto:"Ya estamos trabajando en nuestro tercer juego: construye tu ciudad, vive la vida de sus habitantes y conquista ciudades rivales a través de 10 eras, de la Prehistoria al futuro. Todavía no tiene fecha: síguenos en itch.io para enterarte primero.",
+    texto_en:"We're already working on our third game: build your city, live the lives of its people and conquer rival cities across 10 eras, from prehistory to the future. No release date yet: follow us on itch.io to hear first." },
   { fecha:"2026-11-22", etiqueta:"Nuevo juego", etiqueta_en:"New game",
     titulo:"¡Tidebound ya está en itch.io!", titulo_en:"Tidebound is out on itch.io!",
     texto:"Nuestro segundo juego, por 1,99 $: supervivencia en alta mar. Tu barco dispara solo; tú navegas, recoges madera y mejoras tu navío. Se juega en el navegador con teclado, mando o pantalla táctil, y su demo gratuita ya se puede jugar desde esta web.",
@@ -52,10 +56,13 @@ window.PROYECTOS = [
     enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#tidebound", interno:true, ancla:true},
               {texto:"Jugar la demo gratis", texto_en:"Play the free demo", url:"tidebound/demo/", interno:true},
               {texto:"Comprar · 1,99 $", texto_en:"Buy · $1.99", url:"https://novarisegames.itch.io/tidebound"} ] },
-  { titulo:"Próximo proyecto", titulo_en:"Next project",
-    texto:"Algo nuevo se está gestando en el estudio. Cuando esté listo, lo verás aquí primero.",
-    texto_en:"Something new is brewing at the studio. When it's ready, you'll see it here first.",
-    status:"soon", chips:["Por anunciar"], chips_en:["To be announced"], arte:"misterio", accion:"avisar" }
+  { titulo:"Cronos City", titulo_en:"Cronos City",
+    texto:"Construye tu ciudad, vive la vida de sus habitantes y conquista ciudades rivales a través de 10 eras de la historia. En desarrollo.",
+    texto_en:"Build your city, live the lives of its people and conquer rival cities across 10 eras of history. In development.",
+    status:"dev", chips:["Construcción","Simulación","Estrategia"], chips_en:["City building","Simulation","Strategy"],
+    imagen:"assets/img/cronos/cronos-portada.webp",
+    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#cronos", ancla:true},
+              {texto:"Seguir el desarrollo", texto_en:"Follow development", url:"https://novarisegames.itch.io"} ] }
 ];
 
 /* Reinos del juego: color de acento y nombre oficial en inglés */

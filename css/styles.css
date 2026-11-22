@@ -260,6 +260,24 @@ footer .logo-img{height:52px}
 .boss{aspect-ratio:16/9}
 .boss strong{font-size:1.4rem}.boss small{font-size:.9rem}
 
+/* CRONOS CITY */
+.cr{padding-top:60px}
+.cr-hero{display:grid;grid-template-columns:1.15fr 1fr;gap:3rem;align-items:center}
+.cr-hero>img{width:100%;height:auto;border-radius:22px;border:1px solid rgba(127,216,255,.35);box-shadow:0 40px 90px -40px rgba(56,214,255,.45)}
+.cr-pill{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem 1rem;border-radius:999px;border:1px solid rgba(232,182,90,.45);background:rgba(232,182,90,.08);color:var(--gold2);font-size:.8rem;font-weight:600}
+.cr-pill i{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+.cr .title{font-family:'Cinzel',serif;font-weight:900;margin:.9rem 0 .3rem;background:linear-gradient(180deg,#f4f7ff,#9fb6cc 60%,#5d7a96);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cr-tag{font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:#bfefff;margin-bottom:1rem}
+.cr-eras{list-style:none;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;margin:3rem 0 1.4rem}
+.cr-eras li{display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:12px 4px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:.74rem;color:#cfc9e3;text-align:center}
+.cr-eras span{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.78rem;background:linear-gradient(135deg,#e8b65a,#38d6ff);color:#07060d}
+.cr-feats{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.cr-feats li{padding:18px;border-radius:16px;border:1px solid var(--line);background:var(--card)}
+.cr-feats strong{display:block;font-size:.95rem;margin-bottom:.3rem}
+.cr-feats span{font-size:.84rem;color:var(--muted)}
+@media (max-width:980px){.cr-hero{grid-template-columns:1fr}.cr-eras{grid-template-columns:repeat(5,minmax(0,1fr))}.cr-feats{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.cr-feats{grid-template-columns:1fr}}
+
 /* COMUNIDAD (portada) */
 .cm-teaser{display:grid;grid-template-columns:1.6fr auto;gap:2.5rem;align-items:center;padding:44px 48px;border-radius:26px;border:1px solid #3b3270;background:radial-gradient(ellipse at 90% 50%,rgba(56,214,255,.12),transparent 55%),linear-gradient(135deg,#17123a,#0e0c1a 65%)}
 .cm-teaser .lead{max-width:640px}
