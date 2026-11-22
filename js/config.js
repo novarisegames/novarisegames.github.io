@@ -60,7 +60,7 @@ window.PROYECTOS = [
     texto:"Construye tu ciudad, vive la vida de sus habitantes y conquista ciudades rivales a través de 10 eras de la historia. En desarrollo.",
     texto_en:"Build your city, live the lives of its people and conquer rival cities across 10 eras of history. In development.",
     status:"dev", chips:["Construcción","Simulación","Estrategia"], chips_en:["City building","Simulation","Strategy"],
-    imagen:"assets/img/cronos/cronos-portada.webp?v=2",
+    imagen:"assets/img/cronos/cronos-portada.webp?v=3",
     enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#cronos", ancla:true},
               {texto:"Seguir el desarrollo", texto_en:"Follow development", url:"https://novarisegames.itch.io"} ] }
 ];
