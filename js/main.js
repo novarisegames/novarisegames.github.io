@@ -163,7 +163,16 @@ const nav=document.getElementById('nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
 const links=document.getElementById('links');
 document.getElementById('burger').onclick=()=>links.classList.toggle('open');
-links.addEventListener('click',e=>{ if(e.target.tagName==='A') links.classList.remove('open'); });
+links.addEventListener('click',e=>{ if(e.target.closest('a')) links.classList.remove('open'); });
+
+// Menús desplegables para elegir juego (demos y compra)
+const closeDD=()=>document.querySelectorAll('.dd.open').forEach(x=>{x.classList.remove('open');x.querySelector('.dd-btn').setAttribute('aria-expanded','false');});
+document.querySelectorAll('.dd').forEach(dd=>{
+  const b=dd.querySelector('.dd-btn');
+  b.addEventListener('click',e=>{ e.stopPropagation(); const abrir=!dd.classList.contains('open'); closeDD(); if(abrir){ dd.classList.add('open'); b.setAttribute('aria-expanded','true'); } });
+});
+document.addEventListener('click',e=>{ if(!e.target.closest('.dd')) closeDD(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDD(); });
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 // Animaciones de entrada
