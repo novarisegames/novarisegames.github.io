@@ -7,7 +7,7 @@ Web oficial de **NovaRise Games**, estudio independiente de videojuegos. Aquí s
 ## Estructura
 
 ```
-novarise-web/
+novarisegames.github.io/
 ├── index.html        # Página principal
 ├── css/
 │   └── styles.css    # Estilos
