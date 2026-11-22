@@ -13,6 +13,10 @@ window.TIENDA = {
 /* Diario de desarrollo (sección «Novedades»). La más reciente, arriba.
    fecha: "AAAA-MM-DD" (opcional) · etiqueta: texto corto, p. ej. "v0.4" o "Demo" */
 window.NOVEDADES = [
+  { fecha:"2026-11-22", etiqueta:"Nuevo juego", etiqueta_en:"New game",
+    titulo:"¡Tidebound ya está en itch.io!", titulo_en:"Tidebound is out on itch.io!",
+    texto:"Nuestro segundo juego: supervivencia en alta mar. Tu barco dispara solo; tú navegas, recoges madera y mejoras tu navío. Se juega en el navegador con teclado, mando o pantalla táctil, y tiene demo gratuita.",
+    texto_en:"Our second game: survival on the open sea. Your ship fires on its own; you sail, collect wood and upgrade your vessel. Plays in the browser with keyboard, gamepad or touch, and has a free demo." },
   { fecha:"2026-11-22", etiqueta:"Actualización", etiqueta_en:"Update",
     titulo:"¡Nuevos mapas para elegir!", titulo_en:"New maps to choose from!",
     texto:"Hemos añadido seis mapas nuevos de los siete reinos: cordilleras, archipiélagos, cañones, ríos y lagos. Ahora puedes escoger en cuál librar tu partida.",
@@ -32,13 +36,20 @@ window.NOVEDADES = [
 ];
 
 /* Añade aquí cada nuevo proyecto. status: "live" | "early" | "dev" | "soon"
-   Usa "imagen" con la ruta de una imagen propia, o "arte" para una ilustración provisional. */
+   Usa "imagen" con la ruta de una imagen propia, o "arte" para una ilustración provisional.
+   enlaces: botones a páginas externas, p. ej. [{texto:"Ver en itch.io", texto_en:"See on itch.io", url:"…"}] */
 window.PROYECTOS = [
   { titulo:"Reinos de Leyenda", titulo_en:"Realms of Legend",
     texto:"Estrategia fantástica por turnos. Ya jugable en acceso anticipado por 1,99 $, y sigue creciendo.",
     texto_en:"Turn-based fantasy strategy. Playable now in early access for $1.99, and still growing.",
     status:"early", chips:["Estrategia","Por turnos","Navegador"], chips_en:["Strategy","Turn-based","Browser"],
     imagen:"assets/img/portada/portada-es.webp", imagen_en:"assets/img/portada/portada-en.webp", accion:"comprar" },
+  { titulo:"Tidebound", titulo_en:"Tidebound",
+    texto:"Sobrevive en alta mar. Tu barco dispara solo: tú solo navega, recoge madera y mejora tu navío entre tormentas, noches cerradas y tesoros.",
+    texto_en:"Survive on the open sea. Your ship fires on its own: just sail, collect wood and upgrade your vessel through storms, dark nights and treasure.",
+    status:"live", chips:["Supervivencia naval","Acción","Navegador"], chips_en:["Naval survival","Action","Browser"], arte:"olas",
+    enlaces:[ {texto:"Ver en itch.io", texto_en:"See on itch.io", url:"https://novarisegames.itch.io/tidebound"},
+              {texto:"Probar la demo", texto_en:"Try the demo", url:"https://novarisegames.itch.io/tidebound-demo"} ] },
   { titulo:"Próximo proyecto", titulo_en:"Next project",
     texto:"Algo nuevo se está gestando en el estudio. Cuando esté listo, lo verás aquí primero.",
     texto_en:"Something new is brewing at the studio. When it's ready, you'll see it here first.",
