@@ -77,6 +77,7 @@ Cada vez que cambies uno de esos archivos, actualiza ese número en las dos pág
 - `sitemap.xml` y `robots.txt` en la raíz. Al añadir una página nueva, añádela al sitemap.
 - Imágenes para compartir: `assets/img/social/compartir-es.jpg` y `compartir-en.jpg` (1200×630).
 - `404.html`: página de error propia.
+- `google56d692fc0045d526.html`: verificación de Google Search Console. **No borrar.**
 
 ## Verla en local
 
