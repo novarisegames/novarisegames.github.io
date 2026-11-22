@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
-  <defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#7b5cff"/><stop offset="1" stop-color="#38d6ff"/></linearGradient></defs>
-  <rect width="520" height="120" fill="#07060d"/>
-  <g transform="translate(30 20) scale(2)"><path d="M20 2 L23.5 16.5 L38 20 L23.5 23.5 L20 38 L16.5 23.5 L2 20 L16.5 16.5Z" fill="url(#g)"/><circle cx="20" cy="20" r="4" fill="#fff"/></g>
-  <text x="125" y="74" font-family="Sora, Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#ece9f6">Nova<tspan fill="url(#g)">Rise</tspan></text>
-  <text x="352" y="72" font-family="Sora, Arial, Helvetica, sans-serif" font-size="20" font-weight="600" letter-spacing="6" fill="#a29cbf">GAMES</text>
-</svg>

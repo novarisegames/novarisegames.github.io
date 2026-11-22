@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="NovaRise Games"><title>NovaRise Games</title><g transform="translate(0 0) scale(1)">
+<defs><linearGradient id="sy" x1="0" y1="64" x2="64" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7b5cff"/><stop offset="1" stop-color="#38d6ff"/></linearGradient>
+<linearGradient id="ty" x1="6" y1="58" x2="36" y2="34" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7b5cff" stop-opacity="0"/><stop offset=".55" stop-color="#7b5cff"/><stop offset="1" stop-color="#38d6ff"/></linearGradient></defs>
+<path d="M6 58 Q22 54 34 36" fill="none" stroke="url(#ty)" stroke-width="6" stroke-linecap="round"/>
+<path d="M42.00 3.00 L45.60 18.40 L61.00 22.00 L45.60 25.60 L42.00 41.00 L38.40 25.60 L23.00 22.00 L38.40 18.40Z" fill="url(#sy)"/><circle cx="42" cy="22" r="3.4" fill="#ffffff"/>
+<path d="M56.00 43.00 L57.10 46.90 L61.00 48.00 L57.10 49.10 L56.00 53.00 L54.90 49.10 L51.00 48.00 L54.90 46.90Z" fill="#e8b65a"/></g></svg>
