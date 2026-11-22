@@ -182,6 +182,9 @@ nav.scrolled{background:rgba(7,6,13,.82);backdrop-filter:blur(14px);border-color
 .dd-btn{display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;font-family:inherit;white-space:nowrap}
 .links .dd-btn.nav-demo{background:none;color:var(--gold2);padding:.5rem 1rem;border:1px solid rgba(232,182,90,.45);border-radius:999px;font-weight:600;font-size:.85rem}
 .links .dd-btn.nav-demo:hover{background:rgba(232,182,90,.1)}
+.links .dd-btn.nav-link{background:none;border:0;padding:0;color:inherit;font-size:.92rem;gap:.35rem}
+.links .dd-btn.nav-link:hover,.dd-games.open .nav-link{color:var(--text)}
+.dd-games .dd-menu{left:0;right:auto}
 .nav-buy .dd-btn{padding:.6rem 1.1rem;font-size:.85rem}
 .dd .chev{transition:transform .2s;opacity:.8}
 .dd.open .chev{transform:rotate(180deg)}
@@ -380,7 +383,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;margin-top:40px}
   .links a.nav-demo{align-self:flex-start;margin:.4rem 0 1rem;padding:.6rem 1.2rem;border-bottom:1px solid rgba(232,182,90,.45)}
   .links a.lang{align-self:flex-start;margin:.9rem 0;padding:.35rem .7rem}
   .links .dd{display:block}
-  .links .dd-btn.nav-demo{pointer-events:none;border:0;padding:1rem 0 .3rem;color:var(--muted);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase}
+  .links .dd-btn.nav-demo,.links .dd-btn.nav-link{pointer-events:none;border:0;padding:1rem 0 .3rem;color:var(--muted);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase}
   .links .dd-btn .chev{display:none}
   .links .dd-menu{position:static;display:flex;width:auto;padding:0 0 .6rem;border:0;background:none;box-shadow:none}
   .links .dd-menu .dd-title{display:none}
