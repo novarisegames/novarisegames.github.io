@@ -15,7 +15,8 @@ novarisegames.github.io/
 ├── js/
 │   ├── config.js     # ← Enlace de compra, novedades, héroes, capturas y proyectos (ES + EN)
 │   └── main.js       # Lógica de la página
-├── demo/             # Demo jugable (5 días) en https://novarisegames.github.io/demo/
+├── demo/             # Demo de Reinos de Leyenda (5 días) → /demo/
+├── tidebound/demo/   # Demo de Tidebound (8 minutos) → /tidebound/demo/
 ├── assets/img/
 │   ├── portada/      # Portadas del juego (ES y EN)
 │   ├── heroes/       # Retratos: nombre.webp (miniatura) y nombre-grande.webp (visor)

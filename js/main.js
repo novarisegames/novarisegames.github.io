@@ -32,7 +32,7 @@ PROYECTOS.forEach(p=>{
   el.innerHTML = `<div class="art">${arte}<span class="status ${cls}">${lbl}</span></div>
     <div class="body"><h4>${tr(p,'titulo')}</h4><p>${tr(p,'texto')}</p>
     <div class="meta">${(tr(p,'chips')||[]).map(c=>`<span class="chip">${c}</span>`).join('')}</div>
-    ${p.enlaces ? `<div class="proj-links">${p.enlaces.map((l,k)=>`<a class="follow${k?' sec':''}" href="${l.url}" target="_blank" rel="noopener">${tr(l,'texto')} →</a>`).join('')}</div>`
+    ${p.enlaces ? `<div class="proj-links">${p.enlaces.map((l,k)=>`<a class="follow${k?' sec':''}" href="${l.interno?BASE+l.url:l.url}"${l.interno?'':' target="_blank" rel="noopener"'}>${tr(l,'texto')} →</a>`).join('')}</div>`
                 : `<button class="follow" data-act="${p.accion}">${p.accion==='comprar'?T.buy:T.follow}</button>`}</div>`;
   grid.appendChild(el);
 });
