@@ -32,7 +32,7 @@ PROYECTOS.forEach(p=>{
   el.innerHTML = `<div class="art">${arte}<span class="status ${cls}">${lbl}</span></div>
     <div class="body"><h4>${tr(p,'titulo')}</h4><p>${tr(p,'texto')}</p>
     <div class="meta">${(tr(p,'chips')||[]).map(c=>`<span class="chip">${c}</span>`).join('')}</div>
-    ${p.enlaces ? `<div class="proj-links">${p.enlaces.map((l,k)=>`<a class="follow${k?' sec':''}" href="${l.interno?BASE+l.url:l.url}"${l.interno?'':' target="_blank" rel="noopener"'}>${tr(l,'texto')} →</a>`).join('')}</div>`
+    ${p.enlaces ? `<div class="proj-links">${p.enlaces.map((l,k)=>`<a class="follow${k?' sec':''}" href="${l.ancla?l.url:(l.interno?BASE+l.url:l.url)}"${(l.interno||l.ancla)?'':' target="_blank" rel="noopener"'}>${tr(l,'texto')} →</a>`).join('')}</div>`
                 : `<button class="follow" data-act="${p.accion}">${p.accion==='comprar'?T.buy:T.follow}</button>`}</div>`;
   grid.appendChild(el);
 });
@@ -90,6 +90,26 @@ const reinosUsados=[...new Set(HEROS.map(h=>h.reino))];
 heroFilters.innerHTML=`<button type="button" data-r="">${T.all}</button>`+reinosUsados.map(r=>`<button type="button" data-r="${r}" style="--rc:${RE[r]||'var(--gold)'}"><i></i>${reinoN(r)}</button>`).join('');
 heroFilters.addEventListener('click',e=>{const b=e.target.closest('button'); if(b) renderHeroes(b.dataset.r);});
 renderHeroes('');
+
+// Tidebound: épocas y jefes
+const TBB=BASE+'assets/img/tidebound/';
+const eraGrid=document.getElementById('eraGrid'), bossGrid=document.getElementById('bossGrid');
+if(eraGrid){
+  const ER=window.TB_ERAS||[], JF=window.TB_JEFES||[];
+  const eraList=ER.map((e,i)=>({src:TBB+e.img+'-grande.webp',title:(i+1)+' · '+tr(e,'nombre'),sub:'',bio:tr(e,'texto')}));
+  ER.forEach((e,i)=>{
+    const li=document.createElement('li'); li.className='reveal';
+    li.innerHTML=`<button type="button" class="era"><img src="${TBB+e.img}.webp" alt="${tr(e,'nombre')}: ${tr(e,'texto')}" loading="lazy" width="640" height="360"><span class="era-n">${i+1}</span><span class="era-cap"><strong>${tr(e,'nombre')}</strong><small>${tr(e,'texto')}</small></span></button>`;
+    li.querySelector('button').onclick=()=>openLb(eraList,i,true);
+    eraGrid.appendChild(li);
+  });
+  const bossList=JF.map(j=>({src:TBB+j.img+'-grande.webp',title:tr(j,'nombre'),sub:'',bio:tr(j,'texto')}));
+  JF.forEach((j,i)=>{
+    const b=document.createElement('button'); b.type='button'; b.className='boss reveal';
+    b.innerHTML=`<img src="${TBB+j.img}.webp" alt="${tr(j,'nombre')}" loading="lazy" width="640" height="360"><span class="cap"><strong>${tr(j,'nombre')}</strong><small>${tr(j,'texto')}</small></span>`;
+    b.onclick=()=>openLb(bossList,i,true); bossGrid.appendChild(b);
+  });
+}
 
 // Mapas
 const mapGrid=document.getElementById('mapGrid'), MB=BASE+'assets/img/mapas/', MAPS=window.MAPAS||[];

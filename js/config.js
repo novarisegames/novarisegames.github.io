@@ -49,7 +49,8 @@ window.PROYECTOS = [
     texto_en:"Survive on the open sea. Your ship fires on its own: just sail, collect wood and upgrade your vessel through storms, dark nights and treasure. Full game for $1.99.",
     status:"live", chips:["Supervivencia naval","Acción","Navegador"], chips_en:["Naval survival","Action","Browser"],
     imagen:"assets/img/tidebound/portada.webp", arte:"olas",
-    enlaces:[ {texto:"Jugar la demo gratis", texto_en:"Play the free demo", url:"tidebound/demo/", interno:true},
+    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#tidebound", interno:true, ancla:true},
+              {texto:"Jugar la demo gratis", texto_en:"Play the free demo", url:"tidebound/demo/", interno:true},
               {texto:"Comprar · 1,99 $", texto_en:"Buy · $1.99", url:"https://novarisegames.itch.io/tidebound"} ] },
   { titulo:"Próximo proyecto", titulo_en:"Next project",
     texto:"Algo nuevo se está gestando en el estudio. Cuando esté listo, lo verás aquí primero.",
@@ -124,6 +125,21 @@ window.MAPAS = [
   { img:"archipielago", nombre:"El Archipiélago", nombre_en:"The Archipelago", etiqueta:"Nuevo", etiqueta_en:"New",
     texto:"Los siete reinos repartidos en islas unidas por puentes: quien controla los pasos, controla el mapa.",
     texto_en:"The seven realms spread across islands linked by bridges: whoever holds the crossings holds the map." }
+];
+
+/* Tidebound: las 7 épocas de barcos y los jefes (imágenes en assets/img/tidebound/) */
+window.TB_ERAS = [
+  { img:"era-prehistoria", nombre:"Prehistoria", nombre_en:"Prehistoric", texto:"Canoa de troncos con vela de piel", texto_en:"Log canoe with a hide sail" },
+  { img:"era-antigua",     nombre:"Antigua",     nombre_en:"Ancient",     texto:"Galera de remos con espolón de bronce", texto_en:"Oared galley with a bronze ram" },
+  { img:"era-medieval",    nombre:"Medieval",    nombre_en:"Medieval",    texto:"Coca fortificada con castillos de proa y popa", texto_en:"Fortified cog with fore and aft castles" },
+  { img:"era-piratas",     nombre:"Piratas",     nombre_en:"Pirates",     texto:"Galeón de guerra cargado de cañones", texto_en:"War galleon bristling with cannons" },
+  { img:"era-industrial",  nombre:"Industrial",  nombre_en:"Industrial",  texto:"Vapor de ruedas que desafía la tormenta", texto_en:"Paddle steamer that defies the storm" },
+  { img:"era-moderna",     nombre:"Moderna",     nombre_en:"Modern",      texto:"Fragata con helipuerto entre el hielo", texto_en:"Frigate with a helipad among the ice" },
+  { img:"era-futurista",   nombre:"Futurista",   nombre_en:"Futuristic",  texto:"Nave flotante de energía sobre el océano", texto_en:"Hovering energy ship above the ocean" }
+];
+window.TB_JEFES = [
+  { img:"jefe-kraken",   nombre:"El Kraken",   nombre_en:"The Kraken",   texto:"¡El Kraken despierta! Sus tentáculos surgen del agua en plena noche.", texto_en:"The Kraken awakens! Its tentacles rise from the water in the dead of night." },
+  { img:"jefe-leviatan", nombre:"El Leviatán", nombre_en:"The Leviathan", texto:"¡Un Leviatán se acerca! Una mole de roca y fuego bajo la tormenta.", texto_en:"A Leviathan approaches! A mass of rock and fire beneath the storm." }
 ];
 
 /* Capturas de la sección "Así se juega". Las imágenes están en assets/img/capturas/
