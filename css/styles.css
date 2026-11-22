@@ -1,3 +1,6 @@
+/* Tipografías servidas desde la propia web (sin Google Fonts). Licencia SIL OFL: assets/fonts/ */
+@font-face{font-family:'Sora';src:url('../assets/fonts/sora.woff') format('woff');font-weight:100 800;font-style:normal;font-display:swap}
+@font-face{font-family:'Cinzel';src:url('../assets/fonts/cinzel.woff') format('woff');font-weight:400 900;font-style:normal;font-display:swap}
 :root{
   --bg:#07060d; --bg2:#0e0c1a; --card:#141226; --line:#2a2547;
   --text:#ece9f6; --muted:#a29cbf; --gold:#e8b65a; --gold2:#ffd98a;

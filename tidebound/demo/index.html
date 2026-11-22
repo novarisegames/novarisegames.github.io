@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
+<style>@font-face{font-family:'Cinzel';src:url('/assets/fonts/cinzel.woff') format('woff');font-weight:400 900;font-style:normal;font-display:swap}</style>
 <title>Tidebound (Demo)</title>
 <meta name="description" content="Juega gratis la demo de Tidebound en tu navegador: sobrevive en alta mar y mejora tu barco durante 8 minutos. Juego completo por 1,99 $.">
 <link rel="canonical" href="https://novarisegames.github.io/tidebound/demo/">
@@ -73,7 +73,7 @@ body.ph #pi{display:block;position:fixed;left:50%;bottom:calc(env(safe-area-inse
 <div class="ov h" id="pz"><h1 style="font-size:30px">Pausa</h1><div class="cards"><label>Volumen<input type="range" id="vol" min="0" max="100" style="width:100%"></label><label><input type="checkbox" id="shk"> Vibración de pantalla</label><label><input type="checkbox" id="mus"> Música</label><button id="ql"></button><button id="phb">Modo foto (H)</button><button id="fs">Pantalla completa (F)</button></div><button id="rs">Continuar</button><button id="qt" style="background:var(--card);color:var(--fg);border:2px solid var(--ac)">Salir al menú</button></div>
 <div class="ov h" id="over"><h1 id="ovt" style="font-size:34px">Naufragio</h1><p id="res"></p><div id="promo" style="display:none"><p style="font-size:14px;margin:6px 0 10px">¿Te ha gustado la demo? El juego completo traerá las 7 épocas de barcos, el Mar del Norte, más jefes y más mejoras.</p><button id="pl">Seguir el juego completo</button></div><button id="re">Navegar de nuevo</button></div>
 <script src="three.min.js"></script>
-<script>window.THREE||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>')</script>
+<script>window.THREE||document.write('<script src="three.min.js"><\/script>')</script>
 <script>
 addEventListener('pointerdown',()=>{try{window.focus()}catch(e){}});
 const DEMO_LINK='https://novarisegames.itch.io/tidebound',DEMO_T=480,DEMO_ERA=3,DEMO_SHOP=2;
