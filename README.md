@@ -120,7 +120,7 @@ Para usar un dominio propio (por ejemplo `novarisegames.com`), añádelo en **Se
 - [ ] Más capturas (batallas, ciudades), tráiler y logo de NovaRise Games
 - [x] Demo jugable gratis
 - [x] Compra a través de itch.io (1,99 $)
-- [ ] Correo de contacto real
+- [x] Correo de contacto: novarisegames26@gmail.com
 - [ ] Boletín propio (opcional; ahora se usa «Seguir en itch.io»)
 - [ ] Páginas legales: aviso legal, privacidad, cookies, condiciones de venta
 - [x] Versión en inglés (/en/)
