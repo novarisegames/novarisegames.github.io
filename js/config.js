@@ -91,24 +91,27 @@ window.HEROES = [
 /* Mapas que se pueden escoger en el juego (sección «Elige tu mapa»).
    Imágenes en assets/img/mapas/ (archivo.webp miniatura, archivo-grande.webp visor). */
 window.MAPAS = [
-  { img:"cordillera",    nombre:"Cordillera Central",    nombre_en:"Central Range",
+  { img:"tierras-rotas", nombre:"Tierras Rotas", nombre_en:"Broken Lands", etiqueta:"Original", etiqueta_en:"Original",
+    texto:"El mapa original de Reinos de Leyenda: un reino dividido donde empieza la leyenda.",
+    texto_en:"The original Realms of Legend map: a divided realm where the legend begins." },
+  { img:"costa-de-los-faros", nombre:"Costa de los Faros", nombre_en:"Lighthouse Coast", etiqueta:"Nuevo", etiqueta_en:"New",
+    texto:"Los faros vigilan la costa mientras un mar interior rodea el castillo central.",
+    texto_en:"Lighthouses watch over the coast while an inland sea surrounds the central castle." },
+  { img:"corona-de-cristal", nombre:"Corona de Cristal", nombre_en:"Crystal Crown", etiqueta:"Nuevo", etiqueta_en:"New",
+    texto:"Ríos y cascadas descienden entre cuevas de cristal hasta el corazón del continente.",
+    texto_en:"Rivers and waterfalls run past crystal caves down to the heart of the continent." },
+  { img:"reinos-elementales", nombre:"Reinos Elementales", nombre_en:"Elemental Realms", etiqueta:"Nuevo", etiqueta_en:"New",
+    texto:"Hielo, fuego, arena y bosque rodean una meseta central cercada por cañones y puentes de piedra.",
+    texto_en:"Ice, fire, sand and forest surround a central plateau ringed by canyons and stone bridges." },
+  { img:"confin-de-los-siete-reinos", nombre:"Confín de los Siete Reinos", nombre_en:"Edge of the Seven Realms", etiqueta:"Nuevo", etiqueta_en:"New",
+    texto:"Caminos y arroyos unen los siete reinos hasta el último confín, con minas de oro en cada rincón.",
+    texto_en:"Trails and streams link the seven realms to the farthest edge, with gold mines in every corner." },
+  { img:"cordillera-blanca", nombre:"La Cordillera Blanca", nombre_en:"The White Ridge", etiqueta:"Nuevo", etiqueta_en:"New",
     texto:"Una gran cordillera nevada parte el continente en dos. Elegir por dónde cruzarla lo cambia todo.",
-    texto_en:"A great snowy range splits the continent in two. Choosing where to cross changes everything." },
-  { img:"archipielago",  nombre:"Archipiélago",          nombre_en:"Archipelago",
+    texto_en:"A great snowy ridge splits the continent in two. Choosing where to cross changes everything." },
+  { img:"archipielago", nombre:"El Archipiélago", nombre_en:"The Archipelago", etiqueta:"Nuevo", etiqueta_en:"New",
     texto:"Los siete reinos repartidos en islas unidas por puentes: quien controla los pasos, controla el mapa.",
-    texto_en:"The seven realms spread across islands linked by bridges: whoever holds the crossings holds the map." },
-  { img:"meseta",        nombre:"Meseta de los Cañones", nombre_en:"Canyon Plateau",
-    texto:"El castillo central se alza sobre una meseta rodeada de cañones, ríos y puentes de piedra.",
-    texto_en:"The central castle rises on a plateau ringed by canyons, rivers and stone bridges." },
-  { img:"valle-del-rio", nombre:"Valle del Río",         nombre_en:"River Valley",
-    texto:"Un río serpentea por el corazón del continente entre ruinas, minas y una antigua estatua.",
-    texto_en:"A river winds through the heart of the continent among ruins, mines and an ancient statue." },
-  { img:"senderos",      nombre:"Tierra de Senderos",    nombre_en:"Land of Trails",
-    texto:"Caminos y arroyos se entrelazan por todo el mapa, con minas de oro esperando en cada rincón.",
-    texto_en:"Trails and streams weave across the whole map, with gold mines waiting in every corner." },
-  { img:"lagos",         nombre:"Lagos Interiores",      nombre_en:"Inland Lakes",
-    texto:"Un mar interior rodea el castillo principal y los caminos lo bordean de reino en reino.",
-    texto_en:"An inland sea surrounds the main castle, with roads skirting it from realm to realm." }
+    texto_en:"The seven realms spread across islands linked by bridges: whoever holds the crossings holds the map." }
 ];
 
 /* Capturas de la sección "Así se juega". Las imágenes están en assets/img/capturas/

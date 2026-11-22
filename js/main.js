@@ -96,7 +96,7 @@ if(mapGrid){
   MAPS.forEach((m,i)=>{
     const b=document.createElement('button'); b.type='button'; b.className='map-tile reveal';
     b.setAttribute('aria-label',tr(m,'nombre'));
-    b.innerHTML=`<img src="${MB+m.img}.webp" alt="${tr(m,'nombre')}" loading="lazy" width="600" height="600"><div class="cap"><strong>${tr(m,'nombre')}</strong><span>${tr(m,'texto')}</span></div>`;
+    b.innerHTML=`<img src="${MB+m.img}.webp" alt="${tr(m,'nombre')}" loading="lazy" width="600" height="600">${tr(m,'etiqueta')?`<em class="map-tag${m.etiqueta==='Original'?' orig':''}">${tr(m,'etiqueta')}</em>`:''}<div class="cap"><strong>${tr(m,'nombre')}</strong><span>${tr(m,'texto')}</span></div>`;
     b.onclick=()=>openLb(mapList,i,true);
     mapGrid.appendChild(b);
   });
