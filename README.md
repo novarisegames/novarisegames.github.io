@@ -70,6 +70,14 @@ cámbialo también allí. Los nombres oficiales en inglés de los reinos están 
 **Caché del navegador**: `index.html` y `en/index.html` cargan `styles.css`, `config.js` y `main.js` con `?v=AAAAMMDDHHMM`.
 Cada vez que cambies uno de esos archivos, actualiza ese número en las dos páginas para que los visitantes reciban la versión nueva al momento.
 
+## SEO
+
+- Títulos, descripciones, `canonical`, `hreflang` y vista previa para redes en el `<head>` de `index.html` y `en/index.html`.
+- Datos estructurados (JSON-LD: Organization, WebSite y un VideoGame por juego, con precio). Si cambias precio o contenido, actualízalos también ahí.
+- `sitemap.xml` y `robots.txt` en la raíz. Al añadir una página nueva, añádela al sitemap.
+- Imágenes para compartir: `assets/img/social/compartir-es.jpg` y `compartir-en.jpg` (1200×630).
+- `404.html`: página de error propia.
+
 ## Verla en local
 
 Abre `index.html` en el navegador, o arranca un servidor:

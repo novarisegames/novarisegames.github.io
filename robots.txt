@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://novarisegames.github.io/sitemap.xml
