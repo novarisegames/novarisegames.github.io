@@ -108,7 +108,7 @@ la web no guarda nada. Para publicar un juego aprobado:
 
 ## Protección de imágenes
 
-- Las imágenes grandes (`*-grande.webp`, las del visor) llevan marca de agua «© NovaRise Games».
+- Las imágenes grandes (`*-grande.webp`, las del visor) y las del kit de prensa (`prensa/img/` y el .zip) llevan marca de agua «© NovaRise Games».
   Si añades imágenes nuevas, márcalas igual antes de subirlas.
 - La web bloquea el menú contextual, el arrastre y la pulsación larga sobre las imágenes (`js/main.js` y `css/styles.css`).
 - Ninguna medida impide una captura de pantalla; la marca de agua es la protección principal.
