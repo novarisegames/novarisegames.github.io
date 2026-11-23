@@ -8,8 +8,12 @@ Web oficial de **NovaRise Games**, estudio independiente de videojuegos. Aquí s
 
 ```
 novarisegames.github.io/
-├── index.html        # Página principal (español)
-├── en/index.html     # Versión en inglés (comparte css, js y assets)
+├── index.html        # Portada (español): hero + carrusel de destacados + demos, compra, Cronos, novedades…
+├── en/index.html     # Portada en inglés (comparte css, js y assets)
+├── reinos-de-leyenda/        # Página propia de Reinos de Leyenda (héroes, así se juega, mapas)
+├── tidebound/index.html      # Página propia de Tidebound (épocas y jefes)
+├── en/realms-of-legend/      # Página de Reinos en inglés
+├── en/tidebound/             # Página de Tidebound en inglés
 ├── css/
 │   └── styles.css    # Estilos
 ├── js/
@@ -28,6 +32,13 @@ novarisegames.github.io/
 │   └── banner-caballero.webp
 └── .nojekyll         # Para que GitHub Pages sirva los archivos tal cual
 ```
+
+## Carrusel de destacados
+
+El carrusel de la portada (estilo Steam) se rellena desde `window.CARRUSEL` en `js/config.js`:
+portada, texto, etiquetas, precio, demo, enlace de compra, página del juego y 4 capturas
+(`img` = miniatura, `grande` = la que aparece al pasar el ratón). Para añadir un juego nuevo,
+añade un bloque más a la lista. Pasa solo cada 6,5 s y se detiene al poner el ratón encima.
 
 ## Tareas habituales
 

@@ -59,7 +59,7 @@
   {
    "@type": "VideoGame",
    "name": "Reinos de Leyenda",
-   "url": "https://novarisegames.github.io/#juego",
+   "url": "https://novarisegames.github.io/reinos-de-leyenda/",
    "description": "Estrategia fantástica por turnos en acceso anticipado: 7 reinos, 14 héroes, 39 criaturas, 7 mapas y campaña de 6 misiones.",
    "image": "https://novarisegames.github.io/assets/img/portada/portada-es.jpg",
    "genre": [
@@ -97,7 +97,7 @@
   {
    "@type": "VideoGame",
    "name": "Tidebound",
-   "url": "https://novarisegames.github.io/#tidebound",
+   "url": "https://novarisegames.github.io/tidebound/",
    "description": "Supervivencia en alta mar: tu barco dispara solo, tú navegas, recoges madera y lo mejoras a través de 7 épocas, del Kraken al Leviatán.",
    "image": "https://novarisegames.github.io/assets/img/tidebound/portada.jpg",
    "genre": [
@@ -137,7 +137,7 @@
 <link rel="icon" href="assets/logo/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="assets/logo/favicon.ico" sizes="48x48">
 <link rel="preload" href="assets/fonts/sora.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="css/styles.css?v=2026112222171">
+<link rel="stylesheet" href="css/styles.css?v=2026112301">
 </head>
 <body>
 
@@ -157,8 +157,8 @@
   <div class="wrap nav-in">
     <a href="#inicio" class="logo" aria-label="NovaRise Games · Inicio"><img src="assets/logo/novarise-logo-oscuro.svg" alt="NovaRise Games" width="163" height="38" class="logo-img"></a>
     <div class="links" id="links">
-      <div class="dd dd-games"><button type="button" class="nav-link dd-btn" aria-expanded="false" aria-haspopup="true">Juegos<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="dd-menu"><span class="dd-title">Nuestros juegos</span><a class="dd-item" href="#juego"><img src="assets/img/portada/portada-es.webp" alt="" width="64" height="51" loading="lazy"><span><strong>Reinos de Leyenda</strong><small>Estrategia fantástica por turnos</small></span></a><a class="dd-item" href="#tidebound"><img src="assets/img/tidebound/portada.webp" alt="" width="64" height="51" loading="lazy"><span><strong>Tidebound</strong><small>Supervivencia en alta mar</small></span></a><a class="dd-item" href="#cronos"><img src="assets/img/cronos/cronos-portada.webp?v=3" alt="" width="64" height="51" loading="lazy"><span><strong>Cronos City</strong><small>En desarrollo · próximamente</small></span></a></div></div>
-      <a href="#jugabilidad">Así se juega</a>
+      <div class="dd dd-games"><button type="button" class="nav-link dd-btn" aria-expanded="false" aria-haspopup="true">Juegos<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="dd-menu"><span class="dd-title">Nuestros juegos</span><a class="dd-item" href="reinos-de-leyenda/"><img src="assets/img/portada/portada-es.webp" alt="" width="64" height="51" loading="lazy"><span><strong>Reinos de Leyenda</strong><small>Estrategia fantástica por turnos</small></span></a><a class="dd-item" href="tidebound/"><img src="assets/img/tidebound/portada.webp" alt="" width="64" height="51" loading="lazy"><span><strong>Tidebound</strong><small>Supervivencia en alta mar</small></span></a><a class="dd-item" href="#cronos"><img src="assets/img/cronos/cronos-portada.webp?v=3" alt="" width="64" height="51" loading="lazy"><span><strong>Cronos City</strong><small>En desarrollo · próximamente</small></span></a></div></div>
+      <a href="reinos-de-leyenda/#jugabilidad">Así se juega</a>
       <a href="#novedades">Novedades</a>
       <a href="comunidad/">Creadores</a>
       <a href="#faq">FAQ</a>
@@ -169,6 +169,7 @@
     <button class="burger" id="burger" aria-label="Menú"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   </div>
 </nav>
+
 
 <!-- ===== HERO ===== -->
 <header class="hero" id="inicio">
@@ -190,94 +191,24 @@
       </div>
     </div>
     <div class="hero-covers reveal">
-      <a class="hero-card c1" href="#juego"><img src="assets/img/portada/portada-es.webp" alt="Portada de Reinos de Leyenda" width="630" height="500" fetchpriority="high"><span class="badge">★ Acceso anticipado</span></a>
-      <a class="hero-card c2" href="#tidebound"><img src="assets/img/tidebound/portada.webp" alt="Portada de Tidebound" width="630" height="500"><span class="badge">★ Nuevo</span></a>
+      <a class="hero-card c1" href="reinos-de-leyenda/"><img src="assets/img/portada/portada-es.webp" alt="Portada de Reinos de Leyenda" width="630" height="500" fetchpriority="high"><span class="badge">★ Acceso anticipado</span></a>
+      <a class="hero-card c2" href="tidebound/"><img src="assets/img/tidebound/portada.webp" alt="Portada de Tidebound" width="630" height="500"><span class="badge">★ Nuevo</span></a>
     </div>
   </div>
 </header>
 
-<!-- ===== JUEGO ===== -->
-<section id="juego">
+<!-- ===== DESTACADOS (CARRUSEL) ===== -->
+<section class="featured" id="destacados" aria-label="Nuestros juegos">
   <div class="wrap">
-    <div class="game-head reveal">
-      <span class="eyebrow">Nuestro primer lanzamiento</span>
-      <div class="game-logo">Reinos de Leyenda</div>
-      <div class="ornament"><i></i>✦<i></i></div>
-      <p class="tagline">Un reino dividido. Siete coronas. Una sola leyenda.</p>
-      <p class="wip-pill"><i></i>En desarrollo activo · acceso anticipado</p>
-      <p class="lead">Estrategia fantástica por turnos. Siete reinos luchan por la supremacía, del Oasis Dorado a la Corona de Hielo, de la Torre Azul a la Ceniza Ardiente. Elige el tuyo, recluta a sus héroes y conviértelo en leyenda.</p>
+    <div class="feat-head reveal">
+      <div><span class="eyebrow">Destacados</span><h2>Nuestros juegos</h2></div>
     </div>
-
-    <div class="facts reveal">
-      <div><strong>7</strong><span>reinos</span></div>
-      <div><strong>14</strong><span>héroes</span></div>
-      <div><strong>39</strong><span>criaturas</span></div>
-      <div><strong>6</strong><span>misiones de campaña</span></div>
-      <div><strong>4</strong><span>idiomas</span></div>
+    <div class="carousel reveal" id="carousel" aria-roledescription="carousel" tabindex="-1">
+      <div class="car-track"></div>
+      <button type="button" class="car-nav car-prev">‹</button>
+      <button type="button" class="car-nav car-next">›</button>
+      <div class="car-dots"></div>
     </div>
-
-    <div class="banner reveal">
-      <img src="assets/img/banner-caballero.webp" alt="Roland, caballero de la Fortaleza Bermeja, ante su castillo" loading="lazy">
-      <div class="banner-txt">
-        <p class="quote">«Cada reino tiene su héroe.<br>¿Cuál será el tuyo?»</p>
-        <div class="banner-btns"><a class="btn btn-gold" href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener" data-buy>Empieza tu conquista · 1,99 $</a><a href="demo/" class="btn btn-ghost"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg> Demo gratis</a></div>
-      </div>
-    </div>
-
-    <div class="features">
-      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/></svg></div><h4>Táctica por turnos</h4><p>Planifica cada movimiento. En el campo de batalla gana quien mejor piensa, no quien más rápido pulsa.</p></div>
-      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V10l4-3 4 3 4-3 4 3v11z M9 21v-5h6v5 M4 10V5M20 10V5"/></svg></div><h4>Reinos únicos</h4><p>Alba Violeta, Torre Azul, Fortaleza Bermeja, Corona de Hielo, Ceniza Ardiente, Puerto Sur y Oasis Dorado: cada uno con su estilo y su forma de hacer la guerra.</p></div>
-      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div><h4>Héroes legendarios</h4><p>Caballeros, archimagas, guardabosques, corsarios y señores de la guerra. Recluta a los tuyos y llévalos a la gloria.</p></div>
-      <div class="feat reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></div><h4>Conquista</h4><p>Expande tus fronteras, defiende tus castillos y haz que tu reino domine sobre todos los demás.</p></div>
-    </div>
-
-    <div class="heroes-head reveal">
-      <span class="eyebrow">Los héroes</span>
-      <h2 class="title">Conoce a los héroes de los Reinos</h2>
-      <p class="lead" style="margin:0 auto">Siete reinos, cada uno con sus héroes. Filtra por reino y toca cualquier retrato para verlo a tamaño completo.</p>
-    </div>
-    <div class="filters reveal" id="heroFilters" role="toolbar" aria-label="Filtrar héroes por reino"></div>
-    <div class="heroes" id="heroGrid"></div>
-  </div>
-</section>
-
-<!-- ===== JUGABILIDAD ===== -->
-<section id="jugabilidad">
-  <div class="wrap">
-    <div class="play-head reveal">
-      <span class="eyebrow">Así se juega</span>
-      <h2 class="title">Tu reino, día a día</h2>
-      <p class="lead">Mueve a tus héroes por el mapa, conquista minas, lanza hechizos y cumple misiones. Cada día cuenta: al terminarlo, tus rivales también mueven ficha.</p>
-    </div>
-    <div class="play">
-      <div class="viewer reveal">
-        <button class="shot-main" id="shotMain" type="button" aria-label="Ver captura a pantalla completa">
-          <img id="shotImg" alt="" width="1220" height="864">
-          <span class="zoom">⤢ Ampliar</span>
-        </button>
-        <p class="shot-cap" id="shotCap"></p>
-        <div class="thumbs" id="thumbs"></div>
-      </div>
-      <ul class="mechs">
-        <li class="reveal"><span class="mi">🗺️</span><div><strong>Explora el mapa</strong><p>Avanza entre la niebla de guerra y descubre castillos, ruinas, minas y criaturas.</p></div></li>
-        <li class="reveal"><span class="mi">⛏️</span><div><strong>Captura minas</strong><p>Cada mina que controlas te da recursos cada día: oro, madera, mineral y gemas.</p></div></li>
-        <li class="reveal"><span class="mi">⚔️</span><div><strong>Haz crecer a tus héroes</strong><p>Ataque, defensa, maná, logística y diplomacia. Cada nivel los hace más fuertes.</p></div></li>
-        <li class="reveal"><span class="mi">✨</span><div><strong>Lanza hechizos</strong><p>Ciudad Portal, Clarividencia, Marcha Forzada… La magia puede cambiar el rumbo de la partida.</p></div></li>
-        <li class="reveal"><span class="mi">🚩</span><div><strong>Misiones y tutorial</strong><p>Un tutorial guiado y misiones para que domines tu reino desde el primer día.</p></div></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ===== MAPAS ===== -->
-<section id="mapas" style="padding-top:40px">
-  <div class="wrap">
-    <div class="maps-head reveal">
-      <span class="eyebrow">Nuevo · Mapas</span>
-      <h2 class="title">Elige tu mapa</h2>
-      <p class="lead">Siete mapas: el original, Tierras Rotas, y seis nuevos, cada uno con su propia forma de jugar. Escoge dónde librar tu guerra.</p>
-    </div>
-    <div class="maps" id="mapGrid"></div>
   </div>
 </section>
 
@@ -382,37 +313,6 @@
         </dl>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== TIDEBOUND ===== -->
-<section id="tidebound" class="tb">
-  <div class="tb-hero">
-    <img src="assets/img/tidebound/jefe-kraken-grande.webp" alt="Un galeón pirata se enfrenta al Kraken en Tidebound" loading="lazy">
-    <div class="wrap tb-hero-in reveal">
-      <span class="eyebrow">Nuevo juego · ya disponible</span>
-      <h2 class="tb-logo">Tidebound</h2>
-      <p class="tb-tag">Sobrevive al mar · Evoluciona tu barco</p>
-      <p class="lead">Sobrevive en alta mar. Tu barco dispara solo: tú solo navega, recoge madera y mejora tu navío. De una canoa de troncos a una nave del futuro, entre tormentas, noches cerradas y monstruos marinos.</p>
-      <div class="tb-btns">
-        <a href="tidebound/demo/" class="btn btn-gold"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg> Jugar la demo gratis</a>
-        <a href="https://novarisegames.itch.io/tidebound" target="_blank" rel="noopener" class="btn btn-ghost">Juego completo · 1,99 $</a>
-      </div>
-      <p class="tb-ctrl">Navegador · teclado, mando o táctil</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="tb-head reveal">
-      <span class="eyebrow">7 épocas · 1 océano · sin piedad</span>
-      <h3 class="title">Evoluciona tu barco a través de la historia</h3>
-      <p class="lead">Cada nivel te acerca a la siguiente época. Toca una para verla en grande.</p>
-    </div>
-    <ol class="eras" id="eraGrid"></ol>
-    <div class="tb-head reveal" style="margin-top:4.5rem">
-      <span class="eyebrow">Jefes</span>
-      <h3 class="title">Lo que acecha bajo las olas</h3>
-    </div>
-    <div class="bosses" id="bossGrid"></div>
   </div>
 </section>
 
@@ -540,13 +440,14 @@
         <a href="#inicio" class="logo" aria-label="NovaRise Games · Inicio"><img src="assets/logo/novarise-logo-oscuro.svg" alt="NovaRise Games" width="197" height="46" class="logo-img"></a>
         <p style="color:var(--muted);font-size:.9rem;margin-top:1rem;max-width:300px">Estudio independiente de videojuegos. Creamos mundos que se elevan.</p>
       </div>
-      <div><h5>Juegos</h5><ul><li><a href="#juego">Reinos de Leyenda</a></li><li><a href="#tidebound">Tidebound</a></li><li><a href="#probar">Demos gratis</a></li><li><a href="#proyectos">Próximamente</a></li></ul></div>
+      <div><h5>Juegos</h5><ul><li><a href="reinos-de-leyenda/">Reinos de Leyenda</a></li><li><a href="tidebound/">Tidebound</a></li><li><a href="#probar">Demos gratis</a></li><li><a href="#proyectos">Próximamente</a></li></ul></div>
       <div><h5>Tienda</h5><ul><li><a href="#comprar">Precio</a></li><li><a href="https://novarisegames.itch.io/reinos-de-leyenda" target="_blank" rel="noopener">itch.io</a></li><li><a href="#faq">Ayuda</a></li></ul></div>
       <div><h5>Contacto</h5><ul><li><a href="mailto:novarisegames26@gmail.com">novarisegames26@gmail.com</a></li><li><a href="https://novarisegames.itch.io" target="_blank" rel="noopener">NovaRise Games en itch.io</a></li><li><a href="#estudio">Sobre nosotros</a></li><li><a href="prensa/">Prensa</a></li><li><a href="comunidad/">Escaparate de creadores</a></li><li><a href="en/" hreflang="en">English version</a></li></ul></div>
     </div>
     <div class="copy"><span>© <span id="yr"></span> NovaRise Games. Todos los derechos reservados.</span><span><a href="aviso-legal/">Aviso legal</a> · <a href="privacidad/">Privacidad</a> · Sin cookies</span></div>
   </div>
 </footer>
+
 
 <!-- ===== VISOR DE IMÁGENES ===== -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
@@ -559,7 +460,7 @@
   <button class="lb-nav next" id="lbNext" aria-label="Siguiente">›</button>
 </div>
 
-<script src="js/config.js?v=2026112222010"></script>
-<script src="js/main.js?v=2026112222171"></script>
+<script src="js/config.js?v=2026112301"></script>
+<script src="js/main.js?v=2026112301"></script>
 </body>
 </html>

@@ -49,7 +49,7 @@ window.PROYECTOS = [
     texto_en:"Turn-based fantasy strategy. Playable now in early access for $1.99, and still growing.",
     status:"early", chips:["Estrategia","Por turnos","Navegador"], chips_en:["Strategy","Turn-based","Browser"],
     imagen:"assets/img/portada/portada-es.webp", imagen_en:"assets/img/portada/portada-en.webp",
-    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#juego", ancla:true},
+    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"reinos-de-leyenda/", url_en:"realms-of-legend/", pagina:true},
               {texto:"Demo gratis", texto_en:"Free demo", url:"demo/", interno:true} ],
     boton:{texto:"Comprar · 1,99 $", texto_en:"Buy · $1.99", url:"https://novarisegames.itch.io/reinos-de-leyenda"} },
   { titulo:"Tidebound", titulo_en:"Tidebound",
@@ -57,7 +57,7 @@ window.PROYECTOS = [
     texto_en:"Survive on the open sea. Your ship fires on its own: just sail, collect wood and upgrade your vessel through storms, dark nights and treasure. Full game for $1.99.",
     status:"live", chips:["Supervivencia naval","Acción","Navegador"], chips_en:["Naval survival","Action","Browser"],
     imagen:"assets/img/tidebound/portada.webp", arte:"olas",
-    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"#tidebound", ancla:true},
+    enlaces:[ {texto:"Descubrir", texto_en:"Discover", url:"tidebound/", url_en:"tidebound/", pagina:true},
               {texto:"Demo gratis", texto_en:"Free demo", url:"tidebound/demo/", interno:true} ],
     boton:{texto:"Comprar · 1,99 $", texto_en:"Buy · $1.99", url:"https://novarisegames.itch.io/tidebound"} },
   { titulo:"Cronos City", titulo_en:"Cronos City",
@@ -164,3 +164,34 @@ window.CAPTURAS = [
     texto_en:"The guided tutorial teaches you to capture mines to earn resources every day." }
 ];
 /* ========================================================= */
+
+// Carrusel de destacados de la portada (estilo Steam). Cada juego enlaza a su página propia.
+// "capturas": img = miniatura, grande = imagen que se muestra al pasar el ratón.
+window.CARRUSEL = [
+  { titulo:"Reinos de Leyenda", titulo_en:"Realms of Legend", fuente:"cinzel", color:"#ffd98a",
+    pagina:"reinos-de-leyenda/", pagina_en:"realms-of-legend/",
+    portada:"assets/img/portada/portada-es.webp", portada_en:"assets/img/portada/portada-en.webp",
+    texto:"Estrategia fantástica por turnos. Siete reinos luchan por la supremacía: elige el tuyo, recluta a sus héroes y conviértelo en leyenda.",
+    texto_en:"Turn-based fantasy strategy. Seven realms fight for supremacy: choose yours, recruit its heroes and turn it into a legend.",
+    status:"early", tags:["Estrategia","Por turnos","Fantasía","Navegador"], tags_en:["Strategy","Turn-based","Fantasy","Browser"],
+    precio:"1,99 $", precio_en:"$1.99",
+    demo:"demo/", compra:"https://novarisegames.itch.io/reinos-de-leyenda",
+    capturas:[
+      {img:"assets/img/capturas/mapa-exploracion.webp", grande:"assets/img/capturas/mapa-exploracion-grande.webp?v=wm1"},
+      {img:"assets/img/banner-caballero.webp", grande:"assets/img/banner-caballero.webp"},
+      {img:"assets/img/mapas/costa-de-los-faros.webp", grande:"assets/img/mapas/costa-de-los-faros-grande.webp?v=wm1"},
+      {img:"assets/img/capturas/mapa-tutorial.webp", grande:"assets/img/capturas/mapa-tutorial-grande.webp?v=wm1"} ] },
+  { titulo:"Tidebound", titulo_en:"Tidebound", fuente:"cinzel", color:"#7fd8ff",
+    pagina:"tidebound/", pagina_en:"tidebound/",
+    portada:"assets/img/tidebound/portada.webp",
+    texto:"Supervivencia en alta mar. Tu barco dispara solo: tú navega, recoge madera y evoluciónalo a través de 7 épocas, del Kraken al Leviatán.",
+    texto_en:"Survival on the open sea. Your ship fires on its own: you sail, collect wood and evolve it through 7 eras, from the Kraken to the Leviathan.",
+    status:"live", tags:["Supervivencia naval","Acción","Navegador"], tags_en:["Naval survival","Action","Browser"],
+    precio:"1,99 $", precio_en:"$1.99",
+    demo:"tidebound/demo/", compra:"https://novarisegames.itch.io/tidebound",
+    capturas:[
+      {img:"assets/img/tidebound/jefe-kraken.webp", grande:"assets/img/tidebound/jefe-kraken-grande.webp?v=wm1"},
+      {img:"assets/img/tidebound/era-piratas.webp", grande:"assets/img/tidebound/era-piratas-grande.webp?v=wm1"},
+      {img:"assets/img/tidebound/era-futurista.webp", grande:"assets/img/tidebound/era-futurista-grande.webp?v=wm1"},
+      {img:"assets/img/tidebound/jefe-leviatan.webp", grande:"assets/img/tidebound/jefe-leviatan-grande.webp?v=wm1"} ] }
+];

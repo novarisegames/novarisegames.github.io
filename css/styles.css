@@ -488,3 +488,66 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;margin-top:40px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
 .hero-covers .c2 .badge{top:auto;bottom:14px;right:14px}
+
+/* ===== CARRUSEL DE DESTACADOS (estilo Steam) ===== */
+.featured{padding:30px 0 80px}
+.feat-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}
+.feat-head h2{font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:700;letter-spacing:-.01em;margin-top:.35rem}
+.carousel{position:relative;outline:none}
+.car-track{display:grid}
+.car-slide{grid-area:1/1;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);background:linear-gradient(135deg,#17142c,#0e0c1a);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 30px 70px -35px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.02) inset;opacity:0;visibility:hidden;transform:translateX(24px);transition:opacity .5s,transform .5s,visibility 0s .5s}
+.car-slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .5s,transform .5s}
+.car-main{position:relative;display:block;overflow:hidden;background:#05040a}
+.car-main::before{content:"";display:block;padding-top:79.4%}
+.car-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s,opacity .25s}
+.car-main:hover img{transform:scale(1.025)}
+.car-main::after{content:"";position:absolute;inset:auto 0 0 auto;width:30%;height:100%;background:linear-gradient(90deg,transparent,rgba(14,12,26,.55));pointer-events:none}
+.car-info{display:flex;flex-direction:column;gap:.8rem;padding:24px 24px 22px;min-width:0}
+.car-title{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(1.45rem,2.3vw,2rem);line-height:1.1;letter-spacing:.03em;color:var(--ac);transition:filter .2s}
+.car-title:hover{filter:brightness(1.2)}
+.car-txt{color:var(--muted);font-size:.93rem;line-height:1.55}
+.car-ths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.car-th{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--line);padding:0;background:#05040a;cursor:pointer;transition:border-color .2s,transform .2s}
+.car-th img{width:100%;height:100%;object-fit:cover;opacity:.78;transition:opacity .2s}
+.car-th:hover,.car-th.on{border-color:var(--ac);transform:translateY(-1px)}
+.car-th:hover img,.car-th.on img{opacity:1}
+.car-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.car-tags .status{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:.3rem .7rem;border-radius:999px;background:rgba(7,6,13,.6)}
+.car-buy{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;gap:0 .6rem;padding-top:.2rem;border-top:1px solid var(--line)}
+.car-buy .btn{margin-top:.6rem}
+.car-price{font-weight:800;font-size:1.15rem;color:var(--gold2);margin:.6rem .3rem 0 0}
+.car-link{margin:.6rem 0 0 auto;font-size:.82rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.car-link:hover{color:var(--text)}
+.car-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:78px;border:1px solid var(--line);background:rgba(10,9,20,.78);backdrop-filter:blur(6px);color:var(--text);font-size:1.9rem;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.car-nav:hover{background:rgba(123,92,255,.35);color:#fff}
+.car-prev{left:-62px;border-radius:12px 0 0 12px}
+.car-next{right:-62px;border-radius:0 12px 12px 0}
+.car-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+.car-dots button{width:26px;height:8px;border-radius:6px;border:0;background:#2e2950;cursor:pointer;transition:background .2s,width .2s}
+.car-dots button.on{background:linear-gradient(90deg,var(--nova2),var(--nova));width:40px}
+@media (max-width:1320px){.car-prev{left:-14px;border-radius:12px}.car-next{right:-14px;border-radius:12px}.car-nav{width:40px;height:64px}}
+@media (max-width:900px){
+  .car-slide{grid-template-columns:1fr}
+  .car-main::after{display:none}
+  .car-ths{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .car-info{padding:20px}
+  .car-nav{top:calc((min(1180px,92vw))*500/630/2)}
+}
+@media (max-width:560px){.car-nav{width:34px;height:52px;font-size:1.5rem}.car-prev{left:-8px}.car-next{right:-8px}.car-ths{gap:6px}.featured{padding:10px 0 60px}}
+
+/* ===== PÁGINAS DE CADA JUEGO ===== */
+.crumbs{padding:100px 0 0;font-size:.85rem;color:var(--muted)}
+.crumbs ol{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem}
+.crumbs li+li::before{content:"›";margin-right:.5rem;color:#5d567f}
+.crumbs a:hover{color:var(--text)}
+.crumbs [aria-current]{color:var(--text)}
+.gp #juego{padding-top:50px}
+.gp-tb .tb-hero{margin-top:18px}
+.gp-tb #tidebound{padding-top:0}
+.game-cta{display:grid;grid-template-columns:260px 1fr auto;gap:28px;align-items:center;padding:24px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(135deg,#1a1631,#0e0c1a)}
+.game-cta img{border-radius:12px;width:100%;height:auto;aspect-ratio:630/500;object-fit:cover}
+.game-cta h3{font-size:1.5rem;margin:.3rem 0 .5rem}
+.game-cta p{color:var(--muted)}
+.game-cta .btns{display:flex;flex-direction:column;gap:.7rem}
+.gp-more{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:2rem}
+@media (max-width:860px){.game-cta{grid-template-columns:1fr;text-align:center}.game-cta img{max-width:320px;margin:0 auto}.game-cta .btns{flex-direction:row;flex-wrap:wrap;justify-content:center}}

@@ -23,14 +23,15 @@ const ARTES = ARTES_DEF();
 
 // Proyectos
 const grid = document.getElementById('projGrid');
-PROYECTOS.forEach(p=>{
+if(grid){
+(window.PROYECTOS||[]).forEach(p=>{
   const [lbl,cls] = ST[p.status];
   const el = document.createElement('article');
   el.className='proj reveal';
   const img = tr(p,'imagen');
   const arte = img ? `<img src="${BASE+img}" alt="${tr(p,'titulo')}" loading="lazy">` : (ARTES[p.arte]||ARTES.misterio);
-  const href = l => l.ancla ? l.url : (l.interno ? BASE+l.url : l.url);
-  const ext = l => (l.interno||l.ancla) ? '' : ' target="_blank" rel="noopener"';
+  const href = l => (l.ancla||l.pagina) ? tr(l,'url') : (l.interno ? BASE+l.url : l.url);
+  const ext = l => (l.interno||l.ancla||l.pagina) ? '' : ' target="_blank" rel="noopener"';
   const links = (p.enlaces||[]).map(l=>`<a class="follow" href="${href(l)}"${ext(l)}>${tr(l,'texto')} →</a>`).join('');
   const btn = p.boton ? `<a class="btn ${p.boton.sec?'btn-ghost':'btn-gold'} proj-btn" href="${href(p.boton)}"${ext(p.boton)}>${tr(p.boton,'texto')}</a>`
             : (!p.enlaces ? `<button class="follow" data-act="${p.accion}">${p.accion==='comprar'?T.buy:T.follow}</button>` : '');
@@ -43,11 +44,68 @@ PROYECTOS.forEach(p=>{
 grid.addEventListener('click',e=>{
   const b=e.target.closest('.follow'); if(!b) return;
   if(b.dataset.act==='comprar') window.open(window.TIENDA.url,'_blank','noopener');
-  else document.getElementById('seguir').scrollIntoView({behavior:'smooth',block:'center'});
+  else { const sg=document.getElementById('seguir'); if(sg) sg.scrollIntoView({behavior:'smooth',block:'center'}); }
 });
+}
+
+// Carrusel de juegos destacados (estilo Steam)
+const car=document.getElementById('carousel');
+if(car && (window.CARRUSEL||[]).length){
+  const CR=window.CARRUSEL, TX=LANG==='en'
+    ? {see:'View game',demo:'Free demo',buy:'Buy',prev:'Previous game',next:'Next game',go:'Go to',open:'Open the page for'}
+    : {see:'Ver juego',demo:'Demo gratis',buy:'Comprar',prev:'Juego anterior',next:'Juego siguiente',go:'Ir a',open:'Abrir la página de'};
+  const play='<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>';
+  const track=car.querySelector('.car-track'), dots=car.querySelector('.car-dots');
+  track.innerHTML=CR.map((g,k)=>{
+    const [lbl,cls]=ST[g.status]||['',''];
+    const pg=tr(g,'pagina'), cover=BASE+tr(g,'portada');
+    const th=(g.capturas||[]).map(c=>`<button type="button" class="car-th" data-big="${BASE+c.grande}"><img src="${BASE+c.img}" alt="" loading="lazy" width="160" height="100"></button>`).join('');
+    return `<article class="car-slide${k?'':' on'}" aria-roledescription="slide" aria-label="${k+1} / ${CR.length}: ${tr(g,'titulo')}"${k?' aria-hidden="true"':''} style="--ac:${g.color||'var(--gold)'}">
+      <a class="car-main" href="${pg}" aria-label="${TX.open} ${tr(g,'titulo')}"><img src="${cover}" data-cover="${cover}" alt="${tr(g,'titulo')}" width="630" height="500"${k?' loading="lazy"':''}></a>
+      <div class="car-info">
+        <a href="${pg}" class="car-title${g.fuente?' f-'+g.fuente:''}">${tr(g,'titulo')}</a>
+        <p class="car-txt">${tr(g,'texto')}</p>
+        <div class="car-ths">${th}</div>
+        <div class="car-tags"><span class="status ${cls}">${lbl}</span>${(tr(g,'tags')||[]).map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+        <div class="car-buy"><span class="car-price">${tr(g,'precio')||''}</span>
+          <a class="btn btn-gold btn-sm" href="${pg}">${TX.see} →</a>
+          <a class="btn btn-ghost btn-sm" href="${BASE+g.demo}">${play} ${TX.demo}</a>
+          <a class="car-link" href="${g.compra}" target="_blank" rel="noopener">${TX.buy} · ${tr(g,'precio')||''}</a></div>
+      </div></article>`;
+  }).join('');
+  dots.innerHTML=CR.map((g,k)=>`<button type="button" class="${k?'':'on'}" aria-label="${TX.go} ${tr(g,'titulo')}"></button>`).join('');
+  car.querySelector('.car-prev').setAttribute('aria-label',TX.prev);
+  car.querySelector('.car-next').setAttribute('aria-label',TX.next);
+  const slides=[...track.children]; let cur=0, timer=null, paused=false;
+  function go(n){
+    cur=(n+slides.length)%slides.length;
+    slides.forEach((s,k)=>{ s.classList.toggle('on',k===cur); s.toggleAttribute('aria-hidden',k!==cur); s.querySelectorAll('a,button').forEach(a=>a.tabIndex=k===cur?0:-1); });
+    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===cur));
+  }
+  const auto=()=>{ clearInterval(timer); timer=setInterval(()=>{ if(!paused && !document.hidden) go(cur+1); },6500); };
+  car.querySelector('.car-prev').onclick=()=>{go(cur-1);auto();};
+  car.querySelector('.car-next').onclick=()=>{go(cur+1);auto();};
+  dots.addEventListener('click',e=>{ const b=e.target.closest('button'); if(b){ go([...dots.children].indexOf(b)); auto(); } });
+  car.addEventListener('mouseenter',()=>paused=true); car.addEventListener('mouseleave',()=>paused=false);
+  car.addEventListener('focusin',()=>paused=true); car.addEventListener('focusout',()=>paused=false);
+  // Miniaturas: al pasar por encima cambian la imagen grande (como en Steam)
+  slides.forEach(s=>{
+    const mi=s.querySelector('.car-main img'), ths=[...s.querySelectorAll('.car-th')];
+    const show=t=>{ mi.src=t?t.dataset.big:mi.dataset.cover; ths.forEach(x=>x.classList.toggle('on',x===t)); };
+    ths.forEach(t=>{ t.addEventListener('mouseenter',()=>show(t)); t.addEventListener('focus',()=>show(t)); t.addEventListener('click',()=>show(t)); });
+    s.querySelector('.car-ths').addEventListener('mouseleave',()=>show(null));
+  });
+  // Deslizar con el dedo en móvil
+  let x0=null;
+  track.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',e=>{ if(x0==null) return; const dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>50){ go(cur+(dx<0?1:-1)); auto(); } x0=null; },{passive:true});
+  car.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'){go(cur-1);auto();} if(e.key==='ArrowRight'){go(cur+1);auto();} });
+  go(0);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) auto();
+}
 
 // Visor de imágenes (héroes y capturas)
-const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbFig=lb.querySelector('figure');
+const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbFig=lb?lb.querySelector('figure'):null;
 let lbList=[], hi=0;
 function showLb(i){
   hi=(i+lbList.length)%lbList.length; const it=lbList[hi];
@@ -59,14 +117,16 @@ function showLb(i){
   document.getElementById('lbPrev').style.display=multi?'':'none';
   document.getElementById('lbNext').style.display=multi?'':'none';
 }
-function openLb(list,i,wide){ lbList=list; lbFig.classList.toggle('wide',!!wide); showLb(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+function openLb(list,i,wide){ if(!lb) return; lbList=list; lbFig.classList.toggle('wide',!!wide); showLb(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
 function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+if(lb){
 document.getElementById('lbClose').onclick=closeLb;
 document.getElementById('lbPrev').onclick=()=>showLb(hi-1);
 document.getElementById('lbNext').onclick=()=>showLb(hi+1);
 lb.addEventListener('click',e=>{ if(e.target===lb) closeLb(); });
+}
 document.addEventListener('keydown',e=>{
-  if(!lb.classList.contains('open')) return;
+  if(!lb||!lb.classList.contains('open')) return;
   if(e.key==='Escape') closeLb();
   if(e.key==='ArrowLeft') showLb(hi-1);
   if(e.key==='ArrowRight') showLb(hi+1);
@@ -90,15 +150,17 @@ function renderHeroes(reino){
   });
   heroFilters.querySelectorAll('button').forEach(f=>f.classList.toggle('on',(f.dataset.r||'')===(reino||'')));
 }
+if(heroGrid&&heroFilters){
 const reinosUsados=[...new Set(HEROS.map(h=>h.reino))];
 heroFilters.innerHTML=`<button type="button" data-r="">${T.all}</button>`+reinosUsados.map(r=>`<button type="button" data-r="${r}" style="--rc:${RE[r]||'var(--gold)'}"><i></i>${reinoN(r)}</button>`).join('');
 heroFilters.addEventListener('click',e=>{const b=e.target.closest('button'); if(b) renderHeroes(b.dataset.r);});
 renderHeroes('');
+}
 
 // Tidebound: épocas y jefes
 const TBB=BASE+'assets/img/tidebound/';
 const eraGrid=document.getElementById('eraGrid'), bossGrid=document.getElementById('bossGrid');
-if(eraGrid){
+if(eraGrid&&bossGrid){
   const ER=window.TB_ERAS||[], JF=window.TB_JEFES||[];
   const eraList=ER.map((e,i)=>({src:TBB+e.img+'-grande.webp?v=wm1',title:(i+1)+' · '+tr(e,'nombre'),sub:'',bio:tr(e,'texto')}));
   ER.forEach((e,i)=>{
@@ -134,6 +196,7 @@ const CB=BASE+'assets/img/capturas/', CAPS=window.CAPTURAS||[];
 const capList=CAPS.map(c=>({src:CB+c.img+'-grande.webp?v=wm1',title:'',sub:tr(c,'texto')}));
 const shotImg=document.getElementById('shotImg'), shotCap=document.getElementById('shotCap'), thumbs=document.getElementById('thumbs');
 let ci=0;
+if(shotImg&&thumbs){
 function showShot(i){
   ci=i; const c=CAPS[i];
   shotImg.src=CB+c.img+'-grande.webp?v=wm1'; shotImg.alt=tr(c,'texto'); shotCap.textContent=tr(c,'texto');
@@ -146,8 +209,9 @@ CAPS.forEach((c,i)=>{
   t.onclick=()=>showShot(i); thumbs.appendChild(t);
 });
 if(CAPS.length){ showShot(0); if(CAPS.length<2) thumbs.style.display='none'; }
-else document.getElementById('jugabilidad').style.display='none';
+else { const j=document.getElementById('jugabilidad'); if(j) j.style.display='none'; }
 document.getElementById('shotMain').onclick=()=>openLb(capList,ci,true);
+}
 
 // Novedades (diario de desarrollo)
 const newsList=document.getElementById('newsList');
@@ -177,7 +241,7 @@ document.querySelectorAll('.dd').forEach(dd=>{
 });
 document.addEventListener('click',e=>{ if(!e.target.closest('.dd')||e.target.closest('.dd-item')) closeDD(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDD(); });
-document.getElementById('yr').textContent=new Date().getFullYear();
+const yr=document.getElementById('yr'); if(yr) yr.textContent=new Date().getFullYear();
 
 // Animaciones de entrada
 const io=new IntersectionObserver(es=>es.forEach(x=>{ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }),{threshold:.12});
@@ -185,7 +249,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 // Cielo estrellado
 (function(){
-  const c=document.getElementById('stars'), x=c.getContext('2d'); let W,H,S=[];
+  const c=document.getElementById('stars'); if(!c) return; const x=c.getContext('2d'); let W,H,S=[];
   function size(){ W=c.width=c.offsetWidth*devicePixelRatio; H=c.height=c.offsetHeight*devicePixelRatio;
     S=Array.from({length:140},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4*devicePixelRatio+.3,p:Math.random()*6.28,s:.005+Math.random()*.02})); }
   function draw(){ x.clearRect(0,0,W,H); S.forEach(s=>{ s.p+=s.s; x.globalAlpha=.35+Math.sin(s.p)*.35; x.fillStyle='#fff'; x.beginPath(); x.arc(s.x,s.y,s.r,0,6.28); x.fill(); }); requestAnimationFrame(draw); }
@@ -206,7 +270,7 @@ document.addEventListener('click',e=>{
 
 // Protección de imágenes: sin menú contextual, arrastre ni pulsación larga sobre las imágenes
 (function(){
-  const esImagen = t => t && (t.tagName==='IMG' || t.closest('.hero-card,.hero-tile,.map-tile,.era,.boss,.shot-main,.lightbox figure,.banner,.proj .art,.cr-hero,.thumb,.dd-item'));
+  const esImagen = t => t && (t.tagName==='IMG' || t.closest('.hero-card,.car-main,.car-th,.game-cta,.hero-tile,.map-tile,.era,.boss,.shot-main,.lightbox figure,.banner,.proj .art,.cr-hero,.thumb,.dd-item'));
   document.addEventListener('contextmenu', e => { if(esImagen(e.target)) e.preventDefault(); });
   document.addEventListener('dragstart', e => { if(e.target.tagName==='IMG') e.preventDefault(); });
 })();
