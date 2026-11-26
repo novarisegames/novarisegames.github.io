@@ -33,6 +33,14 @@ novarisegames.github.io/
 └── .nojekyll         # Para que GitHub Pages sirva los archivos tal cual
 ```
 
+## Asistente de dudas (sin IA)
+
+El botón «¿Dudas?» abajo a la derecha (portadas y páginas de juego) abre un asistente que responde
+las preguntas frecuentes en español e inglés. Funciona en el navegador, sin IA, sin cookies y sin enviar
+nada. Las respuestas y sus palabras clave están en `js/asistente.js` (lista INT); para añadir una
+pregunta nueva, copia un bloque y cambia `k` (palabras clave), `r` (respuesta) y `b` (botones).
+GoatCounter cuenta asistente-abierto, asistente-respondida y asistente-sin-respuesta.
+
 ## Redes sociales
 
 Facebook (https://www.facebook.com/1497432843450057), Instagram (@novarise_games) y TikTok (@novarise_games)
