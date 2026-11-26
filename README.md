@@ -33,6 +33,14 @@ novarisegames.github.io/
 └── .nojekyll         # Para que GitHub Pages sirva los archivos tal cual
 ```
 
+## Redes sociales
+
+Facebook (https://www.facebook.com/1497432843450057), Instagram (@novarise_games) y TikTok (@novarise_games)
+aparecen en la sección «Sigue a NovaRise Games» de la portada, en el pie de todas las páginas de juego,
+en el kit de prensa y en los datos para Google (sameAs). Los clics se cuentan en GoatCounter como
+red-facebook, red-instagram y red-tiktok. Las publicaciones se programan en Buffer; las imágenes que usan
+están en assets/promo/.
+
 ## Carrusel de destacados
 
 El carrusel de la portada (estilo Steam) se rellena desde `window.CARRUSEL` en `js/config.js`:

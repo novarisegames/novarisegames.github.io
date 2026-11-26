@@ -265,6 +265,9 @@ document.addEventListener('click',e=>{
   else if(/(^|\/)tidebound\/demo\/?$/.test(h)) ev='demo-tidebound';
   else if(/(^|\/)demo\/?$/.test(h)) ev='demo-reinos-de-leyenda';
   else if(h.includes('presskit.zip')) ev='descarga-presskit';
+  else if(h.includes('facebook.com/1497432843450057')) ev='red-facebook';
+  else if(h.includes('instagram.com/novarise_games')) ev='red-instagram';
+  else if(h.includes('tiktok.com/@novarise_games')) ev='red-tiktok';
   if(ev) try{ window.goatcounter.count({path:ev,title:ev+' ('+LANG+')',event:true}); }catch(_){}
 });
 
