@@ -9,7 +9,7 @@
     itchRL:'https://novarisegames.itch.io/reinos-de-leyenda', itchTB:'https://novarisegames.itch.io/tidebound', itch:'https://novarisegames.itch.io',
     cronos:HOME+'#cronos', faq:HOME+'#faq', comunidad:HOME+(LANG==='en'?'community/':'comunidad/'), prensa:HOME+(LANG==='en'?'press/':'prensa/'),
     privacidad:HOME+(LANG==='en'?'privacy/':'privacidad/'), mail:'mailto:novarisegames26@gmail.com',
-    fb:'https://www.facebook.com/1497432843450057', ig:'https://www.instagram.com/novarise_games/', tt:'https://www.tiktok.com/@novarise_games'
+    fb:'https://www.facebook.com/novarisegames', ig:'https://www.instagram.com/novarise_games/', tt:'https://www.tiktok.com/@novarise_games'
   };
   const L=(es,en)=>LANG==='en'?en:es;
   // Intenciones: k = palabras clave (sin tildes), r = respuesta, b = botones [texto, enlace]

@@ -43,7 +43,7 @@ GoatCounter cuenta asistente-abierto, asistente-respondida y asistente-sin-respu
 
 ## Redes sociales
 
-Facebook (https://www.facebook.com/1497432843450057), Instagram (@novarise_games) y TikTok (@novarise_games)
+Facebook (https://www.facebook.com/novarisegames), Instagram (@novarise_games) y TikTok (@novarise_games)
 aparecen en la sección «Sigue a NovaRise Games» de la portada, en el pie de todas las páginas de juego,
 en el kit de prensa y en los datos para Google (sameAs). Los clics se cuentan en GoatCounter como
 red-facebook, red-instagram y red-tiktok. Las publicaciones se programan en Buffer; las imágenes que usan
